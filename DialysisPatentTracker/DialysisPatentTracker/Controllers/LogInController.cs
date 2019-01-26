@@ -9,6 +9,7 @@ namespace DialysisPatentTracker.Controllers
         // GET: /<controller>/
         public IActionResult Index()
         {
+
             return View();
         }
     }
