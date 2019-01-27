@@ -16,23 +16,25 @@
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
     </environment>
 </head>
-<body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
+<body style="background: url(https://images.pexels.com/photos/40784/drops-of-water-water-nature-liquid-40784.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500) no-repeat;
+        background-size: cover;">
+    <nav class="navbar navbar-inverse navbar-fixed-top" style="background-color:midnightblue">
+        <div class="container" >
+            <div class="navbar-header" >
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">DialysisPatentTracker</a>
+                <a style="color:yellow"asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">DialysisPatentTracker</a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="LogIn" asp-action="Index">Login</a></li>
-                    <li><a asp-area="" asp-controller="SignUp" asp-action="Index">SignUp</a></li>
+                    <li><a style="color:snow" asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li><a style="color:snow" asp-area="" asp-controller="LogIn" asp-action="Index">Login</a></li>
+                    <li><a style="color:snow" asp-area="" asp-controller="SignUp" asp-action="Index">Sign Up</a></li>
+                    <li><a style="color:snow" asp-area="" asp-controller="LogOut" asp-action="Index">Log Out</a></li>
                 </ul>
             </div>
         </div>
@@ -42,9 +44,9 @@
 
     <div class="container body-content">
         @RenderBody()
-        <hr />
+        <hr style="color:midnightblue; "/>
         <footer>
-            <p>&copy; 2019 - DialysisPatentTracker</p>
+            <p style="color:midnightblue">&copy; 2019 - DialysisPatentTracker</p>
         </footer>
     </div>
 

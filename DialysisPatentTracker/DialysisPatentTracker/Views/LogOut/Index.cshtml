@@ -1,0 +1,64 @@
+﻿<style>
+    body {
+        background: url(https://www.google.com/imgres?imgurl=https%3A%2F%2Fwww.isis.stfc.ac.uk%2FGallery%2FWater%2520image_Dreamstime.jpg&imgrefurl=https%3A%2F%2Fwww.isis.stfc.ac.uk%2FPages%2FWater-the-liquid-of-life.aspx&docid=ky_lDwMi7mWaZM&tbnid=h-eSa7sfLRaChM%3A&vet=10ahUKEwjx7KK7rI3gAhVKGt8KHUGAB9cQMwhuKAQwBA..i&w=4037&h=1981&itg=1&bih=559&biw=1242&q=water%20images&ved=0ahUKEwjx7KK7rI3gAhVKGt8KHUGAB9cQMwhuKAQwBA&iact=mrc&uact=8) url(https://images.pexels.com/photos/40784/drops-of-water-water-nature-liquid-40784.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500) no-repeat;
+        background-size: cover;
+    }
+        h1 {
+       padding:5% 10% 13% 10%;
+       color:midnightblue;
+       
+    }
+
+        hr{
+
+            margin-top:13%;
+        }
+    .logoutPic {
+        justify-content: center;
+        border-radius: 25%;
+    }
+
+    .form-control {
+        color: yellow;
+        background-color:midnightblue;
+        margin: auto;
+        border:none;
+      
+    }
+    
+    .form-group {
+        text-align: center;
+        
+        
+    }
+
+</style>
+
+
+
+<div class="form-group">
+    <h1>You Have Successfully <br />Logged Out </h1>
+</div>
+
+
+
+<div class="form-group row">
+    <form asp-controller="LogIn" asp-action="Index" method="post">
+        <div class="col-md-4 col-md-offset-4 text-center">
+            <input class="form-control" type="submit" value="Log In">
+        </div>
+    </form>
+</div>
+
+<div class="form-group row">
+    <form asp-controller="SignUp" asp-action="Index" method="post">
+        <div class="col-md-4 col-md-offset-4 text-center">
+            <input class="form-control" type="submit" value="Sign Up">
+        </div>
+    </form>
+</div>
+
+
+
+
+

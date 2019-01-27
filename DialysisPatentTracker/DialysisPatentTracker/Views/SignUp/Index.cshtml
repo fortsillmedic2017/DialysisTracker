@@ -1,1 +1,21 @@
-﻿<h1>SignUp Page</h1>
+﻿
+
+<div class="form-group">
+    <h1 >SignUp Page</h1>
+</div>
+<div class="form-group">
+    <form asp-controller="LogIn" asp-action="Index" method="post">
+        <label for="fName.id">First Name</label>
+        <input class="form-control" type="text" id="fName.id " name="fName" value="" />
+        <label for="lName.id">Last Name</label>
+        <input class="form-control" type="text" id="lName.id " name="lName" value="" />
+        <label for="name.id">UserName</label>
+        <input class="form-control" type="text" id="name.id " name="userName" value="" />
+        <label for="password.id">Password</label>
+        <input class="form-control" type="text" id="password.id " name="password" value="" />
+        <label for="comfirm.id">Comfirm Password</label>
+        <input class="form-control" type="text" id="comfirm.id " name="comfirm" value="" />
+        <p></p>
+        <input type="submit" value="Sign Up" />
+    </form>
+</div>
