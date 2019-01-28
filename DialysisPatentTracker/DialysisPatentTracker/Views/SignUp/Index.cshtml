@@ -1,9 +1,18 @@
 ﻿
+<style>
+    hr {
+        margin-top: 9%;
+    }
+
+    h1 {
+        margin-bottom: 6%;
+    }
+</style>
 
 <div class="form-group">
-    <h1 >SignUp Page</h1>
+    <h1>SignUp Page</h1>
 </div>
-<div class="form-group">
+<div class="form-group-sm">
     <form asp-controller="LogIn" asp-action="Index" method="post">
         <label for="fName.id">First Name</label>
         <input class="form-control" type="text" id="fName.id " name="fName" value="" />
@@ -16,6 +25,6 @@
         <label for="comfirm.id">Comfirm Password</label>
         <input class="form-control" type="text" id="comfirm.id " name="comfirm" value="" />
         <p></p>
-        <input type="submit" value="Sign Up" />
+        <input style="background-color:midnightblue; color:yellow" type="submit" value="Sign Up" />
     </form>
 </div>

@@ -12,6 +12,23 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="images\drops-of-water-water-nature-liquid-40784.jpeg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="images\drops-of-water-water-nature-liquid-40784.jpeg">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\images\dialysis Image.jpg" />
+    <None Include="wwwroot\images\download desktop background.jpg" />
+    <None Include="wwwroot\images\download.jpg" />
+    <None Include="wwwroot\images\mountain.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
   </ItemGroup>

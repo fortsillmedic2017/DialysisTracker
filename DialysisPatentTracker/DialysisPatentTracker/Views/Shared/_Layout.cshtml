@@ -15,9 +15,23 @@
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
     </environment>
+
+
+    <style>
+        hr {
+            border: none;
+            height: 3px;                 
+            background-color: midnightblue;
+        }
+        body {
+            background: url(https://images.pexels.com/photos/40784/drops-of-water-water-nature-liquid-40784.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500);
+            background-repeat:no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+    </style>
 </head>
-<body style="background: url(https://images.pexels.com/photos/40784/drops-of-water-water-nature-liquid-40784.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500) no-repeat;
-        background-size: cover;">
+<body >
     <nav class="navbar navbar-inverse navbar-fixed-top" style="background-color:midnightblue">
         <div class="container" >
             <div class="navbar-header" >
@@ -27,7 +41,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a style="color:yellow"asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">DialysisPatentTracker</a>
+                <a style="color:yellow"asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Dialysis Patent Tracker</a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -44,7 +58,11 @@
 
     <div class="container body-content">
         @RenderBody()
-        <hr style="color:midnightblue; "/>
+
+        <p> </p>
+        <p> </p>
+
+        <hr />
         <footer>
             <p style="color:midnightblue">&copy; 2019 - DialysisPatentTracker</p>
         </footer>

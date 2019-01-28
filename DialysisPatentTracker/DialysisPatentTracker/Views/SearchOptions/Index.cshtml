@@ -1,0 +1,49 @@
+﻿<nav class="navbar navbar-inverse navbar-fixed-top" style="background-color:midnightblue">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a style="color:yellow" asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">DialysisPatentTracker</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a style="color:snow" asp-area="" asp-controller="PatientMasterList" asp-action="Index">Patient Master List</a></li>
+                <li><a style="color:snow" asp-area="" asp-controller="PatientDemoGraphics" asp-action="Index">Patient DemoGraphics</a></li>
+                <li><a style="color:snow" asp-area="" asp-controller="TreatmentMasterList" asp-action="Index">Treatment Master List</a></li>
+              
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<h1>Patient Search Options</h1>
+    
+    <div class="form-group">
+        <form asp-controller="PatientSearchOptions" asp-action="Index" method="post">
+
+            <label for="patient.id">Patient ID</label>
+            <input class="form-control" type="text" id="patientId.id " name="patientId" value="" />
+            <label for="fName.id">First Name</label>
+            <input class="form-control" type="text" id="fName.id " name="fName" value="" />
+            <label for="lName.id">Last Name</label>
+            <input class="form-control" type="text" id="lName.id " name="lName" value="" />
+            <label for="physician.id">Physician</label>
+            <input class="form-control" type="text" id="physician.id " name="physicuan" value="" />
+
+
+            <p></p>
+            <input style="background-color:midnightblue; color:yellow" type="submit" value="Sign Up" />
+        </form>
+    </div>
+
+    <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav" style="color:midnightblue">
+            <li><a style="color:midnightblue" asp-area="" asp-controller="SignUp" asp-action="Index">Sign Up</a></li>
+            <li><a style="color:midnightblue" asp-area="" asp-controller="LogOut" asp-action="Index">Log Out</a></li>
+            <li><a style="color:midnightblue" asp-area="" asp-controller="LogIn" asp-action="Index">Login</a></li>
+        </ul>
+    </div>

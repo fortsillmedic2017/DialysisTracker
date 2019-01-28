@@ -1,0 +1,141 @@
+﻿<html>
+<head>
+    <style>
+        .container {
+         
+        }
+        h1{
+            border:red solid 2px;
+            text-align:center;
+            padding:5px;
+            margin-top:50px;
+        }
+
+        table {
+            border: solid 2px yellow;
+            align-content: center;
+            background-color: navy;
+            
+        }
+
+        th {
+            color: snow;
+            border-solid 2px yellow;
+            background-color: darkmagenta;
+            text-align: center;
+        }
+
+        tr {
+            border: solid 2px darkslategray;
+            text-align: center;
+            background-color: navy;
+            color: snow;
+        }
+
+        td {
+            color: yellow;
+            text-align: center;
+        }
+
+        hr {
+            border: none;
+            height: 3px;
+            background-color: darkslategray;
+        }
+        
+    </style> 
+
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" style="background-color:midnightblue">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a style="color:yellow" asp-area="" asp-controller="LogIn" asp-action="Index" class="navbar-brand">DialysisPatentTracker</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a style="color:snow" asp-area="" asp-controller="SearchOptions" asp-action="Index">Patient Search Options</a></li>
+                    <li><a style="color:snow" asp-area="" asp-controller="PatientDemoGraphics" asp-action="Index">Patient DemoGraphics</a></li>
+                    <li><a style="color:snow" asp-area="" asp-controller="TreatmentMasterList" asp-action="Index">Treatment Master List</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+
+
+
+    <h1>Patient master List</h1>
+
+    <table class="table">
+
+        <!--  ************TOD DO !! Have to program table to fill in with inputs ********************-->
+        <tr>
+            <th>Patient Master List</th>
+
+        </tr>
+
+        <thead>
+            <tr>
+                <th>PT ID</th>
+                <th>Last Name</th>
+                <th>First Name</th>
+                <th>Physician</th>
+                <th>Traetment<br />Days</th>
+                <th>Traetment<br />Time(hrs)</th>
+                <th>Traetment<br />Completion(Y/N)</th>
+                <th>Comments</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Hilton</td>
+                <td>Davis</td>
+                <td>Abraham</td>
+                <td>MWF</td>
+                <td>3</td>
+                <td>Yes</td>
+                <td>Pt with no issues.</td>
+            </tr>
+
+            <tr>
+                <td>2</td>
+                <td>Hilton</td>
+                <td>Jenneh</td>
+                <td>Wilson</td>
+                <td>TTHS</td>
+                <td>4</td>
+                <td>Yes</td>
+                <td>Pt with no issues.</td>
+            </tr>
+
+            <tr>
+                <td>3</td>
+                <td>Hilton</td>
+                <td>Annette</td>
+                <td>Frank</td>
+                <td>TTHS</td>
+                <td>3.5</td>
+                <td>Yes</td>
+                <td>Pt with no issues.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav" style="color:midnightblue">
+            <li><a style="color:midnightblue" asp-area="" asp-controller="SignUp" asp-action="Index">Sign Up</a></li>
+            <li><a style="color:midnightblue" asp-area="" asp-controller="LogOut" asp-action="Index">Log Out</a></li>
+            <li><a style="color:midnightblue" asp-area="" asp-controller="LogIn" asp-action="Index">Login</a></li>
+        </ul>
+    </div>
+</body>
+</html>
