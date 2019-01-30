@@ -1,9 +1,12 @@
 ﻿<html>
 <head>
     <style>
-        .container {
+        #nav-bar2 {
+            margin-left: 1050px;
+            margin-right: 10px;
         }
-
+     
+       
         h1 {
             border: yellow solid 2px;
             text-align: center;
@@ -66,6 +69,14 @@
                     <li><a style="color:snow" asp-area="" asp-controller="SearchOptions" asp-action="Index">Patient Search Options</a></li>
                     <li><a style="color:snow" asp-area="" asp-controller="PatientMasterList" asp-action="PatientDemoGraphics">Patient DemoGraphics</a></li>
                     <li><a style="color:snow" asp-area="" asp-controller="PatientMasterList" asp-action="TreatmentMasterList">Treatment Master List</a></li>
+                </ul>
+
+               
+
+                <ul id="nav-bar2" , class="navbar-collapse collapse">
+                    <li><a style="color:yellow" asp-area="" asp-controller="SignUp" asp-action="Index">Sign Up</a></li>
+                    <li><a style="color:yellow" asp-area="" asp-controller="LogOut" asp-action="Index">Log Out</a></li>
+                    <li><a style="color:yellow" asp-area="" asp-controller="LogIn" asp-action="Index">Login</a></li>
                 </ul>
             </div>
         </div>

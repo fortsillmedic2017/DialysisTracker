@@ -18,77 +18,96 @@
 
 
     <style>
+        #nav-bar2 {
+            margin-left: 1050px;
+            margin-right: 10px;
+        }
         hr {
             border: none;
             height: 3px;                 
             background-color: midnightblue;
         }
         body {
-            background: url(https://images.pexels.com/photos/40784/drops-of-water-water-nature-liquid-40784.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500);
+            background: url(https://ceramahmotivasi.com/wp-content/uploads/2017/12/air-1.jpg) ;
             background-repeat:no-repeat;
             background-position: center;
             background-size: cover;
         }
+
+        .logo {
+            color: yellow;
+            font-size: 40px;
+            margin-left: 350px;
+            margin-right: 250px;
+        }
+
+        .form-control {
+            color: white;
+        }
+
     </style>
 </head>
 <body >
+    
     <nav class="navbar navbar-inverse navbar-fixed-top" style="background-color:midnightblue">
-        <div class="container" >
-            <div class="navbar-header" >
+        <div class="container">
+            <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a style="color:yellow"asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Dialysis Patent Tracker</a>
+                <a class="logo" asp-area="" asp-controller="LogIn" asp-action="Index" class="navbar-brand"> Dialysis Patent Tracker</a>
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a style="color:snow" asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a style="color:snow" asp-area="" asp-controller="LogIn" asp-action="Index">Login</a></li>
-                    <li><a style="color:snow" asp-area="" asp-controller="SignUp" asp-action="Index">Sign Up</a></li>
-                    <li><a style="color:snow" asp-area="" asp-controller="LogOut" asp-action="Index">Log Out</a></li>
+
+                <ul id="nav-bar2" , class="navbar-collapse collapse">
+                    <li><a style="color:white" asp-area="" asp-controller="LogIn" asp-action="Index">Login</a></li>
+                    <li><a style="color:white" asp-area="" asp-controller="SignUp" asp-action="Index">Sign Up</a></li>
+                    <li><a style="color:white" asp-area="" asp-controller="LogOut" asp-action="Index">Log Out</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <partial name="_CookieConsentPartial" />
+        <partial name="_CookieConsentPartial" />
 
-    <div class="container body-content">
-        @RenderBody()
+        <div class="container body-content">
+            @RenderBody()
 
-        <p> </p>
-        <p> </p>
+            <p> </p>
+            <p> </p>
 
-        <hr />
-        <footer>
-            <p style="color:midnightblue">&copy; 2019 - DialysisPatentTracker</p>
-        </footer>
-    </div>
+            <hr />
+            <footer>
+                <p style="color:yellow;">&copy; 2019 - Dialysis Patent Tracker</p>
+            </footer>
+        </div>
 
-    <environment include="Development">
-        <script src="~/lib/jquery/dist/jquery.js"></script>
-        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
-        <script src="~/js/site.js" asp-append-version="true"></script>
-    </environment>
-    <environment exclude="Development">
-        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.3.1.min.js"
-                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
-                asp-fallback-test="window.jQuery"
-                crossorigin="anonymous"
-                integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT">
-        </script>
-        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"
-                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
-                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
-                crossorigin="anonymous"
-                integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
-        </script>
-        <script src="~/js/site.min.js" asp-append-version="true"></script>
-    </environment>
+        <environment include="Development">
+            <script src="~/lib/jquery/dist/jquery.js"></script>
+            <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+            <script src="~/js/site.js" asp-append-version="true"></script>
+        </environment>
+        <environment exclude="Development">
+            <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.3.1.min.js"
+                    asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                    asp-fallback-test="window.jQuery"
+                    crossorigin="anonymous"
+                    integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT">
+            </script>
+            <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"
+                    asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
+                    asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
+                    crossorigin="anonymous"
+                    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
+            </script>
+            <script src="~/js/site.min.js" asp-append-version="true"></script>
+        </environment>
 
-    @RenderSection("Scripts", required: false)
+        @RenderSection("Scripts", required: false)
+
+    
 </body>
 </html>

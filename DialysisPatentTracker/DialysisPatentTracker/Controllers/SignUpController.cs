@@ -15,5 +15,11 @@ namespace DialysisPatentTracker.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        public IActionResult Add(string username, string Password)
+        {
+            return View("/LogIn");
+        }
     }
 }

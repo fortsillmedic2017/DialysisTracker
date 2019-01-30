@@ -1,4 +1,60 @@
-﻿<nav class="navbar navbar-inverse navbar-fixed-top" style="background-color:midnightblue">
+﻿<style>
+ 
+      .nav-bar2 {
+        margin-top: -70px;
+        margin-left: 1050px;
+        margin-right: 10px;
+        margin-bottom: -10px;
+        border: white solid 3px;
+    }
+
+    .logo {
+        color: yellow;
+        font-size: 40px;
+        border: white solid 3px;
+        margin-top: -310px;
+    }
+
+    h2 {
+        text-align: center;
+        padding-top: 1px;
+        padding-bottom: 40px;
+        margin-left: 30px;
+        margin-right: 30px;
+        margin-top: 3px;
+        color: yellow;
+    }
+
+    input, input[placeholder] {
+        text-align: center;
+        background-color: midnightblue;
+        border-radius: 40%;
+        border: none;
+    }
+
+    form {
+        border: solid rgba(255, 255, 26,.8) 4px;
+        border-radius: 20%;
+        background: rgba(40, 37, 141, .5);
+        padding: 50px;
+        margin-bottom: 1px;
+        margin-left: 250px;
+        margin-right: 250px;
+    }
+
+    .form-control {
+        color: white;
+    }
+
+    .form {
+        margin-top: 50px;
+        margin-bottom: 125px;
+    }
+</style>
+
+<!--*************HTML***************-->
+
+<nav class="navbar navbar-inverse navbar-fixed-top" style="background-color:midnightblue">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -7,43 +63,68 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a style="color:yellow" asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">DialysisPatentTracker</a>
+            <a style="color:yellow" asp-area="" asp-controller="LogIn" asp-action="Index" class="navbar-brand">DialysisPatentTracker</a>
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li><a style="color:snow" asp-area="" asp-controller="PatientMasterList" asp-action="Index">Patient Master List</a></li>
-                <li><a style="color:snow" asp-area="" asp-controller="PatientMasterList" asp-action="PatientDemoGraphics">Patient DemoGraphics</a></li>
+                <li><a style="color:snow" asp-area="" asp-controller="PatientMasterList" asp-action="PatientDemoGraphics">Patient Demographics</a></li>
                 <li><a style="color:snow" asp-area="" asp-controller="PatientMasterList" asp-action="TreatmentMasterList">Treatment Master List</a></li>
-
             </ul>
+
+
+            <div class="nav-bar2">
+                <ul class="navbar-collapse collapse">
+                    <li><a style="color:yellow" asp-area="" asp-controller="SignUp" asp-action="Index">Sign Up</a></li>
+                    <li><a style="color:yellow" asp-area="" asp-controller="LogOut" asp-action="Index">Log Out</a></li>
+                    <li><a style="color:yellow" asp-area="" asp-controller="LogIn" asp-action="Index">Login</a></li>
+                </ul>
+            </div>
         </div>
     </div>
 </nav>
 
-<h1>Patient Search Options</h1>
-    
+<div class="form">
     <div class="form-group">
-        <form asp-controller="PatientMasterList" asp-action="Index" method="post">
 
-            <label for="patient.id">Patient ID</label>
-            <input class="form-control" type="text" id="patientId.id " name="patientId" value="" />
-            <label for="fName.id">First Name</label>
-            <input class="form-control" type="text" id="fName.id " name="fName" value="" />
-            <label for="lName.id">Last Name</label>
-            <input class="form-control" type="text" id="lName.id " name="lName" value="" />
-            <label for="physician.id">Physician</label>
-            <input class="form-control" type="text" id="physician.id " name="physicuan" value="" />
-
-
-            <p></p>
-            <input style="background-color:midnightblue; color:yellow" type="submit" value="Search" />
-        </form>
     </div>
 
-    <div class="navbar-collapse collapse">
-        <ul class="nav navbar-nav" style="color:midnightblue">
-            <li><a style="color:midnightblue" asp-area="" asp-controller="SignUp" asp-action="Index">Sign Up</a></li>
-            <li><a style="color:midnightblue" asp-area="" asp-controller="LogOut" asp-action="Index">Log Out</a></li>
-            <li><a style="color:midnightblue" asp-area="" asp-controller="LogIn" asp-action="Index">Login</a></li>
-        </ul>
-    </div>
+    <form asp-controller="PatientMasterList" asp-action="Index" method="post">
+        <div class="form-group row">
+            <h2>Patient Search Options</h2><!--********* h2 tag ***********-->
+            <div class="col-lg-10 my-1">
+                <label for="patientId" class="col-sm-2 col-form-label"></label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="patientId" placeholder="Patient ID#">
+                </div>
+            </div>
+        </div><!------------------- end of pt ID# input  ---------------------->
+        <div class="form-group row">
+            <div class="col-lg-10 my-1">
+                <label for="lName" class="col-sm-2 col-form-label"></label>
+                <div class="col-sm-10">
+                    <input type="password" class="form-control" id="lName" placeholder="Last Name">
+                </div>
+            </div>
+        </div><!------------------- end of lname input  ---------------------->
+        <div class="form-group row">
+            <div class="col-lg-10 my-1">
+                <label for="physicianId" class="col-sm-2 col-form-label"></label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="physicianId" placeholder="Physician">
+                </div>
+            </div>
+        </div><!------------------- end of Use Physician input  ---------------------->
+
+        <div class="form-group row">
+            <div class="col-lg-10 my-1">
+                <label class="col-sm-2 col-form-label"></label>
+                <div class="col-sm-10">
+                    <input style="background-color:yellow; color:midnightblue; border-radius:50%" type="submit" class="form-control" value="Search">
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+
