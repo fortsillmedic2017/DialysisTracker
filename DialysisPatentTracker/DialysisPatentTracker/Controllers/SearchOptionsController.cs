@@ -15,5 +15,13 @@ namespace DialysisPatentTracker.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        public IActionResult Add()
+        {
+            /* TODO  Figure out how to  have page redirect to serch option selection*/
+
+            return View("/PatientMasterList");
+        }
     }
 }

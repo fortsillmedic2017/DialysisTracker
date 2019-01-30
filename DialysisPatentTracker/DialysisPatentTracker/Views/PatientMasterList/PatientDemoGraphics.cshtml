@@ -17,10 +17,8 @@
         table {
             border: solid 2px yellow;
             align-content: center;
-            background: rgba(37, 37, 141, .7);
+            background-color: navy;
         }
-          
-        
 
         th {
             color: yellow;
@@ -32,7 +30,7 @@
         tr {
             border: solid 2px darkslategray;
             text-align: center;
-          
+            background-color: navy;
             color: snow;
         }
 
@@ -64,14 +62,14 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a style="color:snow" asp-area="" asp-controller="SearchOptions" asp-action="Index">Patient Search Options</a></li>
-                    <li><a style="color:snow" asp-area="" asp-controller="PatientMasterList" asp-action="PatientDemoGraphics">Patient DemoGraphics</a></li>
+                    <li><a style="color:snow" asp-area="" asp-controller="PatientMasterList" asp-action="Index">PatientMasterList</a></li>
                     <li><a style="color:snow" asp-area="" asp-controller="PatientMasterList" asp-action="TreatmentMasterList">Treatment Master List</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <h1>Patient master List</h1>
+    <h1>Patient Demographics</h1>
 
     <table class="table">
 
@@ -82,11 +80,11 @@
                 <th>PT ID</th>
                 <th>Last Name</th>
                 <th>First Name</th>
-                <th>Physician</th>
-                <th>Traetment<br />Days</th>
-                <th>Traetment<br />Time(hrs)</th>
-                <th>Traetment<br />Completion(Y/N)</th>
-                <th>Comments</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Address</th>
+                <th>Phone <br />Number</th>
+                <th>E-mail</th>
             </tr>
         </thead>
         <tbody>
@@ -94,75 +92,41 @@
                 <td>1</td>
                 <td>Hilton</td>
                 <td>Davis</td>
-                <td>Abraham</td>
-                <td>MWF</td>
-                <td>3</td>
-                <td>Yes</td>
-                <td>Pt with no issues.</td>
+                <td>43</td>
+                <td>Male</td>
+                <td>10279Windswept Place<br />
+                    Boca Raton, FL 33490</td>
+                <td>(856)366-9972</td>
+                <td>fortsillmedic2017@gmail.com</td>
             </tr>
 
             <tr>
                 <td>2</td>
                 <td>Hilton</td>
                 <td>Jenneh</td>
-                <td>Wilson</td>
-                <td>TTHS</td>
-                <td>4</td>
-                <td>Yes</td>
-                <td>Pt with no issues.</td>
+                <td>43</td>
+                <td>Male</td>
+                <td>
+                    10279Windswept Place<br />
+                    Boca Raton, FL 33490
+                </td>
+                <td>(856)366-9972</td>
+                <td>fortsillmedic2017@gmail.com</td>
             </tr>
 
             <tr>
                 <td>3</td>
                 <td>Hilton</td>
                 <td>Annette</td>
-                <td>Frank</td>
-                <td>TTHS</td>
-                <td>3.5</td>
-                <td>Yes</td>
-                <td>Pt with no issues.</td>
+                <td>43</td>
+                <td>Male</td>
+                <td>
+                    10279Windswept Place<br />
+                    Boca Raton, FL 33490
+                </td>
+                <td>(856)366-9972</td>
+                <td>fortsillmedic2017@gmail.com</td>
             </tr>
-            <tr>
-                <td>3</td>
-                <td>Hilton</td>
-                <td>Annette</td>
-                <td>Frank</td>
-                <td>TTHS</td>
-                <td>3.5</td>
-                <td>Yes</td>
-                <td>Pt with no issues.</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Hilton</td>
-                <td>Annette</td>
-                <td>Frank</td>
-                <td>TTHS</td>
-                <td>3.5</td>
-                <td>Yes</td>
-                <td>Pt with no issues.</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Hilton</td>
-                <td>Annette</td>
-                <td>Frank</td>
-                <td>TTHS</td>
-                <td>3.5</td>
-                <td>Yes</td>
-                <td>Pt with no issues.</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Hilton</td>
-                <td>Annette</td>
-                <td>Frank</td>
-                <td>TTHS</td>
-                <td>3.5</td>
-                <td>Yes</td>
-                <td>Pt with no issues.</td>
-            </tr>
-
         </tbody>
     </table>
 

@@ -15,5 +15,15 @@ namespace DialysisPatentTracker.Controllers
         {
             return View();
         }
+
+        public IActionResult PatientDemoGraphics()
+        {
+            return View();
+        }
+
+        public IActionResult TreatmentMasterList()
+        {
+            return View();
+        }
     }
 }

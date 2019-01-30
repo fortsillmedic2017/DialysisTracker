@@ -1,31 +1,54 @@
-﻿<style>
+﻿<!-- **********  CSS  *****************-->
+
+<style>
     hr {
         margin-top: 20%;
     }
 
-    h1{
-        margin-bottom:10%;
+    h1 {
+        margin-bottom: 10%;
+    }
+
+    input, input[placeholder] {
+        text-align: center;
+        color: midnightblue;
     }
 </style>
+<!--********* JavaScript  *************-->
+<script>
+    alert("Are you a autorized User?");
+</script>
 
-
-<div class="form-group">
+<!-- **********  HTML  *****************-->
 <h1>LogIn</h1>
+<form asp-controller="Login" asp-action="Add" method="post">
+    <div class="form-group row">
+        <div class="col-lg-10 my-1">
+            <label for="inputUserName" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="inputUserName" placeholder="User Name">
+            </div>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-lg-10 my-1">
+            <label for="inputPassword3" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-10">
+                <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+            </div>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="submit">
+            <input style="background-color:midnightblue; color:yellow" type="submit" value="Log In" />
+        </div>
 
-<div>
-    
-
-
-</div>
-</div>
-<div class="form-group-sm">
-    <form asp-controller="LogIn" asp-action="Index" method="post">
-        <label for="name.id">UserName</label>
-        <input class="form-control" type="text" id="name.id " name="name" value="" />
-        <label for="password.id">Password</label>
-        <input class="form-control" type="text" id="password.id " name="password" value="" />
-       
-        <p></p>
-        <input style="background-color:midnightblue; color:yellow"type="submit" value="Log In" />
-    </form>
-</div>
+    </div>
+</form>
+<form asp-controller="SignUp" asp-action="Index" method="post">
+    <div class="form-group row">
+        <div class="submit">
+            <input style="background-color:midnightblue; color:yellow" type="submit" value="SignUp" />
+        </div>
+    </div>
+</form>

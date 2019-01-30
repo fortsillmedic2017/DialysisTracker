@@ -12,9 +12,9 @@
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li><a style="color:snow" asp-area="" asp-controller="PatientMasterList" asp-action="Index">Patient Master List</a></li>
-                <li><a style="color:snow" asp-area="" asp-controller="PatientDemoGraphics" asp-action="Index">Patient DemoGraphics</a></li>
-                <li><a style="color:snow" asp-area="" asp-controller="TreatmentMasterList" asp-action="Index">Treatment Master List</a></li>
-              
+                <li><a style="color:snow" asp-area="" asp-controller="PatientMasterList" asp-action="PatientDemoGraphics">Patient DemoGraphics</a></li>
+                <li><a style="color:snow" asp-area="" asp-controller="PatientMasterList" asp-action="TreatmentMasterList">Treatment Master List</a></li>
+
             </ul>
         </div>
     </div>
@@ -23,7 +23,7 @@
 <h1>Patient Search Options</h1>
     
     <div class="form-group">
-        <form asp-controller="PatientSearchOptions" asp-action="Index" method="post">
+        <form asp-controller="PatientMasterList" asp-action="Index" method="post">
 
             <label for="patient.id">Patient ID</label>
             <input class="form-control" type="text" id="patientId.id " name="patientId" value="" />
@@ -36,7 +36,7 @@
 
 
             <p></p>
-            <input style="background-color:midnightblue; color:yellow" type="submit" value="Sign Up" />
+            <input style="background-color:midnightblue; color:yellow" type="submit" value="Search" />
         </form>
     </div>
 
