@@ -2,7 +2,6 @@
 <style>
     hr {
         margin-top: 5%;
-      
     }
 
     h1 {
@@ -12,7 +11,6 @@
         margin-left: 250px;
         margin-right: 250px;
         color: yellow;
-        
     }
 
     input, input[placeholder] {
@@ -24,22 +22,22 @@
 
     form {
         border: solid rgba(255, 255, 26,.8) 4px;
-        border-radius:10%;
+        border-radius: 10%;
         background: rgba(40, 37, 141, .5);
         padding: 10px;
-        margin-top:120px;
-        margin-bottom:160px;
+        margin-top: 120px;
+        margin-bottom: 160px;
         margin-left: 250px;
         margin-right: 250px;
-    }  
- </style>
+    }
+</style>
 
 <!-- **********  HTML  *****************-->
+
 <div class="form-group">
-    
 </div>
 
-<form asp-controller="LogIn"  asp-action="Add" method="post">
+<form asp-controller="LogIn" asp-action="Index" method="post">
     <div class="form-group row">
         <div class="col-lg-10 my-1">
             <h1>LogIn</h1>
@@ -48,17 +46,17 @@
                 <input type="text" class="form-control" id="userName" placeholder="User Name">
             </div>
         </div>
-    </div><!------------------- end of Use Name input  ---------------------->
+    </div><!------------------- end of Useer Name input  ---------------------->
 
     <div class="form-group row">
         <div class="col-lg-10 my-1">
             <label for="password" class="col-sm-2 col-form-label"></label>
             <div class="col-sm-10">
-                <input type="password" class="form-control" id="password"  placeholder ="Password">
+                <input type="password" class="form-control" id="password" placeholder="Password">
             </div>
         </div>
     </div><!------------------- end of password  input  ---------------------->
-    
+
     <div class="form-group row">
         <div class="col-lg-10 my-1">
             <label class="col-sm-2 col-form-label"></label>
@@ -67,28 +65,4 @@
             </div>
         </div>
     </div>
-
 </form>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

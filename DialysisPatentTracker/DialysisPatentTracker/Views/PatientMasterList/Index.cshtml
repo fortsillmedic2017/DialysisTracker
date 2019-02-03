@@ -5,8 +5,7 @@
             margin-left: 1050px;
             margin-right: 10px;
         }
-     
-       
+
         h1 {
             border: yellow solid 2px;
             text-align: center;
@@ -15,6 +14,7 @@
             margin-bottom: 0px;
             background-color: navy;
             color: yellow;
+            margin-top: 50px;
         }
 
         table {
@@ -22,8 +22,6 @@
             align-content: center;
             background: rgba(37, 37, 141, .7);
         }
-          
-        
 
         th {
             color: yellow;
@@ -35,7 +33,7 @@
         tr {
             border: solid 2px darkslategray;
             text-align: center;
-          
+            background: rgba(40, 37, 141, .8);
             color: snow;
         }
 
@@ -48,7 +46,14 @@
         hr {
             border: none;
             height: 3px;
-            background-color: darkslategray;
+            background-color: midnightblue;
+            margin-top: 100px;
+        }
+        a{
+            color:white;
+        }
+        a:hover{
+            color:yellow;
         }
     </style>
 </head>
@@ -62,27 +67,26 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a style="color:yellow" asp-area="" asp-controller="LogIn" asp-action="Index" class="navbar-brand">DialysisPatentTracker</a>
+                <a style="color:yellow" asp-area="" asp-controller="LogIn" asp-action="Index" class="navbar-brand">Dialysis Patient Tracker</a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a style="color:snow" asp-area="" asp-controller="SearchOptions" asp-action="Index">Patient Search Options</a></li>
                     <li><a style="color:snow" asp-area="" asp-controller="PatientMasterList" asp-action="PatientDemoGraphics">Patient DemoGraphics</a></li>
                     <li><a style="color:snow" asp-area="" asp-controller="PatientMasterList" asp-action="TreatmentMasterList">Treatment Master List</a></li>
+                    <li><a style="color:snow" asp-area="" asp-controller="PatientMasterList" asp-action="AddPatient">Add Patient</a></li>
                 </ul>
 
-               
-
                 <ul id="nav-bar2" , class="navbar-collapse collapse">
+                    <li><a style="color:yellow" asp-area="" asp-controller="LogIn" asp-action="Index">Login</a></li>
                     <li><a style="color:yellow" asp-area="" asp-controller="SignUp" asp-action="Index">Sign Up</a></li>
                     <li><a style="color:yellow" asp-area="" asp-controller="LogOut" asp-action="Index">Log Out</a></li>
-                    <li><a style="color:yellow" asp-area="" asp-controller="LogIn" asp-action="Index">Login</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <h1>Patient master List</h1>
+    <h1>Patient Master List</h1>
 
     <table class="table">
 
@@ -90,99 +94,27 @@
 
         <thead>
             <tr>
-                <th>PT ID</th>
+                <th>Medical Record #</th>
                 <th>Last Name</th>
                 <th>First Name</th>
                 <th>Physician</th>
                 <th>Traetment<br />Days</th>
-                <th>Traetment<br />Time(hrs)</th>
-                <th>Traetment<br />Completion(Y/N)</th>
                 <th>Comments</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>1</td>
-                <td>Hilton</td>
-                <td>Davis</td>
-                <td>Abraham</td>
-                <td>MWF</td>
-                <td>3</td>
-                <td>Yes</td>
-                <td>Pt with no issues.</td>
-            </tr>
-
-            <tr>
-                <td>2</td>
-                <td>Hilton</td>
-                <td>Jenneh</td>
-                <td>Wilson</td>
-                <td>TTHS</td>
-                <td>4</td>
-                <td>Yes</td>
-                <td>Pt with no issues.</td>
-            </tr>
-
-            <tr>
-                <td>3</td>
-                <td>Hilton</td>
-                <td>Annette</td>
-                <td>Frank</td>
-                <td>TTHS</td>
-                <td>3.5</td>
-                <td>Yes</td>
-                <td>Pt with no issues.</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Hilton</td>
-                <td>Annette</td>
-                <td>Frank</td>
-                <td>TTHS</td>
-                <td>3.5</td>
-                <td>Yes</td>
-                <td>Pt with no issues.</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Hilton</td>
-                <td>Annette</td>
-                <td>Frank</td>
-                <td>TTHS</td>
-                <td>3.5</td>
-                <td>Yes</td>
-                <td>Pt with no issues.</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Hilton</td>
-                <td>Annette</td>
-                <td>Frank</td>
-                <td>TTHS</td>
-                <td>3.5</td>
-                <td>Yes</td>
-                <td>Pt with no issues.</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Hilton</td>
-                <td>Annette</td>
-                <td>Frank</td>
-                <td>TTHS</td>
-                <td>3.5</td>
-                <td>Yes</td>
-                <td>Pt with no issues.</td>
-            </tr>
-
+            @foreach (var patient in ViewBag.patientMasterList)
+            {
+                <tr>
+                    <td><a asp-controller="PatientMasterList" asp-action="TreatmentMasterList">@patient.PatientId</a></td>
+                    <td><a asp-cotroller="PatientMasterList" asp-action="TreatmentMasterList">@patient.LastName</a></td>
+                    <td><a asp-cotroller="PatientMasterList" asp-action="TreatmentMasterList">@patient.FirstName</a></td>
+                    <td><a asp-cotroller="PatientMasterList" asp-action="TreatmentMasterList">@patient.Physician</a></td>
+                    <td><a asp-cotroller="PatientMasterList" asp-action="TreatmentMasterList">@patient.TreatmentDays</a></td>
+                    <td><a asp-cotroller="PatientMasterList" asp-action="TreatmentMasterList">@patient.Comments</a></td>
+                </tr>
+            }
         </tbody>
     </table>
-
-    <div class="navbar-collapse collapse">
-        <ul class="nav navbar-nav" style="color:midnightblue">
-            <li><a style="color:midnightblue" asp-area="" asp-controller="SignUp" asp-action="Index">Sign Up</a></li>
-            <li><a style="color:midnightblue" asp-area="" asp-controller="LogOut" asp-action="Index">Log Out</a></li>
-            <li><a style="color:midnightblue" asp-area="" asp-controller="LogIn" asp-action="Index">Login</a></li>
-        </ul>
-    </div>
 </body>
 </html>

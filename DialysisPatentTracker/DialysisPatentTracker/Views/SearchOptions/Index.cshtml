@@ -1,19 +1,14 @@
 ﻿<style>
  
       .nav-bar2 {
-        margin-top: -70px;
+      /* margin-top: -70px;*/
         margin-left: 1050px;
         margin-right: 10px;
-        margin-bottom: -10px;
-        border: white solid 3px;
+        margin-bottom: 10px;
+        
     }
 
-    .logo {
-        color: yellow;
-        font-size: 40px;
-        border: white solid 3px;
-        margin-top: -310px;
-    }
+ 
 
     h2 {
         text-align: center;
@@ -63,13 +58,14 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a style="color:yellow" asp-area="" asp-controller="LogIn" asp-action="Index" class="navbar-brand">DialysisPatentTracker</a>
+            <a style="color:yellow" asp-area="" asp-controller="LogIn" asp-action="Index" class="navbar-brand">Dialysis Patient Tracker</a>
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li><a style="color:snow" asp-area="" asp-controller="PatientMasterList" asp-action="Index">Patient Master List</a></li>
                 <li><a style="color:snow" asp-area="" asp-controller="PatientMasterList" asp-action="PatientDemoGraphics">Patient Demographics</a></li>
                 <li><a style="color:snow" asp-area="" asp-controller="PatientMasterList" asp-action="TreatmentMasterList">Treatment Master List</a></li>
+                <li><a style="color:snow" asp-area="" asp-controller="PatientMasterList" asp-action="AddPatient">Add Patient</a></li>
             </ul>
 
 

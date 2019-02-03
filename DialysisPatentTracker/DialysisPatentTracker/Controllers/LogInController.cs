@@ -1,5 +1,6 @@
 ﻿// For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
+using DialysisPatentTracker.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 
@@ -7,27 +8,19 @@ namespace DialysisPatentTracker.Controllers
 {
     public class LogInController : Controller
     {
-        static private List<string> Usernames = new List<string>();
+        static private List<LogIn> LogIn = new List<LogIn>();
 
         // GET: /<controller>/
         public IActionResult Index()
         {
-            ViewBag.usernames = Usernames;
+            ViewBag.login = LogIn;
 
-            return View();
-        }
-
-        //Display Form only
-        public IActionResult Add()
-        {
             return View();
         }
 
         [HttpPost]
-        public IActionResult Add(string username)
+        public IActionResult Index(string username, string password)
         {
-            Usernames.Add(username);
-
             return Redirect("/SearchOptions");
         }
     }
