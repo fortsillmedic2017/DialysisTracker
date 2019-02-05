@@ -27,9 +27,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Update="Views\PatientMasterList\PatientDemoGraphics.cshtml">
-      <Pack>$(IncludeRazorContentInPack)</Pack>
-    </Content>
+    <Folder Include="ViewModels\" />
   </ItemGroup>
 
 </Project>

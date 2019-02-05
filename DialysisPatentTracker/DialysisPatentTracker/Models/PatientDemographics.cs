@@ -5,16 +5,18 @@ using System.Threading.Tasks;
 
 namespace DialysisPatentTracker.Models
 {
-    public class PatientMasterList
+    public class PatientDemographics
     {
         public int MedicalRecord { get; set; }
         public string LastName { get; set; }
         public string FirstName { get; set; }
-        public string Physician { get; set; }
-        public string TreatmentDays { get; set; }
-        public string Comments { get; set; }
+        public int Age { get; set; }
+        public string Gender { get; set; }
+        public string Address { get; set; }
+        public int PhoneNumber { get; set; }
+        public string Email { get; set; }
 
-        public PatientMasterList()
+        public PatientDemographics()
         {
         }
     }

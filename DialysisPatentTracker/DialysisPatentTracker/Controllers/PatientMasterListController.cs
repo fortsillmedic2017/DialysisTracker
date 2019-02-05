@@ -26,11 +26,12 @@ namespace DialysisPatentTracker.Controllers
         }
 
         [HttpPost]
-        public IActionResult Add(int patientid, string firstName, string lastName, string physician, string treatmentDays, string comments)
+        public IActionResult AddPatient(int medicalRecord, string firstName, string lastName, string physician, string treatmentDays, string comments)
         {
+            //created a new list object(constructor)
             PatientMasterList newPatientMasterList = new PatientMasterList
             {
-                PatientId = patientid,
+                MedicalRecord = medicalRecord,
                 FirstName = firstName,
                 LastName = lastName,
                 Physician = physician,
@@ -42,24 +43,6 @@ namespace DialysisPatentTracker.Controllers
             PatientMasterLists.Add(newPatientMasterList);
 
             return Redirect("/PatientMasterList");
-        }
-
-        //************************** Patient Demo **************************     (TODO)
-        public IActionResult PatientDemoGraphics()
-        {
-            return View();
-        }
-
-        //***************** Patient Treatment List ***************       (TODO)
-        public IActionResult TreatmentMasterList()
-        {
-            return View();
-        }
-
-        //******************** Physician  List *******************       (TODO)
-        public IActionResult PhysicianList()
-        {
-            return View();
         }
     }
 }

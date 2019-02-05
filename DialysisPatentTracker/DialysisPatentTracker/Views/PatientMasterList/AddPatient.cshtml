@@ -17,9 +17,8 @@
         color: yellow;
     }
 
-    input, input[placeholder] {
+    input {
         text-align: center;
-        background-color: midnightblue;
         border-radius: 0%;
         border: none;
     }
@@ -36,14 +35,16 @@
 
     .form-control {
         color: white;
+        background-color: midnightblue;
     }
 
     .form {
         margin-top: 50px;
         margin-bottom: 125px;
     }
-    .col-form-label{
-        color:yellow;
+
+    .col-form-label {
+        color: yellow;
     }
 </style>
 
@@ -61,10 +62,11 @@
             <a style="color:yellow" asp-area="" asp-controller="LogIn" asp-action="Index" class="navbar-brand">Dialysis Patient Tracker</a>
         </div>
         <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                <li><a style="color:snow" asp-area="" asp-controller="PatientMasterList" asp-action="Index">Patient Master List</a></li>
-                <li><a style="color:snow" asp-area="" asp-controller="PatientMasterList" asp-action="PatientDemoGraphics">Patient Demographics</a></li>
-                <li><a style="color:snow" asp-area="" asp-controller="PatientMasterList" asp-action="TreatmentMasterList">Treatment Master List</a></li>
+            <ul class="nav navbar-nav" style="margin-left:150px">
+                <li><a style="color:snow" asp-area="" asp-controller="SearchOptions" asp-action="Index"><spand class="spandnavremove"> Patient</spand><br /> Search Options</a></li>
+                <li><a style="color:snow" asp-area="" asp-controller="PatientMasterList" asp-action="Index"><spand class="spandnavremove"> Patient</spand><br /> Master List</a></li>
+                <li><a style="color:snow" asp-area="" asp-controller="TreatmentMasterList" asp-action="Index"><spand> Treatment</spand><br /> Master List</a></li>
+                <li><a style="color:snow" asp-area="" asp-controller="PatientDemographics" asp-action="Index"><spand class="spandnavremove"> Patient</spand><br /> Demographics</a></li>
             </ul>
 
             <div class="nav-bar2">
@@ -79,21 +81,21 @@
 </nav>
 
 <div class="form">
-    <form asp-controller="PatientMasterList" asp-action="Add" method="post">
+    <form asp-controller="PatientMasterList" asp-action="AddPatient" method="post">
         <div class="form-group row">
             <div class="col-lg-12 my-1">
                 <h2>Add Patient</h2>
-                <label for="patientId" class="col-sm-4 col-form-label">Medical Record #</label>
+                <label for="medicalRecord" class="col-sm-4 col-form-label">Medical Record #</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" name ="PatientId" id="patientId" placeholder="Patient ID#">
+                    <input type="text" class="form-control" name="MedicalRecord" id="medicalRecord">
                 </div>
             </div>
-        </div><!------------------- end of Patient Id#  input  ---------------------->
+        </div><!------------------- end of Medical Record #  input  ---------------------->
         <div class="form-group row">
             <div class="col-lg-12 my-1">
                 <label for="firstName" class="col-sm-4 col-form-label">FirstName</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" name="FirstName" id="firstName" placeholder="First Name">
+                    <input type="text" class="form-control" name="FirstName" id="firstName">
                 </div>
             </div>
         </div><!------------------- end of firstName input  ---------------------->
@@ -101,16 +103,16 @@
             <div class="col-lg-12 my-1">
                 <label for="lastName" class="col-sm-4 col-form-label">Last name</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" name="LastName" id="lastName" placeholder="Last Name">
+                    <input type="text" class="form-control" name="LastName" id="lastName">
                 </div>
             </div>
         </div><!------------------- end of lastname input  ---------------------->
-        
+
         <div class="form-group row">
             <div class="col-lg-12 my-1">
                 <label for="physican" class="col-sm-4 col-form-label">Physician</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" name="Physician" id="physician" placeholder="Physician">
+                    <input type="text" class="form-control" name="Physician" id="physician">
                 </div>
             </div>
         </div><!------------------- end of Physician input  ---------------------->
@@ -119,7 +121,7 @@
             <div class="col-lg-12 my-1">
                 <label for="treatmentDays" class="col-sm-4 col-form-label">Treatment Days</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" name="TreatmentDays" id="treatmentDays" placeholder="Treatment Days">
+                    <input type="text" class="form-control" name="TreatmentDays" id="treatmentDays">
                 </div>
             </div>
         </div><!------------------- end of Treatment Days input  ---------------------->
@@ -127,7 +129,7 @@
             <div class="col-lg-12 my-1">
                 <label for="comments" class="col-sm-4 col-form-label">Comments</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" name ="Comments" id="comments" placeholder="Comments">
+                    <input type="text" class="form-control" name="Comments" id="comments">
                 </div>
             </div>
         </div><!------------------- end of Comments  input  ---------------------->
@@ -140,5 +142,4 @@
             </div>
         </div>
     </form>
-
 </div>

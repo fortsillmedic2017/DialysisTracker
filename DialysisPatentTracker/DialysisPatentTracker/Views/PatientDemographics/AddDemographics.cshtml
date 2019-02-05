@@ -1,0 +1,173 @@
+﻿<
+<style>
+
+    .nav-bar2 {
+        /* margin-top: -70px;*/
+        margin-left: 1050px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+
+    h2 {
+        text-align: center;
+        padding-top: 1px;
+        padding-bottom: 20px;
+        margin-left: 100px;
+        margin-right: 30px;
+        margin-top: 3px;
+        color: yellow;
+    }
+
+    input {
+        text-align: center;
+        border-radius: 0%;
+        border: none;
+       
+    }
+
+    form {
+        border: solid rgba(255, 255, 26,.8) 4px;
+        border-radius: 20%;
+        background: rgba(40, 37, 141, .5);
+        padding: 10px 50px 10px 0px;
+        margin-bottom: 1px;
+        margin-left: 200px;
+        margin-right: 200px;
+    }
+
+    .form-control {
+        color: white;
+        background-color: midnightblue;
+        
+    }
+
+    .form {
+        margin-top: 50px;
+        margin-bottom: 30px;
+    }
+
+    .col-form-label {
+        color: yellow;
+        margin-left:60px;
+       
+    }
+    hr {
+        border: none;
+        height: 3px;
+        background-color: midnightblue;
+        margin-top: 150px;
+    }
+</style>
+
+<!--*************HTML***************-->
+
+<nav class="navbar navbar-inverse navbar-fixed-top" style="background-color:midnightblue">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a style="color:yellow" asp-area="" asp-controller="LogIn" asp-action="Index" class="navbar-brand">Dialysis Patient Tracker</a>
+        </div>
+        <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav" style="margin-left:150px">
+            <li><a style="color:snow" asp-area="" asp-controller="SearchOptions" asp-action="Index"><spand class="spandnavremove"> Patient</spand><br /> Search Options</a></li>
+            <li><a style="color:snow" asp-area="" asp-controller="PatientMasterList" asp-action="Index"><spand class="spandnavremove"> Patient</spand><br /> Master List</a></li>
+            <li><a style="color:snow" asp-area="" asp-controller="TreatmentMasterList" asp-action="Index"><spand> Treatment</spand><br /> Master List</a></li>
+            <li><a style="color:snow" asp-area="" asp-controller="PatientDemographics" asp-action="Index"><spand class="spandnavremove"> Patient</spand><br /> Demographics</a></li>
+        </ul>
+
+
+        <div class="nav-bar2">
+            <ul class="navbar-collapse collapse">
+                <li><a style="color:yellow" asp-area="" asp-controller="SignUp" asp-action="Index">Sign Up</a></li>
+                <li><a style="color:yellow" asp-area="" asp-controller="LogOut" asp-action="Index">Log Out</a></li>
+                <li><a style="color:yellow" asp-area="" asp-controller="LogIn" asp-action="Index">Login</a></li>
+            </ul>
+        </div>
+    </div>
+    </div>
+</nav>
+
+<div class="form">
+    <form asp-controller="PatientDemographics" asp-action="AddDemographics" method="post">
+        <div class="form-group row">
+            <div class="col-lg-12 my-1">
+                <h2>Add Demographic</h2>
+                <label for="medicalRecord" class="col-sm-4 col-form-label">Medical Record #</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" name="MedicalRecord" id="medicalRecord">
+                </div>
+            </div>
+        </div><!------------------- end of Patient Id#  input  ---------------------->
+        <div class="form-group row">
+            <div class="col-lg-12 my-1">
+                <label for="lastName" class="col-sm-4 col-form-label">Last name</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" name="LastName" id="lastName">
+                </div>
+            </div>
+        </div><!------------------- end of lastname input  ---------------------->
+        <div class="form-group row">
+            <div class="col-lg-12 my-1">
+                <label for="firstName" class="col-sm-4 col-form-label">FirstName</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" name="FirstName" id="firstName">
+                </div>
+            </div>
+        </div><!------------------- end of firstName input  ---------------------->
+
+        <div class="form-group row">
+            <div class="col-lg-12 my-1">
+                <label for="age" class="col-sm-4 col-form-label">Age</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" name="Age" id="age">
+                </div>
+            </div>
+        </div><!------------------- end of Age input  ---------------------->
+
+        <div class="form-group row">
+            <div class="col-lg-12 my-1">
+                <label for="gender" class="col-sm-4 col-form-label">Gender</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" name="gender" id="gender">
+                </div>
+            </div>
+        </div><!------------------- end of Gender input  ---------------------->
+        <div class="form-group row">
+            <div class="col-lg-12 my-1">
+                <label for="address" class="col-sm-4 col-form-label">Address</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" name="Address" id="address">
+                </div>
+            </div>
+        </div><!------------------- end of Address input  ---------------------->
+        <div class="form-group row">
+            <div class="col-lg-12 my-1">
+                <label for="phonenumber" class="col-sm-4 col-form-label">Phone Number</label>
+                <div class="col-sm-6">
+                    <input type="tel" class="form-control" name="PhoneNumber" id="comments">
+                </div>
+            </div>
+        </div><!------------------- end of phone number input  ---------------------->
+        <div class="form-group row">
+            <div class="col-lg-12 my-1">
+                <label for="email" class="col-sm-4 col-form-label">E-Mail</label>
+                <div class="col-sm-6">
+                    <input type="email" class="form-control" name="Email" id="comments">
+                </div>
+            </div>
+        </div><!------------------- end of Email  input  ---------------------->
+        <div class="form-group row">
+            <div class="col-lg-12 my-1">
+                <label class="col-sm-5 col-form-label"></label>
+                <div class="col-sm-4">
+                    <input style="background-color:yellow; color:midnightblue; border-radius:50%" type="submit" class="form-control" value="Add Demographics">
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
