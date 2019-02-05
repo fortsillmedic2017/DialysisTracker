@@ -44,5 +44,25 @@ namespace DialysisPatentTracker.Controllers
 
             return Redirect("/PatientMasterList");
         }
+
+        public IActionResult RemovePatient()
+        {
+            ViewBag.title = "Remove Patient";
+            ViewBag.patientMasterList = PatientMasterLists;
+
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult RemovePatient(int[] patientIds) //Comes from piatientIds in checkbox id =""  in  Remove View
+        {
+            //Remove patient from List
+            //Loop through list created from int[] patientIds
+            foreach (int patientId in patientIds)
+            {
+                PatientMasterLists.Single(p => p.PatientId == patientId); //List itself not (PatientMasterList Class)
+            }
+            return Redirect("/");
+        }
     }
 }
