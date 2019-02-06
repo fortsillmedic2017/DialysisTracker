@@ -2,14 +2,20 @@
  
       .nav-bar2 {
       /* margin-top: -70px;*/
-        margin-left: 1050px;
+        margin-left: 1055px;
         margin-right: 10px;
         margin-bottom: 10px;
-        
+        margin-top:25px;
+        font-size:large;
+
     }
 
- 
-
+    .navbar-brand {
+        color: yellow;
+        margin-top: 10px;
+        font-size:18px;
+    }
+       
     h2 {
         text-align: center;
         padding-top: 1px;
@@ -81,9 +87,9 @@
 
             <div class="nav-bar2">
                 <ul class="navbar-collapse collapse">
-                    <li><a style="color:yellow" asp-area="" asp-controller="SignUp" asp-action="Index">Sign Up</a></li>
+                    @*<li><a style="color:yellow" asp-area="" asp-controller="SignUp" asp-action="Index">Sign Up</a></li>*@
                     <li><a style="color:yellow" asp-area="" asp-controller="LogOut" asp-action="Index">Log Out</a></li>
-                    <li><a style="color:yellow" asp-area="" asp-controller="LogIn" asp-action="Index">Login</a></li>
+                    @*<li><a style="color:yellow" asp-area="" asp-controller="LogIn" asp-action="Index">Login</a></li>*@
                 </ul>
             </div>
         </div>

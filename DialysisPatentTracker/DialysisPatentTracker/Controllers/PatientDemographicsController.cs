@@ -26,24 +26,32 @@ namespace DialysisPatentTracker.Controllers
             return View();
         }
 
+        //Model Rendering ===> property of class must mach name = "" in form.
         [HttpPost]
-        public IActionResult AddDemographics(int medicalRecord, string lastName, string firstName, int age, string gender, string address, int phoneNumber, string email)
+        public IActionResult AddDemographics(PatientDemographics newPatientDemographic)
         {
-            PatientDemographics newPatientDemographic = new PatientDemographics
-            {
-                MedicalRecord = medicalRecord,
-                LastName = lastName,
-                FirstName = firstName,
-                Age = age,
-                Gender = gender,
-                Address = address,
-                PhoneNumber = phoneNumber,
-                Email = email
-            };
-
+            //Add new Patient to exsisting patient list
             PatientDemographic.Add(newPatientDemographic);
 
-            //Add new Patient to exsisting patient list
+            return Redirect("/PatientDemographics");
+        }
+
+        // Remove Patient From List**************************************************************
+        public IActionResult RemoveDemographics()
+        {
+            ViewBag.title = "Remove DemoGraphics";
+            ViewBag.patientDemographics = PatientDemographic;
+
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult RemoveDemographics(int[] demographicIds)
+        {
+            foreach (int demographicId in demographicIds)
+            {
+                PatientDemographic.RemoveAll(d => d.PatientId == demographicId);
+            }
             return Redirect("/PatientDemographics");
         }
     }

@@ -31,7 +31,7 @@
     }
 
     hr {
-        margin-top: 200px;
+        margin-top: 100px;
     }
 
     .pageForm {
@@ -43,7 +43,7 @@
         margin-top: 70px;
         margin-bottom: 70px;
     }
-
+    
     label {
         color: yellow;
         font-size: large;
@@ -70,7 +70,7 @@
                 <li><a style="color:snow" asp-area="" asp-controller="PatientMasterList" asp-action="Index"><spand class="spandnavremove"> Patient</spand><br /> Master List</a></li>
                 <li><a style="color:snow" asp-area="" asp-controller="TreatmentMasterList" asp-action="Index"><spand> Treatment</spand><br /> Master List</a></li>
                 <li><a style="color:snow" asp-area="" asp-controller="PatientDemographics" asp-action="Index"><spand class="spandnavremove"> Patient</spand><br /> Demographics</a></li>
-                <li><a style="color:snow" asp-area="" asp-controller="PatientMasterList" asp-action="AddPatient"> <spand class="spandnavadd">Add</spand><br />Patient</a></li>
+                <li><a style="color:snow" asp-area="" asp-controller="PatientDemographics" asp-action="AddDemographics"> <spand class="spandnavadd">Add</spand><br />Demographic</a></li>
             </ul>
 
             <div class="nav-bar2">
@@ -85,18 +85,19 @@
 </nav>
 
 <div class="pageForm">
-    <h2>@ViewBag.title</h2>
-    <form asp-controller="PatientMasterList" asp-action="RemovePatient" method="post">
-        @foreach (var patient in ViewBag.patientMasterList)
+    <h2>Remove Demographic</h2>
+    <form asp-controller="PatientDemographics" asp-action="RemoveDemographics" method="post">
+        @foreach (var patientDemographic in ViewBag.patientDemographics)
         {<div class="form-group row">
                 <div>
-                    <input type="checkbox" name="patientIds" id="@patient.PatientId" value="@patient.PatientId" /><!--PatientId from(Model)-->
-                    <label for="@patient.PatientId">@patient.LastName, @patient.FirstName (MRN:@patient.MedicalRecord)</label>
+                    <input type="checkbox" name="demographicIds" id="@patientDemographic.PatientId" value="@patientDemographic.PatientId" /><!--PatientId from(Model)-->
+                    <label for="@patientDemographic.PatientId"> @patientDemographic.LastName, @patientDemographic.FirstName (MRN:@patientDemographic.MedicalRecord)</label>
+                    <br />
                 </div>
             </div>
         }
         <div>
-            <input style="background-color:yellow; color:midnightblue; border-radius:50%" type="submit" class="form-control" value="Remove Patient">
+            <input style="background-color:yellow; color:midnightblue; border-radius:50%" type="submit" class="form-control" value="Remove">
         </div>
     </form>
 </div>

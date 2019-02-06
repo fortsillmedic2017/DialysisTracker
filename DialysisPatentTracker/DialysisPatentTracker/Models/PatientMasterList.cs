@@ -13,9 +13,8 @@ namespace DialysisPatentTracker.Models
         public string Physician { get; set; }
         public string TreatmentDays { get; set; }
         public string Comments { get; set; }
-
         public int PatientId { get; set; }
-        private int nextId = 1;
+        private static int nextId = 1;
 
         public PatientMasterList()
         {

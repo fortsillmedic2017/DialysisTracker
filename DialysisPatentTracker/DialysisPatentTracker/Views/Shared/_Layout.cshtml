@@ -45,6 +45,14 @@
         .form-control {
             color: white;
         }
+
+        a{
+            color:white;
+        }
+        a:hover{
+            color:yellow;
+        }
+     
     </style>
 </head>
 <body>
@@ -63,9 +71,9 @@
             <div class="navbar-collapse collapse">
 
                 <ul id="nav-bar2" , class="navbar-collapse collapse">
-                    <li><a style="color:white" asp-area="" asp-controller="LogIn" asp-action="Index">Login</a></li>
-                    <li><a style="color:white" asp-area="" asp-controller="SignUp" asp-action="Index">Sign Up</a></li>
-                    <li><a style="color:white" asp-area="" asp-controller="LogOut" asp-action="Index">Log Out</a></li>
+                    <li><a asp-area="" asp-controller="LogIn" asp-action="Index">Login</a></li>
+                    <li><a asp-area="" asp-controller="SignUp" asp-action="Index">Sign Up</a></li>
+                    <li><a asp-area="" asp-controller="LogOut" asp-action="Index">Log Out</a></li>
                 </ul>
             </div>
         </div>

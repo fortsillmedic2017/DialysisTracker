@@ -5,6 +5,12 @@
         margin-right: 10px;
     }
 
+    .navbar-brand {
+        color: yellow;
+        margin-top: 10px;
+        font-size: 18px;
+    }
+
     h1 {
         border: yellow solid 2px;
         text-align: center;
@@ -77,12 +83,12 @@
             <a style="color:yellow" asp-area="" asp-controller="LogIn" asp-action="Index" class="navbar-brand">Dialysis Patient Tracker</a>
         </div>
         <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav" style="margin-left:150px">
+            <ul class="nav navbar-nav" style="margin-left:100px">
                 <li><a style="color:snow" asp-area="" asp-controller="SearchOptions" asp-action="Index"><spand class="spandnavremove"> Patient</spand><br /> Search Options</a></li>
                 <li><a style="color:snow" asp-area="" asp-controller="PatientMasterList" asp-action="Index"><spand class="spandnavremove"> Patient</spand><br /> Master List</a></li>
                 <li><a style="color:snow" asp-area="" asp-controller="TreatmentMasterList" asp-action="Index"><spand> Treatment</spand><br /> Master List</a></li>
                 <li><a style="color:snow" asp-area="" asp-controller="PatientDemographics" asp-action="AddDemographics"> <spand class="spandnavadd">Add</spand><br />Demographics</a></li>
-                <li><a style="color:snow" asp-area="" asp-controller="PatientsDemographics" asp-action="RemoveDemographics"><spand class="spandnavremove"> Remove</spand><br /> Demographics</a></li>
+                <li><a style="color:snow" asp-area="" asp-controller="PatientDemographics" asp-action="RemoveDemographics"><spand class="spandnavremove"> Remove</spand><br /> Demographics</a></li>
             </ul>
             <div class="nav-bar2">
                 <ul id="nav-bar2" , class="navbar-collapse collapse">
