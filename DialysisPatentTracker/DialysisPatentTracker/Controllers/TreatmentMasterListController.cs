@@ -26,30 +26,29 @@ namespace DialysisPatentTracker.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddTreatment(string medicalRecord, string lastName, string firstName, string treatmentDays,
-                                          string treatmentTime, string accessType, string kBath, string caBath, string naBath,
-                                          string biCarb, string temp, string dialyzerSize, string comments)
+        public IActionResult AddTreatment(TreatmentMasterList newTreatmentMasterList)
 
         {
-            TreatmentMasterList newTreatmentMasterList = new TreatmentMasterList
-            {
-                MedicalRecord = medicalRecord,
-                LastName = lastName,
-                FirstName = firstName,
-                Physician = lastName,
-                TreatmentDays = treatmentDays,
-                TreatmentTime = treatmentTime,
-                AccessType = accessType,
-                KBath = kBath,
-                CaBath = caBath,
-                NaBath = naBath,
-                BiCarb = biCarb,
-                Temp = temp,
-                DialyzerSize = dialyzerSize,
-                Comments = comments
-            };
-
             TreatmentMasterLists.Add(newTreatmentMasterList);
+
+            return Redirect("/TreatmentMasterList");
+        }
+
+        //*****************Remove************************
+
+        public IActionResult RemoveTreatment()
+        {
+            ViewBag.treatmentMasterList = TreatmentMasterLists;
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult RemoveTreatment(int[] patientTreatmentListMasterIds)
+        {
+            foreach (int patientTreatmentMasterListId in patientTreatmentListMasterIds)
+            {
+                TreatmentMasterLists.RemoveAll(t => t.PatientId == patientTreatmentMasterListId);
+            }
 
             return Redirect("/TreatmentMasterList");
         }

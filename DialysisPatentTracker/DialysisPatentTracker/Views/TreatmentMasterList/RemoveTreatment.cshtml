@@ -38,8 +38,8 @@
         border: solid rgba(255, 255, 26,.8) 4px;
         border-radius: 20%;
         background: rgba(40, 37, 141, .8);
-        margin-left: 200px;
-        margin-right: 200px;
+        margin-left: 230px;
+        margin-right: 150px;
         margin-top: 70px;
         margin-bottom: 70px;
     }
@@ -85,18 +85,18 @@
 </nav>
 
 <div class="pageForm">
-    <h2>@ViewBag.title</h2>
-    <form asp-controller="PatientMasterList" asp-action="RemovePatient" method="post">
-        @foreach (var patientTreatment in ViewBag.patientTreatmentList)
+    <h2>Remove Treatment</h2>
+    <form asp-controller="TreatmentMasterList" asp-action="RemoveTreatment" method="post">
+        @foreach (var patientTreatment in ViewBag.treatmentMasterList)
         {<div class="form-group row">
                 <div>
-                    <input type="checkbox" name="patientIds" id="@patientTreatment.PatientId" value="@patientTreatment.PatientId" /><!--PatientId from(Model)-->
+                    <input type="checkbox" name="patientTreatmentListMasterIds" id="@patientTreatment.PatientId" value="@patientTreatment.PatientId" /><!--PatientId from(Model)-->
                     <label for="@patientTreatment.PatientId">@patientTreatment.LastName, @patientTreatment.FirstName (MRN:@patientTreatment.MedicalRecord)</label>
                 </div>
             </div>
         }
         <div>
-            <input style="background-color:yellow; color:midnightblue; border-radius:50%" type="submit" class="form-control" value="Remove Patient">
+            <input style="background-color:yellow; color:midnightblue; border-radius:50%" type="submit" class="form-control" value="Remove">
         </div>
     </form>
 </div>
