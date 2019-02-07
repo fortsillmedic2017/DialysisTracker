@@ -1,10 +1,10 @@
 ﻿// For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
-using DialysisPatentTracker.Models;
+using DialysisPatientTracker.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 
-namespace DialysisPatentTracker.Controllers
+namespace DialysisPatientTracker.Controllers
 {
     public class LogInController : Controller
     {

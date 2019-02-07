@@ -1,4 +1,4 @@
-namespace DialysisPatentTracker.Models
+namespace DialysisPatientTracker.Models
 {
     public class ErrorViewModel
     {

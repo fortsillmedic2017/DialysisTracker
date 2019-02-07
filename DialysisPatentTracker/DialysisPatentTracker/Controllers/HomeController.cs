@@ -1,8 +1,8 @@
-﻿using DialysisPatentTracker.Models;
+﻿using DialysisPatientTracker.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace DialysisPatentTracker.Controllers
+namespace DialysisPatientTracker.Controllers
 {
     public class HomeController : Controller
     {

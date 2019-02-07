@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 
-namespace DialysisPatentTracker
+namespace DialysisPatientTracker
 {
     public class Program
     {

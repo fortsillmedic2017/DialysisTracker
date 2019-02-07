@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace DialysisPatentTracker.Models.SignUp
+namespace DialysisPatientTracker.Models.SignUp
 {
     public class SignUp
     {
