@@ -19,7 +19,6 @@
         margin-bottom: 0px;
         background-color: navy;
         color: yellow;
-        
     }
 
     table {
@@ -94,6 +93,8 @@
         </div>
     </nav>
 
+    @model List<DialysisPatientTracker.Models.PatientMasterList>
+
     <h1>Patient Master List</h1>
 
     <table class="table">
@@ -111,21 +112,21 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (var patient in ViewBag.patientMasterList)
+            @foreach (var patient in Model)
             {
                 <tr>
                     <td><a asp-controller="PatientMasterList" asp-action="TreatmentMasterList">@patient.MedicalRecord</a></td>
                     <td><a asp-controller="PatientMasterList" asp-action="TreatmentMasterList">@patient.LastName</a></td>
-                    <td><a asp-controller="PatientMasterList" asp-action="TreatmentMasterList">@patient.FirstName</a></td>
-                    <td><a asp-controller="PatientMasterList" asp-action="TreatmentMasterList">@patient.Physician</a></td>
-                    <td><a asp-controller="PatientMasterList" asp-action="TreatmentMasterList">@patient.TreatmentDays</a></td>
-                    <td><a asp-controller="PatientMasterList" asp-action="TreatmentMasterList">@patient.Comments</a></td>
+                    <td>@patient.FirstName</td>
+                    <td>@patient.Physician</td>
+                    <td>@patient.TreatmentDays</td>
+                    <td>@patient.Comments</td>
                 </tr>
             }
         </tbody>
     </table>
 
-    @if (ViewBag.patientMasterList.Count == 0)
+    @if (Model.Count == 0)
     {
         <p style="color:yellow">There are no patients in the list yet.</p>
     };

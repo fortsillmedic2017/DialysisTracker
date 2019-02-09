@@ -5,6 +5,7 @@
         margin-left: 1050px;
         margin-right: 10px;
         margin-bottom: 10px;
+       
     }
 
     .navbar-brand {
@@ -21,12 +22,14 @@
         margin-right: 30px;
         margin-top: 3px;
         color: yellow;
+       
     }
 
     input {
         text-align: center;
         border-radius: 0%;
         border: none;
+        
     }
 
     form {
@@ -47,11 +50,19 @@
     .form {
         margin-top: 50px;
         margin-bottom: 125px;
+       
     }
 
     .col-form-label {
         color: yellow;
+       
     }
+
+    .validationMessage {
+        color: white;
+     }
+
+
 </style>
 
 <!--*************HTML***************-->
@@ -85,57 +96,66 @@
         </div>
     </div>
 </nav>
+<!--************ NavBar  End *****************-->
+<!-- Allows you to use special tags  helpers -->
+@model DialysisPatientTracker.ViewModels.AddPatientViewModel;
 
 <div class="form">
+
     <form asp-controller="PatientMasterList" asp-action="AddPatient" method="post">
         <div class="form-group row">
             <div class="col-lg-12 my-1">
                 <h2>Add Patient</h2>
-                <label for="medicalRecord" class="col-sm-4 col-form-label">Medical Record #</label>
+                <label class="col-sm-4 col-form-label" asp-for="MedicalRecord"></label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" name="MedicalRecord" id="medicalRecord">
+                    <input class="form-control" asp-for="MedicalRecord">
+                    <span class="validationMessage" asp-validation-for="MedicalRecord"></span>
                 </div>
             </div>
         </div><!------------------- end of Medical Record #  input  ---------------------->
         <div class="form-group row">
             <div class="col-lg-12 my-1">
-                <label for="firstName" class="col-sm-4 col-form-label">FirstName</label>
+                <label class="col-sm-4 col-form-label" asp-for="FirstName"></label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" name="FirstName" id="firstName">
+                    <input class="form-control" asp-for="FirstName">
+                    <span class="validationMessage" asp-validation-for="FirstName"></span>
                 </div>
             </div>
         </div><!------------------- end of firstName input  ---------------------->
         <div class="form-group row">
             <div class="col-lg-12 my-1">
-                <label for="lastName" class="col-sm-4 col-form-label">Last name</label>
+                <label class="col-sm-4 col-form-label" asp-for="LastName"></label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" name="LastName" id="lastName">
+                    <input class="form-control" asp-for="LastName">
+                    <span class="validationMessage" asp-validation-for="LastName"></span>
                 </div>
             </div>
         </div><!------------------- end of lastname input  ---------------------->
 
         <div class="form-group row">
             <div class="col-lg-12 my-1">
-                <label for="physican" class="col-sm-4 col-form-label">Physician</label>
+                <label class="col-sm-4 col-form-label" asp-for="Physician"></label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" name="Physician" id="physician">
+                    <input class="form-control" asp-for="Physician">
+                    <span class="validationMessage" asp-validation-for="Physician"></span>
                 </div>
             </div>
         </div><!------------------- end of Physician input  ---------------------->
 
         <div class="form-group row">
             <div class="col-lg-12 my-1">
-                <label for="treatmentDays" class="col-sm-4 col-form-label">Treatment Days</label>
+                <label class="col-sm-4 col-form-label" asp-for="TreatmentDays"></label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" name="TreatmentDays" id="treatmentDays">
+                    <input type="text" class="form-control" asp-for="TreatmentDays">
+                    <span class="validationMessage" asp-validation-for="TreatmentDays"></span>
                 </div>
             </div>
         </div><!------------------- end of Treatment Days input  ---------------------->
         <div class="form-group row">
             <div class="col-lg-12 my-1">
-                <label for="comments" class="col-sm-4 col-form-label">Comments</label>
+                <label class="col-sm-4 col-form-label" asp-for="Comments"></label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" name="Comments" id="comments">
+                    <input class="form-control" asp-for="Comments">
                 </div>
             </div>
         </div><!------------------- end of Comments  input  ---------------------->

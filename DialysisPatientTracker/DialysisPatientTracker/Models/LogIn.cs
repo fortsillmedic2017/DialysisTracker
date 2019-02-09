@@ -9,8 +9,13 @@ namespace DialysisPatientTracker.Models
     {
         public string UserName { get; set; }
         public string Password { get; set; }
+        public int UserId { get; set; }
+        private static int nextId = 1;
 
         public LogIn()
-        { }
+        {
+            UserId = nextId;
+            nextId++;
+        }
     }
 }
