@@ -10,7 +10,7 @@ namespace DialysisPatientTracker.ViewModels
     {
         [Required(ErrorMessage = "You must Add Paient Medical Record Number")]
         [Display(Name = "MRN")]
-        public int MedicalRecord { get; set; }
+        public string MedicalRecord { get; set; }
 
         [Required]
         public string LastName { get; set; }

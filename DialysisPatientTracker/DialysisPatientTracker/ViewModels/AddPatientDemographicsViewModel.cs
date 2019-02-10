@@ -10,7 +10,7 @@ namespace DialysisPatientTracker.ViewModels
     {
         [Required]
         [Display(Name = "MRN")]
-        public int MedicalRecord { get; set; }
+        public string MedicalRecord { get; set; }
 
         [Required]
         public string LastName { get; set; }
@@ -19,10 +19,10 @@ namespace DialysisPatientTracker.ViewModels
         public string FirstName { get; set; }
 
         [Required]
-        [Range(18,100)]
-        public int Age { get; set; }
+        [Range(18, 100)]
+        public string Age { get; set; }
 
-        [Required (ErrorMessage = "Please Enter M for (Male) or F for (Female)")]
+        [Required(ErrorMessage = "Please Enter M for (Male) or F for (Female)")]
         [StringLength(1)]
         [Display(Name = "Gender (M/F)")]
         public string Gender { get; set; }
@@ -37,6 +37,6 @@ namespace DialysisPatientTracker.ViewModels
         [Required]
         [EmailAddress]
         [Display(Name = "E-Mail")]
-        public string Email { get; set; }               
+        public string Email { get; set; }
     }
 }

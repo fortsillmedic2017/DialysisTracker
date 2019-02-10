@@ -7,7 +7,7 @@ namespace DialysisPatientTracker.Models
 {
     public class PatientMasterList
     {
-        public int MedicalRecord { get; set; }
+        public string MedicalRecord { get; set; }
         public string LastName { get; set; }
         public string FirstName { get; set; }
         public string Physician { get; set; }
