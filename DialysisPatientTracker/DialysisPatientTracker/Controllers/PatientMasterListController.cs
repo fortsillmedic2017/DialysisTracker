@@ -26,14 +26,14 @@ namespace DialysisPatientTracker.Controllers
             return View(addPatientViewModel);
         }
 
-        //Model Rendering ===> property of class must mach name = "" in form.
+        //Model Rendering ===> property of class must match name = "" in form.
 
         [HttpPost]
         public IActionResult AddPatient(AddPatientViewModel addPatientViewModel)
         {
             if (ModelState.IsValid)
             {
-                //Add new Patient to exsisting patient list
+                //Add new Patient to existing patient list
                 PatientMasterList newPatientMasterList = new PatientMasterList
                 {
                     MedicalRecord = addPatientViewModel.MedicalRecord,

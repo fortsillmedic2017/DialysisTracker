@@ -1,5 +1,4 @@
-﻿<
-<style>
+﻿<style>
 
     .nav-bar2 {
         /* margin-top: -70px;*/
@@ -28,7 +27,6 @@
         text-align: center;
         border-radius: 0%;
         border: none;
-       
     }
 
     form {
@@ -44,7 +42,6 @@
     .form-control {
         color: white;
         background-color: midnightblue;
-        
     }
 
     .form {
@@ -54,14 +51,18 @@
 
     .col-form-label {
         color: yellow;
-        margin-left:60px;
-       
+        margin-left: 60px;
     }
+
     hr {
         border: none;
         height: 3px;
         background-color: midnightblue;
         margin-top: 150px;
+    }
+
+    .validationMessage {
+        color: white;
     }
 </style>
 
@@ -79,91 +80,108 @@
             <a style="color:yellow" asp-area="" asp-controller="LogIn" asp-action="Index" class="navbar-brand">Dialysis Patient Tracker</a>
         </div>
         <div class="navbar-collapse collapse">
-        <ul class="nav navbar-nav" style="margin-left:150px">
-            <li><a style="color:snow" asp-area="" asp-controller="SearchOptions" asp-action="Index"><spand class="spandnavremove"> Patient</spand><br /> Search Options</a></li>
-            <li><a style="color:snow" asp-area="" asp-controller="PatientMasterList" asp-action="Index"><spand class="spandnavremove"> Patient</spand><br /> Master List</a></li>
-            <li><a style="color:snow" asp-area="" asp-controller="TreatmentMasterList" asp-action="Index"><spand> Treatment</spand><br /> Master List</a></li>
-            <li><a style="color:snow" asp-area="" asp-controller="PatientDemographics" asp-action="Index"><spand class="spandnavremove"> Patient</spand><br /> Demographics</a></li>
-        </ul>
-
-
-        <div class="nav-bar2">
-            <ul class="navbar-collapse collapse">
-                <li><a style="color:yellow" asp-area="" asp-controller="SignUp" asp-action="Index">Sign Up</a></li>
-                <li><a style="color:yellow" asp-area="" asp-controller="LogOut" asp-action="Index">Log Out</a></li>
-                <li><a style="color:yellow" asp-area="" asp-controller="LogIn" asp-action="Index">Login</a></li>
+            <ul class="nav navbar-nav" style="margin-left:150px">
+                <li><a style="color:snow" asp-area="" asp-controller="SearchOptions" asp-action="Index"><spand class="spandnavremove"> Patient</spand><br /> Search Options</a></li>
+                <li><a style="color:snow" asp-area="" asp-controller="PatientMasterList" asp-action="Index"><spand class="spandnavremove"> Patient</spand><br /> Master List</a></li>
+                <li><a style="color:snow" asp-area="" asp-controller="TreatmentMasterList" asp-action="Index"><spand> Treatment</spand><br /> Master List</a></li>
+                <li><a style="color:snow" asp-area="" asp-controller="PatientDemographics" asp-action="Index"><spand class="spandnavremove"> Patient</spand><br /> Demographics</a></li>
             </ul>
+
+            <div class="nav-bar2">
+                <ul class="navbar-collapse collapse">
+                    <li><a style="color:yellow" asp-area="" asp-controller="SignUp" asp-action="Index">Sign Up</a></li>
+                    <li><a style="color:yellow" asp-area="" asp-controller="LogOut" asp-action="Index">Log Out</a></li>
+                    <li><a style="color:yellow" asp-area="" asp-controller="LogIn" asp-action="Index">Login</a></li>
+                </ul>
+            </div>
         </div>
     </div>
-    </div>
 </nav>
+<!--**************  End of NavBar**************-->
+
+@model DialysisPatientTracker.ViewModels.AddPatientDemographicsViewModel;
 
 <div class="form">
     <form asp-controller="PatientDemographics" asp-action="AddDemographics" method="post">
         <div class="form-group row">
             <div class="col-lg-12 my-1">
                 <h2>Add Demographic</h2>
-                <label for="medicalRecord" class="col-sm-4 col-form-label">Medical Record #</label>
+                <label class="col-sm-4 col-form-label" asp-for="MedicalRecord"></label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" name="MedicalRecord" id="medicalRecord">
+                    <input class="form-control" asp-for="MedicalRecord">
+                    <span class="validationMessage" asp-validation-for="MedicalRecord"></span>
                 </div>
             </div>
         </div><!------------------- end of Patient Id#  input  ---------------------->
         <div class="form-group row">
             <div class="col-lg-12 my-1">
-                <label for="lastName" class="col-sm-4 col-form-label">Last name</label>
+
+                <label class="col-sm-4 col-form-label" asp-for="LastName"></label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" name="LastName" id="lastName">
+                    <input class="form-control" asp-for="LastName">
+                    <span class="validationMessage" asp-validation-for="LastName"></span>
                 </div>
             </div>
-        </div><!------------------- end of lastname input  ---------------------->
+        </div><!------------------- end of last name input  ---------------------->
         <div class="form-group row">
             <div class="col-lg-12 my-1">
-                <label for="firstName" class="col-sm-4 col-form-label">FirstName</label>
+
+                <label class="col-sm-4 col-form-label" asp-for="FirstName"></label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" name="FirstName" id="firstName">
+                    <input class="form-control" asp-for="FirstName">
+                    <span class="validationMessage" asp-validation-for="FirstName"></span>
                 </div>
             </div>
-        </div><!------------------- end of firstName input  ---------------------->
+        </div><!------------------- end of first Name input  ---------------------->
 
         <div class="form-group row">
             <div class="col-lg-12 my-1">
-                <label for="age" class="col-sm-4 col-form-label">Age</label>
+
+                <label class="col-sm-4 col-form-label" asp-for="Age"></label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" name="Age" id="age">
+                    <input class="form-control" asp-for="Age">
+                    <span class="validationMessage" asp-validation-for="Age"></span>
                 </div>
             </div>
         </div><!------------------- end of Age input  ---------------------->
-
         <div class="form-group row">
             <div class="col-lg-12 my-1">
-                <label for="gender" class="col-sm-4 col-form-label">Gender</label>
+
+                <label class="col-sm-4 col-form-label" asp-for="Gender"></label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" name="gender" id="gender">
+                    <input class="form-control" asp-for="Gender">
+                    <span class="validationMessage" asp-validation-for="Gender"></span>
                 </div>
             </div>
         </div><!------------------- end of Gender input  ---------------------->
         <div class="form-group row">
             <div class="col-lg-12 my-1">
-                <label for="address" class="col-sm-4 col-form-label">Address</label>
+
+                <label class="col-sm-4 col-form-label" asp-for="Address"></label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" name="Address" id="address">
+                    <input class="form-control" asp-for="Address">
+                    <span class="validationMessage" asp-validation-for="Address"></span>
                 </div>
             </div>
         </div><!------------------- end of Address input  ---------------------->
         <div class="form-group row">
             <div class="col-lg-12 my-1">
-                <label for="phonenumber" class="col-sm-4 col-form-label">Phone Number</label>
+
+                <label class="col-sm-4 col-form-label" asp-for="PhoneNumber"></label>
                 <div class="col-sm-6">
-                    <input type="tel" class="form-control" name="PhoneNumber" id="comments">
+                    <input class="form-control" asp-for="PhoneNumber">
+                    <span class="validationMessage" asp-validation-for="PhoneNumber"></span>
                 </div>
             </div>
         </div><!------------------- end of phone number input  ---------------------->
+
         <div class="form-group row">
             <div class="col-lg-12 my-1">
-                <label for="email" class="col-sm-4 col-form-label">E-Mail</label>
+
+                <label class="col-sm-4 col-form-label" asp-for="Email"></label>
                 <div class="col-sm-6">
-                    <input type="email" class="form-control" name="Email" id="comments">
+                    <input class="form-control" asp-for="Email">
+                    <span class="validationMessage" asp-validation-for="Email"></span>
                 </div>
             </div>
         </div><!------------------- end of Email  input  ---------------------->
