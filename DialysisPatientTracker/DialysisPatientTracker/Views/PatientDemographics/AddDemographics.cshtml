@@ -149,7 +149,7 @@
 
                 <label class="col-sm-4 col-form-label" asp-for="Gender"></label>
                 <div class="col-sm-6">
-                    <input class="form-control" asp-for="Gender">
+                    <select class="form-control" asp-for="Gender" asp-items="Model.GenderOptions"></select>
                     <span class="validationMessage" asp-validation-for="Gender"></span>
                 </div>
             </div>

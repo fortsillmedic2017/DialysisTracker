@@ -11,9 +11,9 @@ namespace DialysisPatientTracker.Models
         public string LastName { get; set; }
         public string FirstName { get; set; }
         public string Physician { get; set; }
-        public string TreatmentDays { get; set; }
+        public TreatmentDaysEnum TreatmentDays { get; set; }
         public string TreatmentTime { get; set; }
-        public string AccessType { get; set; }
+        public AccessTypeEnum AccessType { get; set; }
         public string KBath { get; set; }
         public string CaBath { get; set; }
         public string NaBath { get; set; }
