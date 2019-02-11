@@ -26,11 +26,15 @@ namespace DialysisPatientTracker.ViewModels
         public TreatmentDaysEnum TreatmentDays { get; set; }
         [Required]
         public AccessTypeEnum AccessType { get; set; }
+        [Required]
+        public KBathEnum KBath { get; set; }
+
         public List<SelectListItem> TreatmentDayOptions { get; set; }
         public List<SelectListItem> AccessTypeOptions { get; set; }
+        public List<SelectListItem> KBathOptions { get; set; }
 
-        public AddTreatmentMasterListViewModel()
-        {
+        public AddTreatmentMasterListViewModel() {
+
             TreatmentDayOptions = new List<SelectListItem>();
 
             //<option value ="0">MWF</option>
@@ -77,23 +81,38 @@ namespace DialysisPatientTracker.ViewModels
                 Text = AccessTypeEnum.CVC.ToString()
             });
 
+            //===========  Options for KBath   ============================================
+           KBathOptions = new List<SelectListItem>();
+
+            KBathOptions.Add(new SelectListItem
+            {
+                Value = ((int)KBathEnum._1K).ToString(),
+                Text =KBathEnum._1K.ToString()
+            });
+            KBathOptions.Add(new SelectListItem
+            {
+                Value = ((int)KBathEnum._2K).ToString(),
+                Text = KBathEnum._2K.ToString()
+            });
+            KBathOptions.Add(new SelectListItem
+            {
+                Value = ((int)KBathEnum._3K).ToString(),
+                Text = KBathEnum._3K.ToString()
+            });
+            KBathOptions.Add(new SelectListItem
+            {
+                Value = ((int)KBathEnum._4K).ToString(),
+                Text = KBathEnum._4K.ToString()
+            });
+
         }
         //**********************************************************************************************************
         [Required]
         [Display(Name = "Treatment Time (HRS)")]
         public string TreatmentTime { get; set; }
-        //**************************************************************************************************
         
-
+        //**************************************************************************************************
       
-
-        
-
-        
-
-        //**************************************************************************************************
-        [Required]
-        public string KBath { get; set; }
 
         [Required]
         public string CaBath { get; set; }
@@ -113,3 +132,23 @@ namespace DialysisPatientTracker.ViewModels
         public string Comments { get; set; }
     }
 }
+
+
+
+
+//public AddTreatmentMasterListViewModel()
+//{ }
+
+//    public AddTreatmentMasterListViewModel(IEnumerable<TreatmentDaysEnum> treatmentDays)
+//{
+//    TreatmentDayOptions = new List<SelectListItem>();
+
+//    foreach (var treatmentDay in treatmentDays)
+//    {
+//        TreatmentDayOptions.Add(new SelectListItem
+//        {
+//            Value = treatmentDay.ID.ToString(),
+//            Text = treatmentDay.
+//                });
+//    }
+//}
