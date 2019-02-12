@@ -14,16 +14,5 @@ namespace DialysisPatientTracker.Models
         public string Physician { get; set; }
         public TreatmentDaysEnum TreatmentDays { get; set; }
         public string Comments { get; set; }
-
-
-
-        public int PatientId { get; set; }
-        private static int nextId = 1;
-
-        public PatientMasterList()
-        {
-            PatientId = nextId;
-            nextId++;
-        }
     }
 }

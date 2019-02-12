@@ -92,8 +92,8 @@
         @foreach (var patient in ViewBag.patientMasterList)
         {<div class="form-group row">
                 <div>
-                    <input type="checkbox" name="patientIds" id="@patient.PatientId" value="@patient.PatientId" /><!--PatientId from(Model)-->
-                    <label for="@patient.PatientId">@patient.LastName, @patient.FirstName (MRN:@patient.MedicalRecord)</label>
+                    <input type="checkbox" name="patientIds" id="@patient.ID" value="@patient.ID" /><!--ID from(Model)-->
+                    <label for="@patient.ID">@patient.LastName, @patient.FirstName (MRN:@patient.MedicalRecord)</label>
                 </div>
             </div>
         }

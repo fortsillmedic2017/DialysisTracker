@@ -43,7 +43,7 @@
         margin-top: 70px;
         margin-bottom: 70px;
     }
-    
+
     label {
         color: yellow;
         font-size: large;
@@ -90,8 +90,8 @@
         @foreach (var patientDemographic in ViewBag.patientDemographics)
         {<div class="form-group row">
                 <div>
-                    <input type="checkbox" name="demographicIds" id="@patientDemographic.PatientId" value="@patientDemographic.PatientId" /><!--PatientId from(Model)-->
-                    <label for="@patientDemographic.PatientId"> @patientDemographic.LastName, @patientDemographic.FirstName (MRN:@patientDemographic.MedicalRecord)</label>
+                    <input type="checkbox" name="demographicIds" id="@patientDemographic.ID" value="@patientDemographic.ID" /><!--PatientId from(Model)-->
+                    <label for="@patientDemographic.ID"> @patientDemographic.LastName, @patientDemographic.FirstName (MRN:@patientDemographic.MedicalRecord)</label>
                     <br />
                 </div>
             </div>

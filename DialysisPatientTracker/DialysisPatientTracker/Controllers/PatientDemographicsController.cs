@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DialysisPatientTracker.Data;
 using DialysisPatientTracker.Models;
 using DialysisPatientTracker.ViewModels;
 using Microsoft.AspNetCore.Mvc;
@@ -12,12 +13,17 @@ namespace DialysisPatientTracker.Controllers
 {
     public class PatientDemographicsController : Controller
     {
-        static public List<PatientDemographics> patientDemographic = new List<PatientDemographics>();
+        private PatientDemographicsDbContext context;
+
+        public PatientDemographicsController(PatientDemographicsDbContext dbContext)
+        {
+            context = dbContext;
+        }
 
         // GET: /<controller>/
         public IActionResult Index()
         {
-            List<PatientDemographics> patientDemographics = patientDemographic;
+            List<PatientDemographics> patientDemographics = context.PatientDemographic.ToList();//****
 
             return View(patientDemographics);
         }
@@ -47,7 +53,8 @@ namespace DialysisPatientTracker.Controllers
                     Email = addPatientDemographicsViewModel.Email
                 };
 
-                patientDemographic.Add(newPatientDemographics);
+                context.PatientDemographic.Add(newPatientDemographics);//****
+                context.SaveChanges();//*** must save
 
                 return Redirect("/PatientDemographics");
             }
@@ -59,7 +66,7 @@ namespace DialysisPatientTracker.Controllers
         public IActionResult RemoveDemographics()
         {
             ViewBag.title = "Remove DemoGraphics";
-            ViewBag.patientDemographics = patientDemographic;
+            ViewBag.patientDemographics = context.PatientDemographic.ToList();
 
             return View();
         }
@@ -69,8 +76,11 @@ namespace DialysisPatientTracker.Controllers
         {
             foreach (int demographicId in demographicIds)
             {
-                patientDemographic.RemoveAll(d => d.PatientId == demographicId);
+                PatientDemographics theDemographic = context.PatientDemographic.Single(d => d.ID == demographicId);
+                context.PatientDemographic.Remove(theDemographic);
             }
+            context.SaveChanges();
+
             return Redirect("/PatientDemographics");
         }
     }
