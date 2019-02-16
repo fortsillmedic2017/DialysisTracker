@@ -14,9 +14,9 @@ namespace DialysisPatientTracker.Controllers
 {
     public class TreatmentMasterListController : Controller
     {
-        private TreatmentMasterListDbContext context;
+        private PatientDbContext context;
 
-        public TreatmentMasterListController(TreatmentMasterListDbContext dbContext)
+        public TreatmentMasterListController(PatientDbContext dbContext)
         {
             context = dbContext;
         }

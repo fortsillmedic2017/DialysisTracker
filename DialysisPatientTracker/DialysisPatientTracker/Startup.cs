@@ -22,20 +22,20 @@ namespace DialysisPatientTracker
         public void ConfigureServices(IServiceCollection services)
         {  //*************************************************************************
             //**** /Added This/  ******
-            services.AddDbContext<PatientMasterListDbContext>(options =>
+            services.AddDbContext<PatientDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
-            //*************************************************************************
-            //**** /Added This/ ******
-            services.AddDbContext<PatientDemographicsDbContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            ////*************************************************************************
+            ////**** / Added This / ******
+            //// services.AddDbContext<PatientDemographicsDbContext>(options =>
+            ////     options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
-            //*******************************************************************************
-            //**** /Added This/ ******
-            services.AddDbContext<TreatmentMasterListDbContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            ////*******************************************************************************
+            ////**** / Added This / ******
+            //// services.AddDbContext<TreatmentMasterListDbContext>(options =>
+            ////     options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
-            //*******************************************************************************
+            ////*******************************************************************************
             services.Configure<CookiePolicyOptions>(options =>
             {
                 // This lambda determines whether user consent for non-essential cookies is needed for a given request.

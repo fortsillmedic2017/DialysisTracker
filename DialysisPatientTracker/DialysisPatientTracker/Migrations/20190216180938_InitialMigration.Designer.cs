@@ -6,11 +6,11 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace DialysisPatientTracker.Migrations.TreatmentMasterListDb
+namespace DialysisPatientTracker.Migrations
 {
-    [DbContext(typeof(TreatmentMasterListDbContext))]
-    [Migration("20190212001115_int")]
-    partial class @int
+    [DbContext(typeof(PatientDbContext))]
+    [Migration("20190216180938_InitialMigration")]
+    partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -19,6 +19,56 @@ namespace DialysisPatientTracker.Migrations.TreatmentMasterListDb
                 .HasAnnotation("ProductVersion", "2.1.4-rtm-31024")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+            modelBuilder.Entity("DialysisPatientTracker.Models.PatientDemographics", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Address");
+
+                    b.Property<string>("Age");
+
+                    b.Property<string>("Email");
+
+                    b.Property<string>("FirstName");
+
+                    b.Property<int>("Gender");
+
+                    b.Property<string>("LastName");
+
+                    b.Property<string>("MedicalRecord");
+
+                    b.Property<string>("PhoneNumber");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("PatientDemographic");
+                });
+
+            modelBuilder.Entity("DialysisPatientTracker.Models.PatientMasterList", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Comments");
+
+                    b.Property<string>("FirstName");
+
+                    b.Property<string>("LastName");
+
+                    b.Property<string>("MedicalRecord");
+
+                    b.Property<string>("Physician");
+
+                    b.Property<int>("TreatmentDays");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("PatientMasterLists");
+                });
 
             modelBuilder.Entity("DialysisPatientTracker.Models.TreatmentMasterList", b =>
                 {

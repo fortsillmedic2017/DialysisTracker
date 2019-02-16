@@ -13,9 +13,9 @@ namespace DialysisPatientTracker.Controllers
 {
     public class PatientDemographicsController : Controller
     {
-        private PatientDemographicsDbContext context;
+        private PatientDbContext context;
 
-        public PatientDemographicsController(PatientDemographicsDbContext dbContext)
+        public PatientDemographicsController(PatientDbContext dbContext)
         {
             context = dbContext;
         }
