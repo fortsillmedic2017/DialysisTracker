@@ -13,7 +13,7 @@ namespace DialysisPatientTracker.Controllers
 {
     public class PatientMasterListController : Controller
     {
-        //Ctreated an Instance of PatientMasterListDBContext(context)
+        //Created an Instance of PatientMasterListDBContext(context)
         private PatientMasterListDbContext context;
 
         /*Created a Constructor from PatientMasterListController and set

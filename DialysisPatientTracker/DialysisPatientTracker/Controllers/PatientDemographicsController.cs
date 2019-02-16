@@ -46,6 +46,7 @@ namespace DialysisPatientTracker.Controllers
                     MedicalRecord = addPatientDemographicsViewModel.MedicalRecord,
                     FirstName = addPatientDemographicsViewModel.FirstName,
                     LastName = addPatientDemographicsViewModel.LastName,
+                    DOB = addPatientDemographicsViewModel.DOB,
                     Age = addPatientDemographicsViewModel.Age,
                     Gender = addPatientDemographicsViewModel.Gender,
                     Address = addPatientDemographicsViewModel.Address,

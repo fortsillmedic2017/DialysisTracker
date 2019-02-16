@@ -11,6 +11,7 @@ namespace DialysisPatientTracker.Models
         public string MedicalRecord { get; set; }
         public string LastName { get; set; }
         public string FirstName { get; set; }
+        public DateTime DOB { get; set; }
         public string Age { get; set; }
         public GenderEnum Gender { get; set; }
         public string Address { get; set; }
