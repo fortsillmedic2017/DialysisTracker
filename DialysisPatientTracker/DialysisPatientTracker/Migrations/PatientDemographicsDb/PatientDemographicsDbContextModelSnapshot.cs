@@ -3,16 +3,14 @@ using DialysisPatientTracker.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace DialysisPatientTracker.Migrations
+namespace DialysisPatientTracker.Migrations.PatientDemographicsDb
 {
-    [DbContext(typeof(PatientMasterListDbContext))]
-    [Migration("20190214015155_int")]
-    partial class @int
+    [DbContext(typeof(PatientDemographicsDbContext))]
+    partial class PatientDemographicsDbContextModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -20,27 +18,31 @@ namespace DialysisPatientTracker.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("DialysisPatientTracker.Models.PatientMasterList", b =>
+            modelBuilder.Entity("DialysisPatientTracker.Models.PatientDemographics", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Comments");
+                    b.Property<string>("Address");
+
+                    b.Property<string>("Age");
+
+                    b.Property<string>("Email");
 
                     b.Property<string>("FirstName");
+
+                    b.Property<int>("Gender");
 
                     b.Property<string>("LastName");
 
                     b.Property<string>("MedicalRecord");
 
-                    b.Property<string>("Physician");
-
-                    b.Property<int>("TreatmentDays");
+                    b.Property<string>("PhoneNumber");
 
                     b.HasKey("ID");
 
-                    b.ToTable("PatientMasterLists");
+                    b.ToTable("PatientDemographic");
                 });
 #pragma warning restore 612, 618
         }

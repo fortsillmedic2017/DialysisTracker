@@ -115,8 +115,8 @@
             @foreach (var patient in Model)
             {
                 <tr>
-                    <td><a asp-controller="IndivPatient" asp-action="IndivPatient">@patient.MedicalRecord</a></td>
-                    <td><a asp-controller="IndivPatient" asp-action="IndIvPatient">@patient.LastName</a></td>
+                    <td><a asp-controller="PatientMasterList" asp-action="IndivPatient">@patient.MedicalRecord</a></td>
+                    <td><a asp-controller="PatientMasterList" asp-action="IndIvPatient">@patient.LastName</a></td>
                     <td>@patient.FirstName</td>
                     <td>@patient.Physician</td>
                     <td>@patient.TreatmentDays</td>

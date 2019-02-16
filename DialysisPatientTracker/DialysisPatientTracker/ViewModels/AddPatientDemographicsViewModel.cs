@@ -21,12 +21,9 @@ namespace DialysisPatientTracker.ViewModels
         public string FirstName { get; set; }
 
         [Required]
-        public DateTime DOB { get; set; }
-
-        [Required]
         [Range(18, 100)]
         public string Age { get; set; }
-
+     
         [Required]
         public string Address { get; set; }
 
@@ -39,7 +36,7 @@ namespace DialysisPatientTracker.ViewModels
         [Display(Name = "E-Mail")]
         public string Email { get; set; }
 
-        [Required(ErrorMessage = "Please Enter M for (Male) or F for (Female)")]
+        [Required(ErrorMessage = "Please Enter M for (Male) or F for (Female)")]      
         [Display(Name = "Gender")]
         public GenderEnum Gender { get; set; }
 
@@ -66,7 +63,9 @@ namespace DialysisPatientTracker.ViewModels
             {
                 Value = ((int)GenderEnum.Other).ToString(),
                 Text = GenderEnum.Other.ToString()
-            });
+            });   
+                
+            
         }
     }
 }

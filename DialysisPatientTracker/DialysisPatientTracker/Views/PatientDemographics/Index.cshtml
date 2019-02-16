@@ -19,6 +19,7 @@
         margin-bottom: -20px;
         background-color: navy;
         color: yellow;
+        
     }
 
     table {
@@ -61,15 +62,13 @@
         a:hover {
             color: yellow;
         }
-
-    .spandnavadd {
-        margin-left: 30px;
-    }
-
+    .spandnavadd{
+           margin-left:30px;
+       }
     .spandnavremove {
         margin-left: 15px;
     }
-</style>
+ </style>
 <!--****** HTML ****************-->
 
 <nav class="navbar navbar-inverse navbar-fixed-top" style="background-color:midnightblue">
@@ -104,6 +103,7 @@
 
 <!--************  End Of NavBar********************-->
 
+
 @model List<DialysisPatientTracker.Models.PatientDemographics>
 
 <h1>Patient DemoGraphics</h1>
@@ -111,10 +111,9 @@
 <table class="table">
     <thead>
         <tr>
-            <th>Medical<br />Record#</th>
+            <th>Medical Record#</th>
             <th>Last name</th>
             <th>First Name</th>
-            <th>DOB</th>
             <th>Age</th>
             <th>Gender</th>
             <th>Address</th>
@@ -129,7 +128,6 @@
                 <td><a asp-controller="PatientDemographics" asp-action="IndivPatient">@patient.MedicalRecord</a></td>
                 <td><a asp-controller="PatientDemographics" asp-action="IndivPatient">@patient.LastName</a></td>
                 <td>@patient.FirstName</td>
-                <td>@patient.DOB</td>
                 <td>@patient.Age</td>
                 <td>@patient.Gender</td>
                 <td>@patient.Address</td>
@@ -137,7 +135,7 @@
                 <td>@patient.Email</td>
             </tr>
         }
-    </tbody>
+     </tbody>
 </table>
 
 @if (Model.Count == 0)
