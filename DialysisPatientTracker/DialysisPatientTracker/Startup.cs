@@ -22,7 +22,7 @@ namespace DialysisPatientTracker
         public void ConfigureServices(IServiceCollection services)
         {  //*************************************************************************
             //**** /Added This/  ******
-            services.AddDbContext<PatientDbContext>(options =>
+            services.AddDbContext<PatientMasterListDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             ////*************************************************************************

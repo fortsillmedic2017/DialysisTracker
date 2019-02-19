@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace DialysisPatientTracker.ViewModels
 {
-    public class AddPatientViewModel
+    public class AddPatientMasterListViewModel
     {
         [Required(ErrorMessage = "You must Add Patient Medical Record Number")]
         [Display(Name = "MRN")]
@@ -27,14 +27,14 @@ namespace DialysisPatientTracker.ViewModels
         [StringLength(1000)]
         public string Comments { get; set; }
 
-        [Required(ErrorMessage = "Use MWF or TThS")]        
+        [Required(ErrorMessage = "Use MWF or TThS")]
         public TreatmentDaysEnum TreatmentDays { get; set; }  //need to add selection for TreatmentDays(MWF.TTHS)
 
         public List<SelectListItem> TreatmentDayOptions { get; set; }
 
         //Using a constructor to populate above( List<SelectListItem> TreatmentDayOptions )
         //Initiate a empty List of List<SelectListItem>  items with the following constructor below
-        public AddPatientViewModel()
+        public AddPatientMasterListViewModel()
         {
             TreatmentDayOptions = new List<SelectListItem>();
 
@@ -58,7 +58,6 @@ namespace DialysisPatientTracker.ViewModels
                 Value = ((int)TreatmentDaysEnum.NonSpecific).ToString(), //Casting property then set ToString()
                 Text = TreatmentDaysEnum.NonSpecific.ToString()
             });
-
         }
     }
 }

@@ -11,7 +11,7 @@
         font-size: 18px;
     }
 
-    h1 {
+    h2 {
         border: yellow solid 2px;
         text-align: center;
         padding: 20px 5px;
@@ -94,41 +94,45 @@
     </nav>
     <div></div>
 
+    <!--*****end of nav Bar***********-->
     @model List<DialysisPatientTracker.Models.PatientMasterList>
+    <div class="pageForm">
 
-    <h1>Patient Master List</h1>
+        <h2>Results By Medical Record Number</h2>
 
-    <table class="table">
+        <table class="table">
 
-        <!--  ************TOD DO !! Have to ********************-->
+            <!--  ************TOD DO !! Have to ********************-->
 
-        <thead>
-            <tr>
-                <th>Medical Record #</th>
-                <th>Last Name</th>
-                <th>First Name</th>
-                <th>Physician</th>
-                <th>Treatment<br />Days</th>
-                <th>Comments</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var patient in Model)
-            {
+            <thead>
                 <tr>
-                    <td><a asp-controller="PatientMasterList" asp-action="IndivPatient">@patient.MedicalRecord</a></td>
-                    <td><a asp-controller="PatientMasterList" asp-action="IndIvPatient">@patient.LastName</a></td>
-                    <td>@patient.FirstName</td>
-                    <td>@patient.Physician</td>
-                    <td>@patient.TreatmentDays</td>
-                    <td>@patient.Comments</td>
+                    <th>Medical Record #</th>
+                    <th>Last Name</th>
+                    <th>First Name</th>
+                    <th>Physician</th>
+                    <th>Treatment<br />Days</th>
+                    <th>Comments</th>
                 </tr>
-            }
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                @foreach (var patient in Model)
+                {
+                    <tr>
+                        <td><a asp-controller="PatientMasterList" asp-action="IndivPatient">@patient.MedicalRecord</a></td>
+                        <td><a asp-controller="PatientMasterList" asp-action="IndIvPatient">@patient.LastName</a></td>
+                        <td>@patient.FirstName</td>
+                        <td>@patient.Physician</td>
+                        <td>@patient.TreatmentDays</td>
+                        <td>@patient.Comments</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
 
-    @if (Model.Count == 0)
-    {
-        <p style="color:yellow">There are no patients in the list yet.</p>
-    };
+        @if (Model.Count == 0)
+        {
+            <p style="color:yellow">There are no patients in the list yet.</p>
+        };
+
+    </div>
 </body>

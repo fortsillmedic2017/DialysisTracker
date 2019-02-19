@@ -14,14 +14,14 @@ namespace DialysisPatientTracker.Controllers
     public class PatientMasterListController : Controller
     {
         //Ctreated an Instance of PatientMasterListDBContext(context)
-        private PatientDbContext context;
+        private PatientMasterListDbContext context;
 
         /*Created a Constructor from PatientMasterListController and set
          *the parameters to a instance of PatientMasterListDbContent and
          * set context = to that.
         */
 
-        public PatientMasterListController(PatientDbContext dbContext)//customized contoller
+        public PatientMasterListController(PatientMasterListDbContext dbContext)//customized contoller
         {
             context = dbContext;
         }
@@ -35,7 +35,7 @@ namespace DialysisPatientTracker.Controllers
 
         public IActionResult AddPatient()
         {
-            AddPatientViewModel addPatientViewModel = new AddPatientViewModel();
+            AddPatientMasterListViewModel addPatientViewModel = new AddPatientMasterListViewModel();
 
             return View(addPatientViewModel);
         }
@@ -43,7 +43,7 @@ namespace DialysisPatientTracker.Controllers
         //Model Rendering ===> property of class must match name = "" in form.
 
         [HttpPost]
-        public IActionResult AddPatient(AddPatientViewModel addPatientViewModel)
+        public IActionResult AddPatient(AddPatientMasterListViewModel addPatientViewModel)
         {
             if (ModelState.IsValid)
             {

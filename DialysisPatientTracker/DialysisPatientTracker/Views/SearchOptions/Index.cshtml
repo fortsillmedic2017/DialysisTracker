@@ -1,5 +1,4 @@
 ﻿<style>
-
     .nav-bar2 {
         /* margin-top: -70px;*/
         margin-left: 1055px;
@@ -40,9 +39,8 @@
         border-radius: 20%;
         background: rgba(40, 37, 141, .5);
         padding: 50px;
-
-        margin-top: 200px;
-        margin-bottom:10px;
+        margin-top: 70px;
+        margin-bottom: 100px;
         margin-left: 250px;
         margin-right: 250px;
     }
@@ -95,52 +93,56 @@
         </div>
     </div>
 </nav>
+<!--**** End of NaveBar **************************-->
 
+@model List<DialysisPatientTracker.Models.SearchOptions>
 <div class="form">
     <h2>Patient Search Options</h2><!--********* h2 tag ***********-->
-    <form asp-controller="SearchOptions" asp-action="FindByMedicalRecord" method="post">
+
+    <form asp-controller="SearchOptions" asp-action="FindByMedicalRecord" method="get">
         <div class="form-group row">
             <div class="col-lg-12 my-1">
                 <div class="col-sm-2">
-                    <label for="medicalRecord" class="col-sm-4 col-form-label">Search By:</label>
+                    <label class="col-sm-4 col-form-label" for="MedicalRecord">Search By:</label>
                 </div>
                 <div class="col-sm-8">
-                    <input type="text" class="form-control" name="medicalRecordids" id="medicalRecord" placeholder="Medical Record#">
+                    <input class="form-control" type="text" name="search" id="MedicalRecord" placeholder="Medical Record#">
                 </div>
                 <div class="col-sm-2">
                     <input id="search-button" type="submit" value="Search">
                 </div>
             </div>
-        </div><!------------------- end of medicalRecord# input  ---------------------->
+        </div>
+        <!----------------- end of medicalRecord# input  -------------------->
     </form>
-    <form asp-controller="LogIn" asp-action="Index" method="post">
+    <form asp-controller="SearchOptions" asp-action="FindByLastName" method="get">
         <div class="form-group row">
             <div class="col-lg-12 my-1">
                 <div class="col-sm-2">
-                    <label for="lastName" class="col-sm-4 col-form-label">Search By:</label>
+                    <label class="col-sm-4 col-form-label" for="LastName">Search By:</label>
                 </div>
                 <div class="col-sm-8">
-                    <input type="text" class="form-control" id="lastnameId" placeholder="LastName">
+                    <input class="form-control" for="LastName" name="search" placeholder="Last Name">
                 </div>
                 <div class="col-sm-2">
                     <input id="search-button" type="submit" value="Search">
                 </div>
             </div>
-        </div><!------------------- end of lastName input  ---------------------->
+        </div><!------------------- end of LastName input  ---------------------->
     </form>
-    <form asp-controller="PatientMasterList" asp-action="Index" method="post">
+    <form asp-controller="SearchOptions" asp-action="FindByPhysician" method="get">
         <div class="form-group row">
             <div class="col-lg-12 my-1">
                 <div class="col-sm-2">
-                    <label for="physician" class="col-sm-4 col-form-label">Search By:</label>
+                    <label class="col-sm-4 col-form-label" for="Physician">Search By:</label>
                 </div>
                 <div class="col-sm-8">
-                    <input type="text" class="form-control" id="physicianId" placeholder="Physician">
+                    <input class="form-control" name="search" for="Physician"  placeholder="Physician">
                 </div>
                 <div class="col-sm-2">
                     <input id="search-button" type="submit" value="Search">
                 </div>
             </div>
-        </div><!------------------- end of Physician  input  ---------------------->
+        </div><!------------------- end of Physician input  ---------------------->
     </form>
 </div>

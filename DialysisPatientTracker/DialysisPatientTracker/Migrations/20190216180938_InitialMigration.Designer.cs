@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DialysisPatientTracker.Migrations
 {
-    [DbContext(typeof(PatientDbContext))]
+    [DbContext(typeof(PatientMasterListDbContext))]
     [Migration("20190216180938_InitialMigration")]
     partial class InitialMigration
     {

@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DialysisPatientTracker.Migrations
 {
-    [DbContext(typeof(PatientDbContext))]
+    [DbContext(typeof(PatientMasterListDbContext))]
     partial class PatientDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
