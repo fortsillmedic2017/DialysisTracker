@@ -1,0 +1,138 @@
+﻿@model DialysisPatientTracker.Models.CompleteList
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CompleteList</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MedicalRecord)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MedicalRecord)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Physician)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Physician)
+        </dd>
+        @*<dt>
+            @Html.DisplayNameFor(model => model.DOB)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DOB)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TreatmentDays)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TreatmentDays)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Age)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Age)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Gender)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Gender)
+        </dd>*@
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PhoneNumber)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        @*<dt>
+            @Html.DisplayNameFor(model => model.TreatmentTime)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TreatmentTime)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AccessType)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AccessType)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.KBath)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.KBath)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CaBath)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CaBath)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.NaBath)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NaBath)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.BiCarb)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.BiCarb)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Temp)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Temp)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DialyzerSize)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DialyzerSize)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Comments)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Comments)
+        </dd>*@
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.CompleteListID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

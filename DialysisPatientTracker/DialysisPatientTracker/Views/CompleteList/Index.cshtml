@@ -1,0 +1,150 @@
+﻿@model IEnumerable<DialysisPatientTracker.Models.CompleteList>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="AddPatient">Add New Patient</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MedicalRecord)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Physician)
+            </th>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.DOB)
+                </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.TreatmentDays)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Age)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Gender)
+            </th>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.Address)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PhoneNumber)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Email)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TreatmentTime)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AccessType)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.KBath)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CaBath)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NaBath)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.BiCarb)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Temp)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DialyzerSize)
+                </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.Comments)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MedicalRecord)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Physician)
+                </td>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.DOB)
+                    </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.TreatmentDays)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Age)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Gender)
+                </td>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.Address)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PhoneNumber)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TreatmentTime)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AccessType)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.KBath)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CaBath)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NaBath)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BiCarb)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Temp)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DialyzerSize)
+                    </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.Comments)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.CompleteListID">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.CompleteListID">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.CompleteListID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -2,31 +2,28 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using DialysisPatientTracker.Data;
 using DialysisPatientTracker.Models;
 using DialysisPatientTracker.ViewModels;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-
-// For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace DialysisPatientTracker.Controllers
 {
-    public class TreatmentMasterListController : Controller
+    public class CompleteListController : Controller
     {
         private DialysisAppDbContext context;
 
-        public TreatmentMasterListController(DialysisAppDbContext dbContext)
+        public CompleteListController(DialysisAppDbContext dbContext)//customized contoller
         {
             context = dbContext;
         }
 
-        // GET: /<controller>/
-        public IActionResult Index()
+        // GET: CompleteList
+        public async Task<IActionResult> Index()
         {
-            List<CompleteList> treatmentMasterLists = context.CompleteLists.ToList();
-
-            return View(treatmentMasterLists);
+            return View(await context.CompleteLists.ToListAsync());
         }
 
         // GET: CompleteList/Details/5
@@ -45,6 +42,92 @@ namespace DialysisPatientTracker.Controllers
             }
 
             return View(completeList);
+        }
+
+        //GET DEMOGRAPHICS------------------
+
+        public async Task<IActionResult> DemoGraphic(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var demographics = await context.CompleteLists
+                .FirstOrDefaultAsync(m => m.CompleteListID == id);
+            if (demographics == null)
+            {
+                return NotFound();
+            }
+
+            return View(demographics);
+        }
+
+        //GET Treatments-----------------
+
+        public async Task<IActionResult> Treatment(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var treatments = await context.CompleteLists
+                .FirstOrDefaultAsync(m => m.CompleteListID == id);
+            if (treatments == null)
+            {
+                return NotFound();
+            }
+
+            return View(treatments);
+        }
+
+        // GET: CompleteList/Create
+        public IActionResult AddPatient()
+        {
+            return View();
+        }
+
+        // POST: CompleteList/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        public IActionResult AddPatient(AddCompleteListViewModle addCompleteListViewModle)
+        {
+            if (ModelState.IsValid)
+            {
+                //Add new Patient to existing patient list
+                CompleteList newCompletList = new CompleteList
+                {
+                    MedicalRecord = addCompleteListViewModle.MedicalRecord,
+                    FirstName = addCompleteListViewModle.FirstName,
+                    LastName = addCompleteListViewModle.LastName,
+                    Physician = addCompleteListViewModle.Physician,
+                    TreatmentDays = addCompleteListViewModle.TreatmentDays,
+                    Age = addCompleteListViewModle.Age,
+                    DOB = addCompleteListViewModle.DOB,
+                    Gender = addCompleteListViewModle.Gender,
+                    Address = addCompleteListViewModle.Address,
+                    PhoneNumber = addCompleteListViewModle.PhoneNumber,
+                    Email = addCompleteListViewModle.Email,
+                    TreatmentTime = addCompleteListViewModle.TreatmentTime,
+                    AccessType = addCompleteListViewModle.AccessType,
+                    KBath = addCompleteListViewModle.KBath,
+                    CaBath = addCompleteListViewModle.CaBath,
+                    NaBath = addCompleteListViewModle.NaBath,
+                    BiCarb = addCompleteListViewModle.BiCarb,
+                    Temp = addCompleteListViewModle.Temp,
+                    DialyzerSize = addCompleteListViewModle.DialyzerSize,
+                    Comments = addCompleteListViewModle.Comments
+                };
+
+                context.CompleteLists.Add(newCompletList);//From Dbset
+                context.SaveChanges();//*****always have to save******
+
+                return Redirect("/PatientMasterList/Index");
+            }
+
+            return View(addCompleteListViewModle);
         }
 
         // GET: CompleteList/Edit/5
@@ -133,66 +216,3 @@ namespace DialysisPatientTracker.Controllers
         }
     }
 }
-
-//===============================================================================================================
-//public IActionResult AddTreatment()
-//{
-//    AddTreatmentMasterListViewModel addTreatmentMasterListViewModel = new AddTreatmentMasterListViewModel();
-
-//    return View(addTreatmentMasterListViewModel);
-//}
-
-//[HttpPost]
-//public IActionResult AddTreatment(AddTreatmentMasterListViewModel addTreatmentMasterListViewModel)
-//{
-//    if (ModelState.IsValid)
-//    {
-//        TreatmentMasterList newTreatmentMasterList = new TreatmentMasterList
-//        {
-//            MedicalRecord = addTreatmentMasterListViewModel.MedicalRecord,
-//            LastName = addTreatmentMasterListViewModel.LastName,
-//            FirstName = addTreatmentMasterListViewModel.FirstName,
-//            Physician = addTreatmentMasterListViewModel.Physician,
-//            TreatmentDays = addTreatmentMasterListViewModel.TreatmentDays,
-//            TreatmentTime = addTreatmentMasterListViewModel.TreatmentTime,
-//            AccessType = addTreatmentMasterListViewModel.AccessType,
-//            KBath = addTreatmentMasterListViewModel.KBath,
-//            CaBath = addTreatmentMasterListViewModel.CaBath,
-//            NaBath = addTreatmentMasterListViewModel.NaBath,
-//            BiCarb = addTreatmentMasterListViewModel.BiCarb,
-//            Temp = addTreatmentMasterListViewModel.Temp,
-//            DialyzerSize = addTreatmentMasterListViewModel.DialyzerSize,
-//            Comments = addTreatmentMasterListViewModel.Comments
-//        };
-
-//        context.TreatmentMasterLists.Add(newTreatmentMasterList);
-//        context.SaveChanges();
-
-//        return Redirect("/TreatmentMasterList");
-//    }
-
-//    return View(addTreatmentMasterListViewModel);
-//}
-
-////*****************Remove************************
-
-//public IActionResult RemoveTreatment()
-//{
-//    ViewBag.treatmentMasterList = context.TreatmentMasterLists.ToList();
-
-//    return View();
-//}
-
-//[HttpPost]
-//public IActionResult RemoveTreatment(int[] patientTreatmentListMasterIds)
-//{
-//    foreach (int patientTreatmentMasterListId in patientTreatmentListMasterIds)
-//    {
-//        TreatmentMasterList theTreatmnet = context.TreatmentMasterLists.Single(t => t.CompleteListID == patientTreatmentMasterListId);
-
-//        context.TreatmentMasterLists.Remove(theTreatmnet);
-//    }
-
-//    context.SaveChanges();
-//    return Redirect("/TreatmentMasterList");
-//}

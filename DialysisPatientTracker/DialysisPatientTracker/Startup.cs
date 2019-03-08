@@ -22,7 +22,7 @@ namespace DialysisPatientTracker
         public void ConfigureServices(IServiceCollection services)
         {  //*************************************************************************
             //**** /Added This/  ******
-            services.AddDbContext<PatientDbContext>(options =>
+            services.AddDbContext<DialysisAppDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             ////*************************************************************************
@@ -67,7 +67,7 @@ namespace DialysisPatientTracker
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=LogIn}/{action=Index}/{id?}");
+                    template: "{controller=UserAccount}/{action=LogIn}/{id?}");
             });
         }
     }

@@ -1,115 +1,5 @@
-﻿<style>
-
-    .nav-bar2 {
-        /* margin-top: -70px;*/
-        margin-left: 1050px;
-        margin-right: 10px;
-        margin-bottom: 10px;
-       
-    }
-
-    .navbar-brand {
-        color: yellow;
-        margin-top: 10px;
-        font-size: 18px;
-    }
-
-    h2 {
-        text-align: center;
-        padding-top: 1px;
-        padding-bottom: 40px;
-        margin-left: 60px;
-        margin-right: 30px;
-        margin-top: 3px;
-        color: yellow;
-       
-    }
-  
-    input {
-        text-align: center;
-        border-radius: 0%;
-        border: none;
-        
-    }
-
-    form {
-        border: solid rgba(255, 255, 26,.8) 4px;
-        border-radius: 20%;
-        background: rgba(40, 37, 141, .5);
-        padding: 30px;
-        margin-bottom: 1px;
-        margin-left: 250px;
-        margin-right: 250px;
-    }
-
-    .form-control {
-        color: white;
-        background-color: midnightblue;
-    }
-
-    hr{
-        margin-top:1px;
-        margin-bottom:5px;
-    }
-    .form {
-        margin-top: 50px;
-        margin-bottom: 30px;
-       
-    }
-
-    .col-form-label {
-        color: yellow;
-       
-    }
-
-    .validationMessage {
-        color: white;
-     }
-
-    #search-button {
-        background-color: yellow;
-        color: midnightblue;
-        border-radius: 50%; 
-        margin-top:10px;
-    }
-
-   
-</style>
-
-<!--*************HTML***************-->
-
-<nav class="navbar navbar-inverse navbar-fixed-top" style="background-color:midnightblue">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a style="color:yellow" asp-area="" asp-controller="LogIn" asp-action="Index" class="navbar-brand">Dialysis Patient Tracker</a>
-        </div>
-        <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav" style="margin-left:150px">
-                <li><a style="color:snow" asp-area="" asp-controller="SearchOptions" asp-action="Index"><spand class="spandnavremove"> Patient</spand><br /> Search Options</a></li>
-                <li><a style="color:snow" asp-area="" asp-controller="PatientMasterList" asp-action="Index"><spand class="spandnavremove"> Patient</spand><br /> Master List</a></li>
-                <li><a style="color:snow" asp-area="" asp-controller="TreatmentMasterList" asp-action="Index"><spand> Treatment</spand><br /> Master List</a></li>
-                <li><a style="color:snow" asp-area="" asp-controller="PatientDemographics" asp-action="Index"><spand class="spandnavremove"> Patient</spand><br /> Demographics</a></li>
-            </ul>
-
-            <div class="nav-bar2">
-                <ul class="navbar-collapse collapse">
-                    <li><a style="color:yellow" asp-area="" asp-controller="SignUp" asp-action="Index">Sign Up</a></li>
-                    <li><a style="color:yellow" asp-area="" asp-controller="LogOut" asp-action="Index">Log Out</a></li>
-                    <li><a style="color:yellow" asp-area="" asp-controller="LogIn" asp-action="Index">Login</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</nav>
-<!--************ NavBar  End *****************-->
-<!-- Allows you to use special tags  helpers -->
-@model DialysisPatientTracker.ViewModels.AddPatientViewModel;
+﻿<!-- Allows you to use special tags  helpers -->
+@model DialysisPatientTracker.ViewModels.AddPatientMasterListViewModel;
 
 <div class="form">
 
@@ -157,7 +47,7 @@
             <div class="col-lg-12 my-1">
                 <label class="col-sm-4 col-form-label" asp-for="TreatmentDays"></label>
                 <div class="col-sm-6">
-                    <select class="form-control" asp-for="TreatmentDays" asp-items="Model.TreatmentDayOptions"></select>
+                    <input class="form-control" asp-for="TreatmentDays" /><!-- asp-items="Model.TreatmentDayOptions"></select>-->
                     <span class="validationMessage" asp-validation-for="TreatmentDays"></span>
                 </div>
             </div>
@@ -174,7 +64,7 @@
             <div class="col-lg-10 my-1">
                 <div class="col-sm-6">
                     <label class="col-sm-5 col-form-label"></label>
-                </div>                    
+                </div>
                 <div class="col-sm-5">
                     <input id="search-button" class="form-control" type="submit" value="Add Patient">
                 </div>

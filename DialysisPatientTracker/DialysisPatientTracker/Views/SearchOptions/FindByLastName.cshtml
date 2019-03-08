@@ -1,0 +1,53 @@
+﻿@model List<DialysisPatientTracker.Models.CompleteList>
+@{
+    ViewData["Title"] = "Index";
+}
+<h2>Results By Last Name</h2>
+<table class="table">
+
+    <!--  ************TOD DO !! Have to ********************-->
+
+    <thead>
+        <tr>
+            <th>Medical Record #</th>
+            <th>Last Name</th>
+            <th>First Name</th>
+            <th>Physician</th>
+            <th>Treatment<br />Days</th>
+            <th>Comments</th>
+            <th>Details</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var patient in Model)
+        {
+        <tr>
+            <td>@patient.MedicalRecord</td>
+            <td>@patient.LastName </td>
+            <td>@patient.FirstName</td>
+            <td><a asp-controller="Physician" asp-action="Index"> @patient.Physician</a></td>
+            <td>@patient.TreatmentDays</td>
+            <td>@patient.Comments</td>
+            <td>
+                <a asp-controller="CompleteList" asp-action="Details" asp-route-id="@patient.CompleteListID">DempGraphics</a>  |
+                <a asp-controller="CompleteList" asp-action="Delete" asp-route-id="@patient.CompleteListID">Orders</a>
+
+            <td>
+                <a asp-controller="CompleteList" asp-action="Edit" asp-route-id="@patient.CompleteListID">Edit</a>
+            </td>
+        </tr>
+
+        }
+    </tbody>
+</table>
+
+@if (Model.Count == 0)
+{
+
+    <p style="color:yellow">There are no patients with that Medical Record Number </p>
+    <p style="color:yellow">
+        Would you like to Add patient?    <span>Click <a asp-controller="CompleteList" asp-action="AddPatient">Yes</a></span> or
+        <a asp-controller="SearchOptions" asp-action="Index">Back To Search Options</a>
+    </p>
+};
