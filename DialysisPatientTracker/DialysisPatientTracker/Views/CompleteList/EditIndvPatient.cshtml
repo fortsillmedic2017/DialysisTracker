@@ -1,0 +1,152 @@
+﻿<style>
+    .nav-bar2 {
+        /* margin-top: -70px;*/
+        margin-left: 1055px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        margin-top: 25px;
+        font-size: large;
+    }
+
+    .navbar-brand {
+        color: yellow;
+        margin-top: 10px;
+        font-size: 18px;
+    }
+
+    h2 {
+        text-align: center;
+        padding-top: 1px;
+        padding-bottom: 60px;
+        margin-left: 30px;
+        margin-right: 30px;
+        margin-top: 1px;
+        color: yellow;
+    }
+
+    input, input[placeholder] {
+        text-align: center;
+        background-color: midnightblue;
+        color: white;
+    }
+
+    .form-control {
+        color: white;
+    }
+
+    .form {
+        border: solid rgba(255, 255, 26,.8) 4px;
+        border-radius: 20%;
+        background: rgba(40, 37, 141, .5);
+        padding: 90px;
+        padding-top: 50px;
+        margin-top: 10px;
+        /*margin-bottom: 100px;
+        margin-left: 250px;
+        margin-right: 250px;*/
+    }
+
+    a {
+        color: white;
+    }
+
+        a:hover {
+            color: yellow;
+        }
+
+    #search-button {
+        background-color: yellow;
+        color: midnightblue;
+        border-radius: 50%;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    .validationMessage {
+        color: yellow;
+        text-shadow: black 0.1em 0.1em 0.2em;
+    }
+</style>
+
+<!-- **********  end of CSS  *****************-->
+
+
+
+
+
+@model DialysisPatientTracker.Models.CompleteList
+
+@{
+    ViewData["Title"] = "Edit";
+}
+<hr />
+<h2>Edit</h2>
+
+<h4>Edit General Patient Information</h4>
+
+<div class="row col-lg-offset-4">
+
+    <div class="col-md-6">
+        <div class="col-md-8">
+            <form asp-action="EditIndvPatient">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="CompleteListID" />
+                <div class="form-group">
+                    <label asp-for="MedicalRecord" class="control-label"></label>
+                    <input asp-for="MedicalRecord" class="form-control" />
+                    <span asp-validation-for="MedicalRecord" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="LastName" class="control-label"></label>
+                    <input asp-for="LastName" class="form-control" />
+                    <span asp-validation-for="LastName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="FirstName" class="control-label"></label>
+                    <input asp-for="FirstName" class="form-control" />
+                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Physician" class="control-label"></label>
+                    <input asp-for="Physician" class="form-control" />
+                    <span asp-validation-for="Physician" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="DOB" class="control-label"></label>
+                    <input asp-for="DOB" class="form-control" />
+                    <span asp-validation-for="DOB" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="TreatmentDays" class="control-label"></label>
+                    <input asp-for="TreatmentDays" class="form-control" />
+                    <span asp-validation-for="TreatmentDays" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Age" class="control-label"></label>
+                    <input asp-for="Age" class="form-control" />
+                    <span asp-validation-for="Age" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Gender" class="control-label"></label>
+                    <input asp-for="Gender" class="form-control" />
+                    <span asp-validation-for="Gender" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Comments" class="control-label"></label>
+                    <input asp-for="Comments" class="form-control" />
+                    <span asp-validation-for="Comments" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Save" class="btn btn-default" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<<div>
+    <a asp-controller="PatientMasterList" asp-action="Index" asp-route-id="@Model.CompleteListID">Back One Page"</a>  |
+    <a asp-controller="PatientMasterList" asp-action="Index">Back to List</a>
+
+</div>

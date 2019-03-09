@@ -1,14 +1,87 @@
-﻿@model DialysisPatientTracker.Models.Physician
+﻿<style>
+    .table-responsive {
+        margin-top:1px;
+        border: solid 2px yellow;
+        align-content: center;
+        background: rgba(37, 37, 141, .6);
+        width:500px;
+        margin-left:150px;
+      
+    }
+    
+    .navbar-brand
+    {
+        color: yellow;
+        margin-top: 10px;
+        font-size: 18px;
+    }
+
+    h2 {
+        width: 500px;
+        border: yellow solid 2px;
+        text-align: center;
+        padding: 20px 5px;
+        margin-left: 150px;
+        margin-top: 70px;
+        margin-bottom: 0px;
+        background-color: navy;
+        color: yellow;
+    }
+
+
+
+    dt {
+        color: yellow;
+        /*border: solid 2px yellow;*/  
+        background-color: darkmagenta;
+        padding: 20px;
+    }
+
+     {
+        border: solid 2px darkslategray;
+        text-align: center;
+        background: rgba(40, 37, 141, .6);
+        color: snow;
+    }
+
+    dd {
+        color: white;
+        text-align: center;
+        background: rgba(40, 37, 141, .6);
+        border: solid 1px yellow;
+        padding: 20px;
+    }
+
+    hr {
+        border: none;
+        height: 3px;
+        background-color: midnightblue;
+        margin-top: 190px;
+    }
+
+    a {
+        color: yellow;
+    }
+
+        a:hover {
+            color: blue;
+        }
+
+</style>
+
+
+
+@model DialysisPatientTracker.Models.Physician
 
 @{
     ViewData["Title"] = "Details";
 }
 
-<h2>Details</h2>
+<div class="col-lg-offset-0">  <h2>Physician Details</h2></div>
 
-<div>
-    <h4>Physician</h4>
-    <hr />
+<div class="table-responsive col-lg-offset-3">
+
+
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.LastName)
@@ -35,8 +108,8 @@
             @Html.DisplayFor(model => model.OfficePhone)
         </dd>
     </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.PhysicianID">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model.PhysicianID">Edit</a> |
+        <a asp-action="Index">Back Physician List</a>
+    </div>
 </div>

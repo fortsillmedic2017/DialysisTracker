@@ -3,34 +3,54 @@
     h1 {
         padding: 5px;
         color: yellow;
-        margin-top: 210px;
-        margin-left: 200px;
-        margin-right: 200px;
-        background: rgba(40, 37, 141, .5);
-        border-radius: 50%;
-        border: yellow 2px solid;
+        /*margin-top:100px;*/
+        text-align:center;
+        /*margin-left: 200px;
+        margin-right: 200px;*/
     }
 
     hr {
         margin-top: 23%;
     }
-
-    .form-control {
-        color: yellow;
-        background-color: midnightblue;
-        margin: auto;
-        border: none;
+    .table-responsive {
+        background: rgba(40, 37, 141, .5);
+        border-radius: 10%;
+        border: yellow 2px solid;
+        margin-top: 100px;
+        padding: 100px;
+        /*margin-left: 200px;*/
+        /*margin-right: 200px;*/
     }
 
-    .form-group {
+    .nav  {
+        padding: 5px;
         text-align: center;
-        color: yellow;
+        margin-left: 100px;
     }
 </style>
 
-<!--****************HTML**************-->
+<nav class="navbar navbar-inverse navbar-fixed-top" style="background-color:midnightblue">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a style="color:yellow" asp-area="" asp-controller="LogIn" asp-action="Index" class="navbar-brand">Dialysis Patient Tracker</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav" style="margin-left:150px">
+                <li class="nav"><a style="color:yellow" asp-area="" asp-controller="UserAccount" asp-action="LogIn"><spand class="spandnavremove"> LogIn To</spand><br />Patient Tracker</a></li>
+                <li class="nav"><a style="color:yellow" asp-area="" asp-controller="UserAccount" asp-action="Register"><spand class="spandnavremove"> Register To</spand><br /> Patient Tracker</a></li>
+                
+            </ul>
 
-    <div class="form-group row">
-        <h1 class="col-lg-2">You Have Successfully <br />Logged Out </h1>
+        </div>
     </div>
-<
+</nav>
+<!--**** End of NaveBar **************************-->
+<div class="table-responsive">
+    <h1 class="col-lg-4 col-lg-offset-4">You Have Successfully <br />Logged Out </h1>
+</div>

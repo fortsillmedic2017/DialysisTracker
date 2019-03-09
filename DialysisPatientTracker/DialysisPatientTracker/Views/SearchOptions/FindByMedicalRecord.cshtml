@@ -1,4 +1,75 @@
-﻿@model List<DialysisPatientTracker.Models.CompleteList>
+﻿<!-- ************ CSS ******************-->
+<style>
+
+    .nav-bar2 {
+        /* margin-top: -70px;*/
+        margin-left: 1055px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        margin-top: 25px;
+        font-size: large;
+    }
+
+    .navbar-brand {
+        color: yellow;
+        margin-top: 10px;
+        font-size: 18px;
+    }
+
+    h2 {
+        border: yellow solid 2px;
+        text-align: center;
+        padding: 20px 5px;
+        margin-top: 50px;
+        margin-bottom: 0px;
+        background-color: navy;
+        color: yellow;
+    }
+
+    table {
+        border: solid 2px yellow;
+        align-content: center;
+        background: rgba(37, 37, 141, .6);
+    }
+
+    th {
+        color: yellow;
+        border: solid 2px yellow;
+        background-color: darkmagenta;
+        text-align: center;
+    }
+
+    tr {
+        border: solid 2px darkslategray;
+        text-align: center;
+        background: rgba(40, 37, 141, .6);
+        color: snow;
+    }
+
+    td {
+        color: white;
+        text-align: center;
+        border: solid 2px yellow;
+    }
+
+    hr {
+        border: none;
+        height: 3px;
+        background-color: midnightblue;
+        margin-top: 190px;
+    }
+
+    a {
+        color: yellow;
+    }
+
+        a:hover {
+            color: blue;
+        }
+</style>
+
+
+@model List<DialysisPatientTracker.Models.CompleteList>
 @{
     ViewData["Title"] = "Index";
 }
@@ -22,21 +93,21 @@
     <tbody>
         @foreach (var patient in Model)
         {
-        <tr>
-            <td>@patient.MedicalRecord</td>
-            <td>@patient.LastName</td>
-            <td>@patient.FirstName</td>
-            <td><a asp-controller="Physician" asp-action="Index"> @patient.Physician</a></td>
-            <td>@patient.TreatmentDays</td>
-            <td>@patient.Comments</td>
-            <td>
-                <a asp-controller="CompleteList" asp-action="Details" asp-route-id="@patient.CompleteListID">DempGraphics</a>  |
-                <a asp-controller="CompleteList" asp-action="Delete" asp-route-id="@patient.CompleteListID">Orders</a>
-            <td>
-            <td>
-                <a asp-controller="CompleteList" asp-action="Edit" asp-route-id="@patient.CompleteListID">Edit</a>
-            </td>
-        </tr>
+            <tr>
+                <td>@patient.MedicalRecord</td>
+                <td>@patient.LastName</td>
+                <td>@patient.FirstName</td>
+                <td><a asp-controller="Physician" asp-action="Index"> @patient.Physician</a></td>
+                <td>@patient.TreatmentDays</td>
+                <td>@patient.Comments</td>
+                <td>
+                    <a asp-controller="CompleteList" asp-action="Details" asp-route-id="@patient.CompleteListID">DempGraphics</a>  |
+                    <a asp-controller="CompleteList" asp-action="Delete" asp-route-id="@patient.CompleteListID">Orders</a>
+                <td>
+                <td>
+                    <a asp-controller="CompleteList" asp-action="Edit" asp-route-id="@patient.CompleteListID">Edit</a>
+                </td>
+            </tr>
 
         }
     </tbody>

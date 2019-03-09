@@ -178,9 +178,170 @@ namespace DialysisPatientTracker.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(completeList);
+            return Redirect("PatientMasterList");
         }
 
+        //**********************************************************************************
+        //EDit Indv Demo tables----------
+
+        // GET: CompleteList/Edit/5
+        public async Task<IActionResult> EditIndvDemo(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var indvDemoList = await context.CompleteLists.FindAsync(id);
+            if (indvDemoList == null)
+            {
+                return NotFound();
+            }
+            return View(indvDemoList);
+        }
+
+        // POST: CompleteList/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> EditIndvDemo(int id, [Bind("CompleteListID,MedicalRecord,LastName,FirstName,Physician,DOB,TreatmentDays,Age,Gender,Address,PhoneNumber,Email,TreatmentTime,AccessType,KBath,CaBath,NaBath,BiCarb,Temp,DialyzerSize,Comments")] CompleteList completeList)
+        {
+            if (id != completeList.CompleteListID)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    context.Update(completeList);
+                    await context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!CompleteListExists(completeList.CompleteListID))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+                return RedirectToAction(nameof(Index));
+            }
+            return View("/PatientDemographicsMasterList/Index");
+        }
+
+        //EDit IndvTreatment tables----------
+
+        // GET: CompleteList/Edit/5
+        public async Task<IActionResult> EditIndvTreatment(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var indvTreatment = await context.CompleteLists.FindAsync(id);
+            if (indvTreatment == null)
+            {
+                return NotFound();
+            }
+            return View(indvTreatment);
+        }
+
+        // POST: CompleteList/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> EditIndvTreatment(int id, [Bind("CompleteListID,MedicalRecord,LastName,FirstName,Physician,DOB,TreatmentDays,Age,Gender,Address,PhoneNumber,Email,TreatmentTime,AccessType,KBath,CaBath,NaBath,BiCarb,Temp,DialyzerSize,Comments")] CompleteList completeList)
+        {
+            if (id != completeList.CompleteListID)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    context.Update(completeList);
+                    await context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!CompleteListExists(completeList.CompleteListID))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+                return RedirectToAction(nameof(Index));
+            }
+            return View("/TreatmentMasterList/Index");
+        }
+
+        //EDit IndvPatient(Patient Gen Info) tables----------
+
+        // GET: CompleteList/Edit/5
+        public async Task<IActionResult> EditIndvPatient(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var indvPatient = await context.CompleteLists.FindAsync(id);
+            if (indvPatient == null)
+            {
+                return NotFound();
+            }
+            return View(indvPatient);
+        }
+
+        // POST: CompleteList/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> EditIndvpatient(int id, [Bind("CompleteListID,MedicalRecord,LastName,FirstName,Physician,DOB,TreatmentDays,Age,Gender,Address,PhoneNumber,Email,TreatmentTime,AccessType,KBath,CaBath,NaBath,BiCarb,Temp,DialyzerSize,Comments")] CompleteList completeList)
+        {
+            if (id != completeList.CompleteListID)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    context.Update(completeList);
+                    await context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!CompleteListExists(completeList.CompleteListID))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+                return RedirectToAction(nameof(Index));
+            }
+            return Redirect("/PatientMasterList/Index");
+        }
+
+        //*********************************************************************************
         // GET: CompleteList/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
@@ -213,6 +374,20 @@ namespace DialysisPatientTracker.Controllers
         private bool CompleteListExists(int id)
         {
             return context.CompleteLists.Any(e => e.CompleteListID == id);
+        }
+
+        //Find pat By Physician
+
+        public IActionResult FindByPhysician(string search)
+        {
+            var physician = from p in context.CompleteLists
+                            select p;
+            if (!String.IsNullOrEmpty(search))
+            {
+                physician = physician.Where(p => p.Physician.Contains(search));
+            }
+
+            return View(physician.ToList());
         }
     }
 }

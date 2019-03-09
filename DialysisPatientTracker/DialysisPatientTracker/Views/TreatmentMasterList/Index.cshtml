@@ -1,5 +1,6 @@
 ﻿!-- ************ CSS ******************-->
 <style>
+
     .nav-bar2 {
         /* margin-top: -70px;*/
         margin-left: 1055px;
@@ -25,10 +26,11 @@
         color: yellow;
     }
 
-    table {
+    .table-responsive {
         border: solid 2px yellow;
         align-content: center;
         background: rgba(37, 37, 141, .6);
+        padding:5px;
     }
 
     th {
@@ -36,20 +38,26 @@
         border: solid 2px yellow;
         background-color: darkmagenta;
         text-align: center;
+        padding: 5px;
     }
+    
 
     tr {
         border: solid 2px darkslategray;
         text-align: center;
         background: rgba(40, 37, 141, .6);
         color: snow;
+        padding: 5px;
     }
+    
 
     td {
         color: white;
         text-align: center;
         border: solid 2px yellow;
+        padding: 5px;
     }
+    
 
     hr {
         border: none;
@@ -100,13 +108,12 @@
     </div>
 </nav>
 
-<!--***** Nav Bar End** ***************-->
 
 @model List<DialysisPatientTracker.Models.CompleteList>;
 
 <h2 class="col-lg-12">Treatment Master List</h2>
 
-<table>
+<table class="table-responsive">
     <thead>
         <tr>
             <th>Medical <br />Record #</th>
@@ -123,8 +130,8 @@
             <th>Temp <br />(C)</th>
             <th>Dialyzer <br />Size</th>
             <th>Comments</th>
-            <th>Details,<br />(Click for Info)</th>
-            <th>Actions</th>
+            <th>Review<br/> Patient: </th>
+            <th>Edit Demo</th>
         </tr>
     </thead>
     <tbody>
@@ -134,7 +141,7 @@
                 <td>@treatment.MedicalRecord</td>
                 <td>@treatment.LastName</td>
                 <td>@treatment.FirstName</td>
-                <td> <a asp-controller="Physician" asp-action="Index" asp-route-id="@treatment.CompleteListID">@treatment.Physician</a></td>
+                <td> <a asp-controller="Physician" asp-action="Details" asp-route-id="@treatment.CompleteListID">@treatment.Physician</a></td>
                 <td>@treatment.TreatmentDays</td>
                 <td>@treatment.TreatmentTime</td>
                 <td>@treatment.AccessType</td>
@@ -146,17 +153,17 @@
                 <td>@treatment.DialyzerSize</td>
                 <td>@treatment.Comments</td>
                 <td>
-                    <a asp-controller="CompleteList" asp-action="Details" asp-route-id="@treatment.CompleteListID">Demographic</a>
+                    <a asp-controller="CompleteList" asp-action="Demographic" asp-route-id="@treatment.CompleteListID">Demographic</a>
 
                 <td>
-                    <a asp-controller="CompleteList" asp-action="Edit" asp-route-id="@treatment.CompleteListID">Edit</a>
+                    <a asp-controller="CompleteList" asp-action="EditIndvTreatment" asp-route-id="@treatment.CompleteListID">Edit</a>
                 </td>
             </tr>
         }
     </tbody>
 </table>
 
-<p><a asp-controller="CompleteList" asp-action="AddPatient">Add Patient</a></p>
+<p><a asp-controller="CompleteList" asp-action="EditIndvTreatment">Add Patient <br /> Treatment  Orders</a></p>
 
 @if (Model.Count == 0)
 {

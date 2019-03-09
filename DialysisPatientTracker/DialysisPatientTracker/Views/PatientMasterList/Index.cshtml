@@ -1,4 +1,4 @@
-﻿!-- ************ CSS ******************-->
+﻿<!-- ************ CSS ******************-->
 <style>
 
     .nav-bar2 {
@@ -70,38 +70,6 @@
 
 <!--*************HTML***************-->
 
-<nav class="navbar navbar-inverse navbar-fixed-top" style="background-color:midnightblue">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a style="color:yellow" asp-area="" asp-controller="LogIn" asp-action="Index" class="navbar-brand">Dialysis Patient Tracker</a>
-        </div>
-        <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav" style="margin-left:150px">
-                <li><a style="color:snow" asp-area="" asp-controller="PatientMasterList" asp-action="Index"><spand class="spandnavremove"> Patient</spand><br /> MasterList</a></li>
-                <li><a style="color:snow" asp-area="" asp-controller="PatientDemographics" asp-action="Index"><spand class="spandnavremove"> Patient</spand><br /> Demographics</a></li>
-                <li><a style="color:snow" asp-area="" asp-controller="TreatmentMasterList" asp-action="Index"><spand> Treatment</spand><br /> Master List</a></li>
-                <li><a style="color:snow" asp-area="" asp-controller="Physician" asp-action="Index"><spand> Physician</spand><br /> Master List</a></li>
-                <li><a style="color:snow" asp-area="" asp-controller="CompleteList" asp-action="AddPatient"> <spand class="spandnavadd">Add</spand><br />Patient</a></li>
-            </ul>
-
-            <div class="nav-bar2">
-                <ul class="navbar-collapse collapse">
-                    @*<li><a style="color:yellow" asp-area="" asp-controller="SignUp" asp-action="Index">Sign Up</a></li>*@
-                    <li><a style="color:yellow" asp-area="" asp-controller="LogOut" asp-action="Index">Log Out</a></li>
-                    @*<li><a style="color:yellow" asp-area="" asp-controller="LogIn" asp-action="Index">Login</a></li>*@
-                </ul>
-            </div>
-        </div>
-    </div>
-</nav>
-
-<!--**************************************Nav End*******************************-->
 @model List<DialysisPatientTracker.Models.CompleteList>
 
 <h2 class="col-lg-12">Patient Master List</h2>
@@ -120,8 +88,8 @@
             <th>Treatment<br />Days</th>
             <th>Physician<br />(Click Name For Info)</th>
             <th>Comments</th>
-            <th>Details,<br />(Click for Info)</th>
-            <th>Actions</th>
+            <th>To Review Details,<br />(Click Below)</th>
+            <th> To Edit Details<br />(Click Below)</th>
         </tr>
     </thead>
     <tbody>
@@ -134,7 +102,7 @@
                 <td>@patient.Age</td>
                 <td>@patient.Gender</td>
                 <td>@patient.TreatmentDays</td>
-                <td> <a asp-controller="Physician" asp-action="Index" asp-route-id="@patient.CompleteListID">@patient.Physician</a></td>
+                <td> <a asp-controller="Physician" asp-action="Details" asp-route-id="@patient.CompleteListID">@patient.Physician</a></td>
                 <td>@patient.Comments</td>
                 <td>
                     <a asp-controller="CompleteList" asp-action="Demographic" asp-route-id="@patient.CompleteListID">DempGraphics</a> |
@@ -142,14 +110,16 @@
                 </td>
 
                 <td>
-                    <a asp-controller="CompleteList" asp-action="Edit" asp-route-id="@patient.CompleteListID">Edit</a>
+                    <a asp-controller="CompleteList" asp-action="EditIndvPatient" asp-route-id="@patient.CompleteListID">Edit  /  Add </a>
                 </td>
             </tr>
         }
     </tbody>
 </table>
 
-@if (Model.Count == 0)
-{
-    <p style="color:yellow">There are no patients in the list yet.</p>
-};
+
+
+    @if (Model.Count == 0)
+    {
+        <p style="color:yellow">There are no patients in the list yet.</p>
+    };

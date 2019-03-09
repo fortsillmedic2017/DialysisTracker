@@ -56,7 +56,7 @@ namespace DialysisPatientTracker.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("PhysicianID,LastName,FirstName,CellPhone,OfficePhone")] Physician physician)
+        public async Task<IActionResult> AddPhysician([Bind("PhysicianID,LastName,FirstName,CellPhone,OfficePhone")] Physician physician)
         {
             if (ModelState.IsValid)
             {
@@ -64,7 +64,7 @@ namespace DialysisPatientTracker.Controllers
                 await context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(physician);
+            return Redirect("/Physician/index");
         }
 
         // GET: Physician/Edit/5

@@ -1,14 +1,78 @@
-﻿@model DialysisPatientTracker.Models.CompleteList
+﻿<style>
+    .table-responsive {
+        margin-top: 1px;
+        border: solid 2px yellow;
+        align-content: center;
+        background: rgba(37, 37, 141, .6);
+        width: 500px;
+    }
+
+    .navbar-brand {
+        color: yellow;
+        margin-top: 10px;
+        font-size: 18px;
+    }
+
+    h2 {
+        width: 500px;
+        border: yellow solid 2px;
+        text-align: center;
+        padding: 20px 5px;
+        margin-top: 70px;
+        margin-bottom: 0px;
+        background-color: navy;
+        color: yellow;
+    }
+
+
+
+    dt {
+        color: yellow;
+        /*border: solid 2px yellow;*/
+        background-color: darkmagenta;
+        padding: 20px;
+    }
+
+    {
+        border: solid 2px darkslategray;
+        text-align: center;
+        background: rgba(40, 37, 141, .6);
+        color: snow;
+    }
+
+    dd {
+        color: white;
+        text-align: center;
+        background: rgba(40, 37, 141, .6);
+        border: solid 1px yellow;
+        padding: 20px;
+    }
+
+    hr {
+        border: none;
+        height: 3px;
+        background-color: midnightblue;
+        margin-top: 190px;
+    }
+
+    a {
+        color: yellow;
+    }
+
+        a:hover {
+            color: blue;
+        }
+</style>
+
+@model DialysisPatientTracker.Models.CompleteList
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Demographics";
 }
 
-<h2>Details</h2>
+<div class="col-lg-offset-3">  <h2>@Model.LastName, @Model.FirstName<br /></h2></div>
 
-<div>
-    <h4>CompleteList</h4>
-    <hr />
+<div class="table-responsive col-lg-offset-3">
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.MedicalRecord)
@@ -35,29 +99,29 @@
             @Html.DisplayFor(model => model.Physician)
         </dd>
         @*<dt>
-            @Html.DisplayNameFor(model => model.DOB)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.DOB)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.TreatmentDays)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.TreatmentDays)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Age)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Age)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Gender)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Gender)
-        </dd>*@
+                @Html.DisplayNameFor(model => model.DOB)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.DOB)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.TreatmentDays)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.TreatmentDays)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Age)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Age)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Gender)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Gender)
+            </dd>*@
         <dt>
             @Html.DisplayNameFor(model => model.Address)
         </dt>
@@ -77,59 +141,59 @@
             @Html.DisplayFor(model => model.Email)
         </dd>
         @*<dt>
-            @Html.DisplayNameFor(model => model.TreatmentTime)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.TreatmentTime)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.AccessType)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.AccessType)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.KBath)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.KBath)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.CaBath)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.CaBath)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.NaBath)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.NaBath)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.BiCarb)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.BiCarb)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Temp)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Temp)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.DialyzerSize)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.DialyzerSize)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Comments)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Comments)
-        </dd>*@
+                @Html.DisplayNameFor(model => model.TreatmentTime)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.TreatmentTime)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.AccessType)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.AccessType)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.KBath)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.KBath)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.CaBath)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.CaBath)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.NaBath)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.NaBath)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.BiCarb)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.BiCarb)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Temp)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Temp)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.DialyzerSize)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.DialyzerSize)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Comments)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Comments)
+            </dd>*@
     </dl>
 </div>
 <div>

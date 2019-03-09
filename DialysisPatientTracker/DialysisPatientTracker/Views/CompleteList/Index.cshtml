@@ -1,14 +1,88 @@
-﻿@model IEnumerable<DialysisPatientTracker.Models.CompleteList>
+﻿<style>
+
+    .nav-bar2 {
+        /* margin-top: -70px;*/
+        margin-left: 1055px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        margin-top: 25px;
+        font-size: large;
+    }
+
+    .navbar-brand {
+        color: yellow;
+        margin-top: 10px;
+        font-size: 18px;
+    }
+
+    h2 {
+        border: yellow solid 2px;
+        text-align: center;
+        padding: 20px 5px;
+        margin-top: 50px;
+        margin-bottom: 0px;
+        background-color: navy;
+        color: yellow;
+    }
+
+    table {
+        border: solid 2px yellow;
+        align-content: center;
+        background: rgba(37, 37, 141, .6);
+    }
+
+    th {
+        color: yellow;
+        border: solid 2px yellow;
+        background-color: darkmagenta;
+        text-align: center;
+    }
+
+    tr {
+        border: solid 2px darkslategray;
+        text-align: center;
+        background: rgba(40, 37, 141, .6);
+        color: snow;
+    }
+
+    td {
+        color: white;
+        text-align: center;
+        border: solid 2px yellow;
+    }
+
+    hr {
+        border: none;
+        height: 3px;
+        background-color: midnightblue;
+        margin-top: 190px;
+    }
+
+    a {
+        color: yellow;
+    }
+
+        a:hover {
+            color: blue;
+        }
+</style>
+
+<!--*************HTML***************-->
+
+
+
+
+
+
+
+@model IEnumerable<DialysisPatientTracker.Models.CompleteList>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Complete Master List";
 }
 
-<h2>Index</h2>
+<h2>Complete Master List</h2>
 
-<p>
-    <a asp-action="AddPatient">Add New Patient</a>
-</p>
 <table class="table">
     <thead>
         <tr>
@@ -24,9 +98,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.Physician)
             </th>
-            @*<th>
-                    @Html.DisplayNameFor(model => model.DOB)
-                </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.DOB)
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.TreatmentDays)
             </th>
@@ -36,43 +110,43 @@
             <th>
                 @Html.DisplayNameFor(model => model.Gender)
             </th>
-            @*<th>
-                    @Html.DisplayNameFor(model => model.Address)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.PhoneNumber)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Email)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.TreatmentTime)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.AccessType)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.KBath)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.CaBath)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.NaBath)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.BiCarb)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Temp)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.DialyzerSize)
-                </th>*@
             <th>
-                @Html.DisplayNameFor(model => model.Comments)
+                @Html.DisplayNameFor(model => model.Address)
             </th>
-            <th></th>
+            <th>
+                @Html.DisplayNameFor(model => model.PhoneNumber)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TreatmentTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AccessType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KBath)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CaBath)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NaBath)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BiCarb)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Temp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DialyzerSize)
+            </th
+        <th>
+            @Html.DisplayNameFor(model => model.Comments)
+        </th>>*@
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
@@ -91,9 +165,9 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Physician)
                 </td>
-                @*<td>
+                <td>
                         @Html.DisplayFor(modelItem => item.DOB)
-                    </td>*@
+                    </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.TreatmentDays)
                 </td>
@@ -103,13 +177,13 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Gender)
                 </td>
-                @*<td>
+                <td>
                         @Html.DisplayFor(modelItem => item.Address)
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.PhoneNumber)
                     </td>
-                    <td>
+                    @*<td>
                         @Html.DisplayFor(modelItem => item.Email)
                     </td>
                     <td>
@@ -135,10 +209,10 @@
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.DialyzerSize)
-                    </td>*@
+                    </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Comments)
-                </td>
+                </td>*@
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.CompleteListID">Edit</a> |
                     <a asp-action="Details" asp-route-id="@item.CompleteListID">Details</a> |
@@ -148,3 +222,6 @@
         }
     </tbody>
 </table>
+<p>
+    <a asp-action="AddPatient">Add New Patient</a>
+</p>

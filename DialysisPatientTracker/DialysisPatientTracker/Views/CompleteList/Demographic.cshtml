@@ -1,98 +1,123 @@
-﻿@model DialysisPatientTracker.Models.CompleteList
+﻿<style>
+    .table-responsive {
+        margin-top: 1px;
+        border: solid 2px yellow;
+        align-content: center;
+        background: rgba(37, 37, 141, .6);
+        width: 500px;
+    }
+
+    .navbar-brand {
+        color: yellow;
+        margin-top: 10px;
+        font-size: 18px;
+    }
+
+    h2 {
+        width: 500px;
+        border: yellow solid 2px;
+        text-align: center;
+        padding: 20px 5px;
+        margin-top: 70px;
+        margin-bottom: 0px;
+        background-color: navy;
+        color: yellow;
+    }
+
+    dt {
+        color: yellow;
+        /*border: solid 2px yellow;*/
+        background-color: darkmagenta;
+        padding: 20px;
+    }
+
+    {
+        border: solid 2px darkslategray;
+        text-align: center;
+        background: rgba(40, 37, 141, .6);
+        color: snow;
+    }
+
+    dd {
+        color: white;
+        text-align: center;
+        background: rgba(40, 37, 141, .6);
+        border: solid 1px yellow;
+        padding: 20px;
+    }
+
+    hr {
+        border: none;
+        height: 3px;
+        background-color: midnightblue;
+        margin-top: 190px;
+    }
+
+    a {
+        color: yellow;
+    }
+
+        a:hover {
+            color: blue;
+        }
+</style>
+
+@model DialysisPatientTracker.Models.CompleteList
 
 @{
     ViewData["Title"] = "Demographics";
 }
+@*<div class="col-lg-offset-3"><h2>@Model.LastName, @Model.FirstName <h2> </div>*@
+<div class="col-lg-offset-3">  <h2>Demographics<br/> (@Model.LastName, @Model.FirstName)<br /></h2></div>
 
-<style>
+<div class="table-responsive col-lg-offset-3">
 
-    h2 {
-        text-align: center;
-        padding-top: 1px;
-        padding-bottom: 30px;
-        margin-left: 30px;
-        margin-right: 30px;
-        margin-top: 1px;
-        color: yellow;
-    }
-
-    .row {
-        border: solid rgba(255, 255, 26,.8) 4px;
-        border-radius: 20%;
-        background: rgba(40, 37, 141, .5);
-        padding: 90px;
-        padding-top: 50px;
-        margin-top: 100px;
-    }
-
-    a {
-        color: white;
-    }
-
-        a:hover {
-            color: yellow;
-        }
-
-    #search-button {
-        background-color: yellow;
-        color: midnightblue;
-        border-radius: 50%;
-        margin-top: 5px;
-        margin-bottom: 5px;
-    }
-</style>
-
-<div class="row">
-    <h2>Demographics</h2>
-    <p>@Model.LastName, @Model.FirstName<p>
-        Z
-        <hr />
-        <dl class="dl-horizontal">
-            <dt>
-                @Html.DisplayNameFor(model => model.MedicalRecord)
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.MedicalRecord)
-            </dd>
-            <dt>
-                @Html.DisplayNameFor(model => model.LastName)
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.LastName)
-            </dd>
-            <dt>
-                @Html.DisplayNameFor(model => model.FirstName)
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.FirstName)
-            </dd>
-            <dt>
-                @Html.DisplayNameFor(model => model.Physician)
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.Physician)
-            </dd>
-            <dt>
-                @Html.DisplayNameFor(model => model.Address)
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.Address)
-            </dd>
-            <dt>
-                @Html.DisplayNameFor(model => model.PhoneNumber)
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.PhoneNumber)
-            </dd>
-            <dt>
-                @Html.DisplayNameFor(model => model.Email)
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.Email)
-            </dd>
-        </dl>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MedicalRecord)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MedicalRecord)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Physician)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Physician)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PhoneNumber)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <div>
+        <a asp-action="EditIndvDemo" asp-route-id="@Model.CompleteListID">Edit</a> |
+        <a asp-controller="PatientMasterList" asp-action="Index">Back to List</a>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.CompleteListID">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    </dl>
 </div>

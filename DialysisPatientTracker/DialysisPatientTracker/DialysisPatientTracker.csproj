@@ -16,6 +16,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\images\dialysisappbg.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="images\drops-of-water-water-nature-liquid-40784.jpeg" />
   </ItemGroup>
 
@@ -27,6 +31,9 @@
 
   <ItemGroup>
     <None Include="wwwroot\images\dialysis Image.jpg" />
+    <None Include="wwwroot\images\dialysisappbg.jpg">
+      <CopyToOutputDirectory></CopyToOutputDirectory>
+    </None>
     <None Include="wwwroot\images\download desktop background.jpg" />
     <None Include="wwwroot\images\download.jpg" />
     <None Include="wwwroot\images\mountain.jpg" />
@@ -86,7 +93,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\NewControllers\" />
     <Folder Include="Views\NewViews\" />
   </ItemGroup>
 

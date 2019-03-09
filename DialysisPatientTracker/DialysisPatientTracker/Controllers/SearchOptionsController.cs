@@ -8,6 +8,7 @@ using DialysisPatientTracker.ViewModels;
 using DialysisPatientTracker.Models;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+
 namespace DialysisPatientTracker.Controllers
 {
     public class SearchOptionsController : Controller
@@ -22,10 +23,7 @@ namespace DialysisPatientTracker.Controllers
         // GET: /<controller>/
         public IActionResult Index()
         {
-            UserAccount name = new UserAccount();
             SearchOptions searchOptions = new SearchOptions();
-
-            ViewBag.Message = ($"{name.UserName}");
             return View();
         }
 
@@ -35,7 +33,7 @@ namespace DialysisPatientTracker.Controllers
                                 select m;
             if (!String.IsNullOrEmpty(search))
             {
-                medicalRecord = medicalRecord.Where(m => m.MedicalRecord.Contains(search));
+                medicalRecord = medicalRecord.Where(m => m.MedicalRecord.Equals(search));
             }
             return View(medicalRecord.ToList());
         }
@@ -44,9 +42,9 @@ namespace DialysisPatientTracker.Controllers
         {
             var lastName = from l in context.CompleteLists
                            select l;
-            if (!String.IsNullOrEmpty(search))
+            if (String.IsNullOrEmpty(search))
             {
-                lastName = lastName.Where(l => l.LastName.Contains(search));
+                lastName = lastName.Where(l => l.LastName.Equals(search));
             }
 
             return View(lastName.ToList());
@@ -58,7 +56,7 @@ namespace DialysisPatientTracker.Controllers
                             select p;
             if (!String.IsNullOrEmpty(search))
             {
-                physician = physician.Where(p => p.Physician.Contains(search));
+                physician = physician.Where(p => p.Physician.Equals(search));
             }
 
             return View(physician.ToList());

@@ -1,15 +1,76 @@
-﻿@model DialysisPatientTracker.Models.CompleteList
+﻿<style>
+    .table-responsive {
+        margin-top: 1px;
+        border: solid 2px yellow;
+        align-content: center;
+        background: rgba(37, 37, 141, .6);
+        width: 500px;
+    }
+
+    .navbar-brand {
+        color: yellow;
+        margin-top: 10px;
+        font-size: 18px;
+    }
+
+    h2 {
+        width: 500px;
+        border: yellow solid 2px;
+        text-align: center;
+        padding: 20px 5px;
+        margin-top: 70px;
+        margin-bottom: 0px;
+        background-color: navy;
+        color: yellow;
+    }
+
+    dt {
+        color: yellow;
+        /*border: solid 2px yellow;*/
+        background-color: darkmagenta;
+        padding: 20px;
+    }
+
+    {
+        border: solid 2px darkslategray;
+        text-align: center;
+        background: rgba(40, 37, 141, .6);
+        color: snow;
+    }
+
+    dd {
+        color: white;
+        text-align: center;
+        background: rgba(40, 37, 141, .6);
+        border: solid 1px yellow;
+        padding: 20px;
+    }
+
+    hr {
+        border: none;
+        height: 3px;
+        background-color: midnightblue;
+        margin-top: 190px;
+    }
+
+    a {
+        color: yellow;
+    }
+
+        a:hover {
+            color: blue;
+        }
+</style>
+
+@model DialysisPatientTracker.Models.CompleteList
 
 @{
-    ViewData["Title"] = "Delete";
+    ViewData["Title"] = "Demographics";
 }
 
-<h2>Delete</h2>
+<div class="col-lg-offset-3">  <h2>Results By Last Name <br />(@Model.LastName, @Model.FirstName)</h2></div>
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>CompleteList</h4>
-    <hr />
+<div class="table-responsive col-lg-offset-3">
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.MedicalRecord)
@@ -136,6 +197,6 @@
     <form asp-action="Delete">
         <input type="hidden" asp-for="CompleteListID" />
         <input type="submit" value="Delete" class="btn btn-default" /> |
-        <a asp-action="Index">Back to List</a>
+        <a asp-controller="PatientMasterList" asp-action="Index">Back to List</a>
     </form>
 </div>

@@ -23,7 +23,7 @@ namespace DialysisPatientTracker.Controllers
         // GET: UserAccount
         public ActionResult Index()
         {
-            return View();
+            return View(context.UserAccounts.OrderBy(u => u.LastName).ToList());
         }
 
         public ActionResult Register()
@@ -38,7 +38,7 @@ namespace DialysisPatientTracker.Controllers
         {
             if (ModelState.IsValid)
             {
-                UserAccount theUserAccount = new UserAccount
+                UserAccount userAccount = new UserAccount
                 {
                     FirstName = addUserAccountViewModel.FirstName,
                     LastName = addUserAccountViewModel.LastName,
@@ -48,11 +48,10 @@ namespace DialysisPatientTracker.Controllers
                     ConfirmPassword = addUserAccountViewModel.ConfirmPassword
                 };
 
-                context.UserAccounts.Add(theUserAccount);
+                context.UserAccounts.Add(userAccount);
                 context.SaveChanges();
                 ModelState.Clear();
                 ViewBag.Message = ($"{addUserAccountViewModel.FirstName} {addUserAccountViewModel.LastName}");
-                return Redirect("/UserAccount/Register");
             }
 
             return View();
@@ -81,7 +80,7 @@ namespace DialysisPatientTracker.Controllers
                 context.UserAccounts.Add(newLogIn);//From Dbset
                 context.SaveChanges();//*****always have to save******
 
-                return Redirect("/SearchOptions");
+                return Redirect("/SearchOptions/Index");
             };
 
             return View(addUseAccountViewModel);
