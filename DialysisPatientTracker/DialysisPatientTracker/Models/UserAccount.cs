@@ -1,16 +1,15 @@
-﻿using DialysisPatientTracker.Models;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace DialysisPatientTracker.ViewModels
+namespace DialysisPatientTracker.Models
 {
-    public class AddUserAccountViewModel
+    public class UserAccount
     {
+        public int UserAccountID { get; set; }
+
         [Required]
         [Display(Name = "First Name")]
         public string FirstName { get; set; }
@@ -41,5 +40,9 @@ namespace DialysisPatientTracker.ViewModels
         public string ConfirmPassword { get; set; }
 
         //public bool IsAmin { get; set; }
+
+        public UserAccount()
+        {
+        }
     }
 }

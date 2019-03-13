@@ -64,7 +64,7 @@
     }
 
         a:hover {
-            color: blue;
+            color: white;
         }
 </style>
 
@@ -93,22 +93,22 @@
     <tbody>
         @foreach (var patient in Model)
         {
-        <tr>
-            <td>@patient.MedicalRecord</td>
-            <td>@patient.LastName </td>
-            <td>@patient.FirstName</td>
-            <td><a asp-controller="Physician" asp-action="Index"> @patient.Physician</a></td>
-            <td>@patient.TreatmentDays</td>
-            <td>@patient.Comments</td>
-            
-            <td>
-                <a asp-controller="CompleteList" asp-action="EditIndvDemo" asp-route-id="@patient.CompleteListID">DempGraphics</a>  |
-                <a asp-controller="CompleteList" asp-action="EditIndvTreatment" asp-route-id="@patient.CompleteListID">Treatment</a>
-            <td>
-                <a asp-controller="CompleteList" asp-action="Edit" asp-route-id="@patient.CompleteListID">Edit</a> |
-                <a asp-controller="CompleteList" asp-action="Delete" asp-route-id="@patient.CompleteListID">Delete</a>
-            </td>
-        </tr>
+            <tr>
+                <td>@patient.MedicalRecord</td>
+                <td>@patient.LastName </td>
+                <td>@patient.FirstName</td>
+                <td><a asp-controller="Physician" asp-action="Index"> @patient.Physician</a></td>
+                <td>@patient.TreatmentDays</td>
+                <td>@patient.Comments</td>
+
+                <td>
+                    <a asp-controller="CompleteList" asp-action="EditIndvDemo" asp-route-id="@patient.CompleteListID">DempGraphics</a>  |
+                    <a asp-controller="CompleteList" asp-action="EditIndvTreatment" asp-route-id="@patient.CompleteListID">Treatment</a>
+                <td>
+                    <a asp-controller="CompleteList" asp-action="Edit" asp-route-id="@patient.CompleteListID">Edit</a> |
+                    <a asp-controller="CompleteList" asp-action="Delete" asp-route-id="@patient.CompleteListID">Delete</a>
+                </td>
+            </tr>
 
         }
     </tbody>
@@ -119,7 +119,10 @@
 
     <p style="color:yellow">There are no patients with that Medical Record Number </p>
     <p style="color:yellow">
-        Would you like to Add patient?    <span>Click <a asp-controller="CompleteList" asp-action="AddPatient">Yes</a></span> or
-        <a asp-controller="SearchOptions" asp-action="Index">Back To Search Options</a>
+        Click <a asp-controller="CompleteList" asp-action="AddPatient"><span style="color:cyan">Here</span></a> to Add patient.
     </p>
+    <p style="color:yellow">
+        Click <a asp-controller="SearchOptions" asp-action="Index"><span style="color:cyan">Here</span></a> to reurn to Search Options.
+    </p>
+
 };

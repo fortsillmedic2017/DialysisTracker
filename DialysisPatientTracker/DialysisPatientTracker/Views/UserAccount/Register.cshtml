@@ -1,120 +1,141 @@
-﻿<!-- **********  CSS  *****************-->
-<style>
-    hr {
-        margin-top: 5%;
+﻿<style>
+    .nav-bar2 {
+        /* margin-top: -70px;*/
+        margin-left: 1055px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        margin-top: 25px;
+        font-size: large;
+    }
+
+    .navbar-brand {
+        color: yellow;
+        margin-top: 10px;
+        font-size: 18px;
     }
 
     h2 {
-      
-        padding-top: 3px;
-        padding-bottom: 40px;
-        margin-left: 250px;
-        margin-right: 250px;
-        color: yellow;
-    }
-
-    label {
+        text-align: center;
+        padding-top: 1px;
+        padding-bottom: 60px;
+        margin-left: 30px;
+        margin-right: 30px;
+        margin-top: 1px;
         color: yellow;
     }
 
     input, input[placeholder] {
         text-align: center;
         background-color: midnightblue;
-        border-color: white;
+        color: white;
     }
 
-    form {
-        border: solid rgba(255, 255, 26,.8) 4px;
-        border-radius: 20%;
-        background: rgba(40, 37, 141, .5);
-        padding-bottom: 50px;
-        padding-top: 10px;
-        margin-left: 250px;
-        margin-right: 250px;
+    .form-control {
+        color: white;
     }
 
     .form {
-        margin-top: 50px;
+        border: solid rgba(255, 255, 26,.8) 4px;
+        border-radius: 20%;
+        background: rgba(40, 37, 141, .5);
+        padding: 90px;
+        padding-top: 50px;
+        margin-top: 100px;
+        /*margin-bottom: 100px;
+        margin-left: 250px;
+        margin-right: 250px;*/
     }
 
-    .validationMessage {
+    a {
         color: yellow;
-        text-shadow: black 0.1em 0.1em 0.2em;
+    }
+
+        a:hover {
+            color: white;
+        }
+
+    #search-button {
+        background-color: yellow;
+        color: midnightblue;
+        border-radius: 50%;
+        margin-top: 5px;
+        margin-bottom: 5px;
     }
 </style>
 
-<!-- **********  End of Css  *****************-->
+@model DialysisPatientTracker.Models.UserAccount
 
-@model DialysisPatientTracker.ViewModels.AddUserAccountViewModel;
+@{
+    ViewData["Title"] = "Registration";
+}
 
-<div class="form">
-    <form asp-controller="UserAccount" asp-action="Register" method="post">
-        <div class="form-group row">
-            <div class="col-lg-10 my-1">
-                <div><h2>SignUp</h2></div> <!--****  Title*******-->
-                <label class="col-sm-2 col-form-label" asp-for="FirstName"></label>
-                <div class="col-sm-10">
-                    <input class="form-control" asp-for="FirstName" placeholder="First Name">
-                    <span class="validationMessage" asp-validation-for="FirstName"></span>
-                </div>
-            </div>
-        </div><!------------------- end of firstName input  ---------------------->
-        <div class="form-group row">
-            <div class="col-lg-10 my-1">
-                <label class="col-sm-2 col-form-label" asp-for="LastName"></label>
-                <div class="col-sm-10">
-                    <input class="form-control" asp-for="LastName" placeholder="Last Name">
-                    <span class="validationMessage" asp-validation-for="LastName"></span>
-                </div>
-            </div>
-        </div><!------------------- end of last name input  ---------------------->
-        <div class="form-group row">
-            <div class="col-lg-10 my-1">
-                <label class="col-sm-2 col-form-label" asp-for="Email"></label>
-                <div class="col-sm-10">
-                    <input class="form-control" asp-for="Email" placeholder="E-Mail">
-                    <span class="validationMessage" asp-validation-for="Email"></span>
-                </div>
-            </div>
-        </div><!------------------- end of Email input  ---------------------->
-        <div class="form-group row">
-            <div class="col-lg-10 my-1">
-                <label class="col-sm-2 col-form-label" asp-for="UserName"></label>
-                <div class="col-sm-10">
-                    <input class="form-control" asp-for="UserName" placeholder="User Name">
-                    <span class="validationMessage" asp-validation-for="UserName"></span>
-                </div>
-            </div>
-        </div><!------------------- end of User Name input  ---------------------->
+<hr />
+@if (ViewBag.Message != null)
+{
+    <div><h4> @ViewBag.SuccessMessage</h4></div>
+}
+<div class="row">
 
-        <div class="form-group row">
-            <div class="col-lg-10 my-1">
-                <label class="col-sm-2 col-form-label" asp-for="Password"></label>
-                <div class="col-sm-10">
-                    <input class="form-control" asp-for="Password" placeholder="Password">
-                    <span class="validationMessage" asp-validation-for="Password"></span>
+    <div class="form col-lg-7 col-lg-offset-2">
+
+        <h2>Registration</h2>
+        <form asp-action="Register" asp-controller="UserAccount" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="FirstName" class="control-label"></label>
+                <input asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LastName" class="control-label"></label>
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserName" class="control-label"></label>
+                <input asp-for="UserName" class="form-control" />
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+
+                <label asp-for="ConfirmPassword" class="control-label"></label>
+                <input asp-for="ConfirmPassword" class="form-control" />
+                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+            </div>
+            @*<div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <div class="checkbox">
+                            <label>
+                                <input asp-for="IsAmin" /> @Html.DisplayNameFor(model => model.IsAmin)
+                            </label>
+                        </div>
+                    </div>
+                </div>*@
+            <div class="form-group">
+
+                <input type="submit" value="Submit" class="btn btn-default" />
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-2">
+                    <label class="label-succes">@ViewBag.SuccessMessage</label>
                 </div>
             </div>
-        </div><!------------------- end of password  input  ---------------------->
-        <div class="form-group row">
-            <div class="col-lg-10 my-1">
-                <label class="col-sm-2 col-form-label" asp-for="ConfirmPassword"></label>
-                <div class="col-sm-10">
-                    <input class="form-control" asp-for="ConfirmPassword" placeholder="Confirm Password">
-                    <span class="validationMessage" asp-validation-for="ConfirmPassword"></span>
-                </div>
-            </div>
-        </div><!------------------- end of Confirm password  input  ---------------------->
-        <div class="form-group row">
-            <div class="col-lg-10 my-1">
-                <label class="col-sm-2 col-form-label"></label>
-                <div class="col-sm-10">
-                    <input style="background-color:yellow; color:midnightblue; border-radius:50%" type="submit" class="form-control" value="Sign Up">
-                </div>
-            </div>
-        </div>
-    </form>
+
+        </form>
+    </div>
 </div>
+
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

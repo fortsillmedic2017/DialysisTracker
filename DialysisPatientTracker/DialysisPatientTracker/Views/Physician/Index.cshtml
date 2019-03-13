@@ -68,7 +68,6 @@
         }
 </style>
 
-
 @model List<DialysisPatientTracker.Models.Physician>
 
 @{
@@ -102,11 +101,13 @@
                         </td>*@
 
                 <td>
-                    <a asp-controller="Physician" asp-action="Edit" asp-route-id="@physician.PhysicianID">Edit</a>
+                    <a asp-action="Edit" asp-route-id="@physician.PhysicianID">Edit</a>|
+                    <a asp-action="AddPhysician" asp-route-id="@physician.PhysicianID">Add </a>|
+                    <a asp-action="Delete" asp-route-id="@physician.PhysicianID">Delete </a>
             </tr>
         }
     </tbody>
 </table>
 <p>
-    <a asp-action="AddPhysician">Add Physician</a> |     <a asp-controller="PatientMasterList" asp-action="Index">Patient List</a>
+    <a asp-controller="PatientMasterList" asp-action="Index">Back to Patient List</a>
 </p>

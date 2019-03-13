@@ -4,14 +4,16 @@ using DialysisPatientTracker.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DialysisPatientTracker.Migrations
 {
     [DbContext(typeof(DialysisAppDbContext))]
-    partial class DialysisAppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20190312215228_UserAccountAddAdmin")]
+    partial class UserAccountAddAdmin
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -129,8 +131,6 @@ namespace DialysisPatientTracker.Migrations
                     b.Property<string>("Email");
 
                     b.Property<string>("FirstName");
-
-                    b.Property<bool>("IsAmin");
 
                     b.Property<string>("LastName");
 

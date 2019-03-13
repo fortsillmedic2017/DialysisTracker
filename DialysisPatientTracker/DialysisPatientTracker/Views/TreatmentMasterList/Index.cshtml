@@ -30,7 +30,7 @@
         border: solid 2px yellow;
         align-content: center;
         background: rgba(37, 37, 141, .6);
-        padding:5px;
+        padding: 5px;
     }
 
     th {
@@ -40,7 +40,6 @@
         text-align: center;
         padding: 5px;
     }
-    
 
     tr {
         border: solid 2px darkslategray;
@@ -49,7 +48,6 @@
         color: snow;
         padding: 5px;
     }
-    
 
     td {
         color: white;
@@ -57,7 +55,6 @@
         border: solid 2px yellow;
         padding: 5px;
     }
-    
 
     hr {
         border: none;
@@ -89,12 +86,14 @@
             <a style="color:yellow" asp-area="" asp-controller="LogIn" asp-action="Index" class="navbar-brand">Dialysis Patient Tracker</a>
         </div>
         <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav" style="margin-left:150px">
-                <li><a style="color:snow" asp-area="" asp-controller="PatientMasterList" asp-action="Index"><spand class="spandnavremove"> Patient</spand><br /> MasterList</a></li>
-                <li><a style="color:snow" asp-area="" asp-controller="PatientDemographics" asp-action="Index"><spand class="spandnavremove"> Patient</spand><br /> Demographics</a></li>
-                <li><a style="color:snow" asp-area="" asp-controller="TreatmentMasterList" asp-action="Index"><spand> Treatment</spand><br /> Master List</a></li>
-                <li><a style="color:snow" asp-area="" asp-controller="Physician" asp-action="Index"><spand> Physician</spand><br /> Master List</a></li>
-                <li><a style="color:snow" asp-area="" asp-controller="CompleteList" asp-action="AddPatient"> <spand class="spandnavadd">Add</spand><br />Patient</a></li>
+            <ul class="nav navbar-nav" style="margin-left:60px; margin-right:70px">
+                <li><a style="color:yellow" asp-area="" asp-controller="SearchOptions" asp-action="Index"> <spand class="spandnavadd">Search</spand><br />Options</a></li>
+                <li><a style="color:yellow" asp-area="" asp-controller="PatientMasterList" asp-action="Index"><spand class="spandnavremove"> Patient</spand><br /> MasterList</a></li>
+                <li><a style="color:yellow" asp-area="" asp-controller="PatientDemographics" asp-action="Index"><spand class="spandnavremove"> Patient</spand><br /> Demographics</a></li>
+                <li><a style="color:yellow" asp-area="" asp-controller="TreatmentMasterList" asp-action="Index"><spand> Treatment</spand><br /> Master List</a></li>
+                <li><a style="color:yellow" asp-area="" asp-controller="Physician" asp-action="Index"><spand> Physician</spand><br /> Master List</a></li>
+                <li><a style="color:yellow" asp-area="" asp-controller="CompleteList" asp-action="AddPatient"><spand> Add</spand><br /> Patient</a></li>
+                <li><a style="color:yellow" asp-area="" asp-controller="CompleteList" asp-action="RemovePatient"><spand> Remove</spand><br /> Patient</a></li>
             </ul>
 
             <div class="nav-bar2">
@@ -107,7 +106,6 @@
         </div>
     </div>
 </nav>
-
 
 @model List<DialysisPatientTracker.Models.CompleteList>;
 
@@ -130,8 +128,8 @@
             <th>Temp <br />(C)</th>
             <th>Dialyzer <br />Size</th>
             <th>Comments</th>
-            <th>Review<br/> Patient: </th>
-            <th>Edit Demo</th>
+            <th>Review<br /> Patient: </th>
+            <th>Edit/Add</th>
         </tr>
     </thead>
     <tbody>
@@ -156,16 +154,16 @@
                     <a asp-controller="CompleteList" asp-action="Demographic" asp-route-id="@treatment.CompleteListID">Demographic</a>
 
                 <td>
-                    <a asp-controller="CompleteList" asp-action="EditIndvTreatment" asp-route-id="@treatment.CompleteListID">Edit</a>
+                    <a asp-controller="CompleteList" asp-action="EditIndvTreatment" asp-route-id="@treatment.CompleteListID">Edit</a>|
+                    <a asp-controller="CompleteList" asp-action="EditIndvTreatment" asp-route-id="@treatment.CompleteListID">Add Treatment  Orders</a>
                 </td>
             </tr>
         }
     </tbody>
 </table>
 
-<p><a asp-controller="CompleteList" asp-action="EditIndvTreatment">Add Patient <br /> Treatment  Orders</a></p>
-
 @if (Model.Count == 0)
 {
     <p style="color:yellow">There are no patients in the list yet</p>
+
 };

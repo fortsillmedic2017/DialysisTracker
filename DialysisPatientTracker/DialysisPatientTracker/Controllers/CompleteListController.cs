@@ -288,7 +288,7 @@ namespace DialysisPatientTracker.Controllers
             return View("/TreatmentMasterList/Index");
         }
 
-        //EDit IndvPatient(Patient Gen Info) tables----------
+        //EDit IndvPatient(Patient Gen Info) tables-------------------------------
 
         // GET: CompleteList/Edit/5
         public async Task<IActionResult> EditIndvPatient(int? id)
@@ -388,6 +388,35 @@ namespace DialysisPatientTracker.Controllers
             }
 
             return View(physician.ToList());
+        }
+
+        //**************************************************************************************
+        //Remove Patients
+
+        public IActionResult RemovePatient()
+        {
+            ViewBag.title = "Remove Patient";
+            ViewBag.completeList = context.CompleteLists.ToList(); //From Db Context
+
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult RemovePatient(int[] patientIds) //Comes from piatientIds in checkbox id =""  in  Remove View
+        {
+            //Remove patient from List
+            //Loop through list created from int[] patientIds
+            foreach (int patientId in patientIds)
+            {
+                //Still can use same array of Ids but you are matching them with PatientMasterLists (from DbContext)
+                //Create a instance of PatientMasterlist(thePatient) and use linq qurey to draw what you want
+                CompleteList thePatient = context.CompleteLists.Single(p => p.CompleteListID == patientId);
+                context.CompleteLists.Remove(thePatient);
+            }
+
+            context.SaveChanges();
+
+            return Redirect("/PatientMasterList/Index");
         }
     }
 }

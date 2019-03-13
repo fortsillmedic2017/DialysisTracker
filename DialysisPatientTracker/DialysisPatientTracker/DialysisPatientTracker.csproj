@@ -48,6 +48,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.1.1" />
+    <PackageReference Include="Microsoft.jQuery.Unobtrusive.Validation" Version="3.2.11" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
     <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.1" />
   </ItemGroup>
@@ -73,15 +74,6 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
-    <Content Update="Views\UserAccount\AddTreatment.cshtml">
-      <Pack>$(IncludeRazorContentInPack)</Pack>
-    </Content>
-    <Content Update="Views\UserAccount\Index.cshtml">
-      <Pack>$(IncludeRazorContentInPack)</Pack>
-    </Content>
-    <Content Update="Views\UserAccount\RemoveTreatment.cshtml">
-      <Pack>$(IncludeRazorContentInPack)</Pack>
-    </Content>
     <Content Update="Views\_ViewImports.cshtml">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <Pack>$(IncludeRazorContentInPack)</Pack>
@@ -90,10 +82,6 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Views\NewViews\" />
   </ItemGroup>
 
   <ProjectExtensions>

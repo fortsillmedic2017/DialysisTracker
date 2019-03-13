@@ -17,7 +17,7 @@
     h2 {
         text-align: center;
         padding-top: 1px;
-        padding-bottom: 40px;
+        padding-bottom: 60px;
         margin-left: 30px;
         margin-right: 30px;
         margin-top: 1px;
@@ -40,18 +40,18 @@
         background: rgba(40, 37, 141, .5);
         padding: 90px;
         padding-top: 50px;
-        margin-top: 50px;
-        margin-bottom: 20px;
-        /*margin-left: 250px;
+        margin-top: 100px;
+        /*margin-bottom: 100px;
+        margin-left: 250px;
         margin-right: 250px;*/
     }
 
     a {
-        color: white;
+        color: yellow;
     }
 
         a:hover {
-            color: yellow;
+            color: white;
         }
 
     #search-button {
@@ -61,40 +61,50 @@
         margin-top: 5px;
         margin-bottom: 5px;
     }
-
-    .validationMessage {
-        color: yellow;
-        text-shadow: black 0.1em 0.1em 0.2em;
 </style>
 
 @model DialysisPatientTracker.ViewModels.AddUserAccountViewModel
 
 @{
-    ViewData["Title"] = "Add Patient Information";
+    ViewData["Title"] = "LogIn";
 }
-<hr />
 
-<div class="form col-lg-4 col-lg-offset-4">
-    <h2>LogIn</h2>
-    <form asp-controller="UserAccount" asp-action="LogIn" method="post">
-        <div class="form-group col-form-label-6">
-            <label class="col-sm-2 col-form-label" asp-for="UserName"></label>
-            <input class="form-control" id="password" asp-for="UserName " placeholder="UserName">
-            <span class="validationMessage" asp-validation-for="UserName"></span>
-        </div>
-        <div class="form-group">
-            <label class="col-sm-2 col-form-label" asp-for="Password"></label>
-            <input class="form-control" id="password" asp-for="Password " placeholder="Password">
-            <span class="validationMessage" asp-validation-for="Password"></span>
-        </div>
-        <div class="form-group">
-            <input type="submit" value="LogIn" class="btn btn-default" />
-        </div>
-        <div>
-            <a asp-controller="UserAccount" asp-action="Register">Register</a>
-        </div>
-    </form>
+<hr />
+<div class="row">
+    <div class="form col-lg-7 col-lg-offset-2">
+        <h2>LogIn</h2>
+        <form asp-action="LogIn" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="UserName" class="control-label"></label>
+                <input asp-for="UserName" class="form-control" />
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+
+            @*<div class="form-group">
+                    <div class="checkbox">
+                        <label>
+                            <input asp-for="IsAmin" /> @Html.DisplayNameFor(model => model.IsAmin)
+                        </label>
+                    </div>
+                </div>*@
+            <div class="form-group">
+                <input type="submit" value="LogIn" class="btn btn-default" />
+            </div>
+            <div style="color:yellow">
+                <a asp-action="Register">Back to Registration</a>
+            </div>
+        </form>
+    </div>
 </div>
+
+>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

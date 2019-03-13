@@ -25,8 +25,8 @@
             text-shadow: black 0.1em 0.1em 0.2em;
         }
 
-        label{
-            color:yellow;
+        label {
+            color: yellow;
         }
 
         .form-control {
@@ -34,6 +34,7 @@
             background-color: midnightblue;
             color: white;
         }
+
         .signUp, .btn btn-default {
             color: yellow;
         }
@@ -43,14 +44,13 @@
         }
 
             a:hover {
-                color:white;
+                color: white;
             }
 
         .validationMessage {
-            color: yellow; 
-           text-shadow: black 0.1em 0.1em 0.2em;
+            color: yellow;
+            text-shadow: black 0.1em 0.1em 0.2em;
         }
-        
     </Style>
 </head>
 <body>
@@ -64,22 +64,24 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a style="color:yellow" asp-area="" asp-controller="UserAccount" asp-action="Login" class="navbar-brand">Dialysis Patient Tracker</a>
-            </div >
+            </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav" style="margin-left:100px; margin-right:70px">
+                <ul class="nav navbar-nav" style="margin-left:70px; margin-right:70px">
                     <li><a style="color:yellow" asp-area="" asp-controller="SearchOptions" asp-action="Index"> <spand class="spandnavadd">Search</spand><br />Options</a></li>
                     <li><a style="color:yellow" asp-area="" asp-controller="PatientMasterList" asp-action="Index"><spand class="spandnavremove"> Patient</spand><br /> MasterList</a></li>
                     <li><a style="color:yellow" asp-area="" asp-controller="PatientDemographics" asp-action="Index"><spand class="spandnavremove"> Patient</spand><br /> Demographics</a></li>
                     <li><a style="color:yellow" asp-area="" asp-controller="TreatmentMasterList" asp-action="Index"><spand> Treatment</spand><br /> Master List</a></li>
                     <li><a style="color:yellow" asp-area="" asp-controller="Physician" asp-action="Index"><spand> Physician</spand><br /> Master List</a></li>
+                    <li><a style="color:yellow" asp-area="" asp-controller="CompleteList" asp-action="AddPatient"><spand> Add</spand><br /> Patient</a></li>
+                    <li><a style="color:yellow" asp-area="" asp-controller="CompleteList" asp-action="RemovePatient"><spand> Remove</spand><br /> Patient</a></li>
                 </ul>
-               <div class="nav-bar2">
-                <ul class="navbar-collapse collapse" style="font-size:20px">
-                    @*<li><a style="color:yellow" asp-area="" asp-controller="SignUp" asp-action="Index">Sign Up</a></li>*@
-                    <li><a style="color:yellow" asp-area="" asp-controller="LogOut" asp-action="Index">Log Out</a></li>
-                    @*<li><a style="color:yellow" asp-area="" asp-controller="LogIn" asp-action="Index">Login</a></li>*@
-                </ul>
-            </div>
+                <div class="nav-bar2">
+                    <ul class="navbar-collapse collapse" style="font-size:20px">
+                        @*<li><a style="color:yellow" asp-area="" asp-controller="SignUp" asp-action="Index">Sign Up</a></li>*@
+                        <li><a style="color:yellow" asp-area="" asp-controller="LogOut" asp-action="Index">Log Out</a></li>
+                        @*<li><a style="color:yellow" asp-area="" asp-controller="LogIn" asp-action="Index">Login</a></li>*@
+                    </ul>
+                </div>
             </div>
         </div>
     </nav>
@@ -92,7 +94,6 @@
         <footer>
             <p style="color:yellow;">&copy; 2019 - Dialysis Patient Tracker</p>
         </footer>
-
     </div>
 
     <environment include="Development">

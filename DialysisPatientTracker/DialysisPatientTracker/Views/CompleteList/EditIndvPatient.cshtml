@@ -80,73 +80,68 @@
     ViewData["Title"] = "Edit";
 }
 <hr />
-<h2>Edit</h2>
+<div class="row">
+    <div class="form col-lg-8 col-lg-offset-2">
+        <h2>Edit Patient General</h2>
+        <form asp-action="EditIndvPatient">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="CompleteListID" />
+            <div class="form-group">
+                <label asp-for="MedicalRecord" class="control-label"></label>
+                <input asp-for="MedicalRecord" class="form-control" />
+                <span asp-validation-for="MedicalRecord" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LastName" class="control-label"></label>
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FirstName" class="control-label"></label>
+                <input asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Physician" class="control-label"></label>
+                <input asp-for="Physician" class="form-control" />
+                <span asp-validation-for="Physician" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DOB" class="control-label"></label>
+                <input asp-for="DOB" class="form-control" />
+                <span asp-validation-for="DOB" class="text-danger"></span>
+            </div>
 
-<h4>Edit General Patient Information</h4>
+            <div class="form-group">
+                <label asp-for="Address" class="control-label"></label>
+                <input asp-for="Address" class="form-control" />
+                <span asp-validation-for="Address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PhoneNumber" class="control-label"></label>
+                <input asp-for="PhoneNumber" class="form-control" />
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
 
-<div class="row col-lg-offset-4">
+            <div class="form-group">
+                <label asp-for="Comments" class="control-label"></label>
+                <input asp-for="Comments" class="form-control" />
+                <span asp-validation-for="Comments" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
 
-    <div class="col-md-6">
-        <div class="col-md-8">
-            <form asp-action="EditIndvPatient">
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                <input type="hidden" asp-for="CompleteListID" />
-                <div class="form-group">
-                    <label asp-for="MedicalRecord" class="control-label"></label>
-                    <input asp-for="MedicalRecord" class="form-control" />
-                    <span asp-validation-for="MedicalRecord" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="LastName" class="control-label"></label>
-                    <input asp-for="LastName" class="form-control" />
-                    <span asp-validation-for="LastName" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="FirstName" class="control-label"></label>
-                    <input asp-for="FirstName" class="form-control" />
-                    <span asp-validation-for="FirstName" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Physician" class="control-label"></label>
-                    <input asp-for="Physician" class="form-control" />
-                    <span asp-validation-for="Physician" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="DOB" class="control-label"></label>
-                    <input asp-for="DOB" class="form-control" />
-                    <span asp-validation-for="DOB" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="TreatmentDays" class="control-label"></label>
-                    <input asp-for="TreatmentDays" class="form-control" />
-                    <span asp-validation-for="TreatmentDays" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Age" class="control-label"></label>
-                    <input asp-for="Age" class="form-control" />
-                    <span asp-validation-for="Age" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Gender" class="control-label"></label>
-                    <input asp-for="Gender" class="form-control" />
-                    <span asp-validation-for="Gender" class="text-danger"></span>
-                </div>
 
-                <div class="form-group">
-                    <label asp-for="Comments" class="control-label"></label>
-                    <input asp-for="Comments" class="form-control" />
-                    <span asp-validation-for="Comments" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <input type="submit" value="Save" class="btn btn-default" />
-                </div>
-            </form>
-        </div>
+            <<div>
+                <a asp-controller="PatientMasterList" asp-action="Index" asp-route-id="@Model.CompleteListID">Back One Page"</a>  |
+                <a asp-controller="PatientMasterList" asp-action="Index">Back to List</a>
+            </div>
+        </form>
     </div>
-</div>
-
-<<div>
-    <a asp-controller="PatientMasterList" asp-action="Index" asp-route-id="@Model.CompleteListID">Back One Page"</a>  |
-    <a asp-controller="PatientMasterList" asp-action="Index">Back to List</a>
-
 </div>
