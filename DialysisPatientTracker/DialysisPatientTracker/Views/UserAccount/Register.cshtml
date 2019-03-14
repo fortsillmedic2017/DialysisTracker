@@ -13,6 +13,12 @@
         margin-top: 10px;
         font-size: 18px;
     }
+    .logo {
+        color:yellow; 
+        font-size:30px;
+        margin-left:400px;
+
+    }
 
     h2 {
         text-align: center;
@@ -62,6 +68,41 @@
         margin-bottom: 5px;
     }
 </style>
+
+<nav class="navbar navbar-inverse navbar-fixed-top" style="background-color:midnightblue">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            @*<a style="color:yellow" asp-area="" asp-controller="UserAccount" asp-action="Login" class="navbar-brand">Dialysis Patient Tracker</a>*@
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav" >
+                <a  class="logo"  asp-area="" asp-controller="UserAccount" asp-action="Login" class="navbar-brand">Dialysis Patient Tracker</a>
+                @*<li><a style="color:yellow" asp-area="" asp-controller="UserAccount" asp-action="LogIn"> <spand class="spandnavadd">Search</spand><br />Options</a></li>
+        <li><a style="color:yellow" asp-area="" asp-controller="UserAccount" asp-action="LogIn"><spand class="spandnavremove"> Patient</spand><br /> MasterList</a></li>
+        <li><a style="color:yellow" asp-area="" asp-controller="UserAccount" asp-action="LogIn"><spand class="spandnavremove"> Patient</spand><br /> Demographics</a></li>
+        <li><a style="color:yellow" asp-area="" asp-controller="UserAccount" asp-action="LogIn"><spand> Treatment</spand><br /> Master List</a></li>
+        <li><a style="color:yellow" asp-area="" asp-controller="UserAccount" asp-action="LogIn"><spand> Physician</spand><br /> Master List</a></li>
+        <li><a style="color:yellow" asp-area="" asp-controller="UserAccount" asp-action="LogIn"><spand> Add</spand><br /> Patient</a></li>
+        <li><a style="color:yellow" asp-area="" asp-controller="UserAccount" asp-action="LogIn"><spand> Remove</spand><br /> Patient</a></li>*@
+            </ul>
+            <div class="nav-bar2">
+                <ul class="navbar-collapse collapse" style="font-size:15px">
+                    <li><a style="color:yellow" asp-area="" asp-controller="UserAccount" asp-action="LogIn">LogIn</a></li>
+                    <li><a style="color:yellow" asp-area="" asp-controller="LogOut" asp-action="Index">Log Out</a></li>
+                    @*<li><a style="color:yellow" asp-area="" asp-controller="LogIn" asp-action="Index">Login</a></li>*@
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
 
 @model DialysisPatientTracker.Models.UserAccount
 
