@@ -29,12 +29,13 @@ namespace DialysisPatientTracker.Controllers
 
         public IActionResult FindByMedicalRecord(string search)
         {
-            var medicalRecord = from m in context.CompleteLists //create a Variable
+            var medicalRecord = from m in context.CompleteLists
                                 select m;
             if (!String.IsNullOrEmpty(search))
             {
                 medicalRecord = medicalRecord.Where(m => m.MedicalRecord.Equals(search));
             }
+
             return View(medicalRecord.ToList());
         }
 
@@ -42,7 +43,7 @@ namespace DialysisPatientTracker.Controllers
         {
             var lastName = from l in context.CompleteLists
                            select l;
-            if (String.IsNullOrEmpty(search))
+            if (!String.IsNullOrEmpty(search))
             {
                 lastName = lastName.Where(l => l.LastName.Equals(search));
             }
