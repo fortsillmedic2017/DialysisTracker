@@ -86,7 +86,7 @@
             <th>Age</th>
             <th>Gender</th>
             <th>Treatment<br />Days</th>
-            <th>Physician<br />(Click Name For Info)</th>
+            <th>Physician<br /> (Click Name For Contact Info)</th>
             <th>Comments</th>
             <th>To Review Details,<br />(Click Below)</th>
             <th> To Edit Details<br />(Click Below)</th>
@@ -95,31 +95,29 @@
     <tbody>
         @foreach (var patient in Model)
         {
-            <tr>
-                <td>@patient.MedicalRecord</td>
-                <td>@patient.LastName</td>
-                <td>@patient.FirstName</td>
-                <td>@patient.Age</td>
-                <td>@patient.Gender</td>
-                <td>@patient.TreatmentDays</td>
-                <td> <a asp-controller="Physician" asp-action="Details" asp-route-id="@patient.CompleteListID">@patient.Physician</a></td>
-                <td>@patient.Comments</td>
-                <td>
-                    <a asp-controller="CompleteList" asp-action="Demographic" asp-route-id="@patient.CompleteListID">DempGraphics</a> |
-                    <a asp-controller="CompleteList" asp-action="Treatment" asp-route-id="@patient.CompleteListID">Treatment </a>
-                </td>
+        <tr>
+            <td>@patient.MedicalRecord</td>
+            <td>@patient.LastName</td>
+            <td>@patient.FirstName</td>
+            <td>@patient.Age</td>
+            <td>@patient.Gender</td>
+            <td>@patient.TreatmentDays</td>
+            <td> <a asp-controller="Physician" asp-action="Index">@patient.Physician</a></td>            
+            <td>@patient.Comments</td>
+            <td>
+                <a asp-controller="CompleteList" asp-action="Demographic" asp-route-id="@patient.CompleteListID">DempGraphics</a> |
+                <a asp-controller="CompleteList" asp-action="Treatment" asp-route-id="@patient.CompleteListID">Treatment </a>
+            </td>
 
-                <td>
-                    <a asp-controller="CompleteList" asp-action="EditIndvPatient" asp-route-id="@patient.CompleteListID">Edit  /  Add </a>
-                </td>
-            </tr>
+            <td>
+                <a asp-controller="CompleteList" asp-action="EditIndvPatient" asp-route-id="@patient.CompleteListID">Edit  /  Add </a>
+            </td>
+        </tr>
         }
     </tbody>
 </table>
 
-
-
-    @if (Model.Count == 0)
-    {
-        <p style="color:yellow">There are no patients in the list yet.</p>
-    };
+@if (Model.Count == 0)
+{
+    <p style="color:yellow">There are no patients in the list yet.</p>
+};

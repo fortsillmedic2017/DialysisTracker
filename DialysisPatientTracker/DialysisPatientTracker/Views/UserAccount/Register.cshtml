@@ -13,14 +13,14 @@
         margin-top: 10px;
         font-size: 18px;
     }
-    .logo {
-        color:yellow; 
-        font-size:30px;
-        margin-left:400px;
 
+    .logo {
+        color: yellow;
+        font-size: 30px;
+        margin-left: 400px;
     }
 
-    h2 {
+    h2, h4 {
         text-align: center;
         padding-top: 1px;
         padding-bottom: 60px;
@@ -46,7 +46,7 @@
         background: rgba(40, 37, 141, .5);
         padding: 90px;
         padding-top: 50px;
-        margin-top: 100px;
+        margin-top: 30px;
         /*margin-bottom: 100px;
         margin-left: 250px;
         margin-right: 250px;*/
@@ -67,6 +67,12 @@
         margin-top: 5px;
         margin-bottom: 5px;
     }
+
+    .validationMessage {
+        color: yellow;
+        text-shadow: black 0.1em 0.1em 0.2em;
+        background-color: midnightblue;
+    }
 </style>
 
 <nav class="navbar navbar-inverse navbar-fixed-top" style="background-color:midnightblue">
@@ -81,15 +87,15 @@
             @*<a style="color:yellow" asp-area="" asp-controller="UserAccount" asp-action="Login" class="navbar-brand">Dialysis Patient Tracker</a>*@
         </div>
         <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav" >
-                <a  class="logo"  asp-area="" asp-controller="UserAccount" asp-action="Login" class="navbar-brand">Dialysis Patient Tracker</a>
+            <ul class="nav navbar-nav">
+                <a class="logo" asp-area="" asp-controller="UserAccount" asp-action="Login" class="navbar-brand">Dialysis Patient Tracker</a>
                 @*<li><a style="color:yellow" asp-area="" asp-controller="UserAccount" asp-action="LogIn"> <spand class="spandnavadd">Search</spand><br />Options</a></li>
-        <li><a style="color:yellow" asp-area="" asp-controller="UserAccount" asp-action="LogIn"><spand class="spandnavremove"> Patient</spand><br /> MasterList</a></li>
-        <li><a style="color:yellow" asp-area="" asp-controller="UserAccount" asp-action="LogIn"><spand class="spandnavremove"> Patient</spand><br /> Demographics</a></li>
-        <li><a style="color:yellow" asp-area="" asp-controller="UserAccount" asp-action="LogIn"><spand> Treatment</spand><br /> Master List</a></li>
-        <li><a style="color:yellow" asp-area="" asp-controller="UserAccount" asp-action="LogIn"><spand> Physician</spand><br /> Master List</a></li>
-        <li><a style="color:yellow" asp-area="" asp-controller="UserAccount" asp-action="LogIn"><spand> Add</spand><br /> Patient</a></li>
-        <li><a style="color:yellow" asp-area="" asp-controller="UserAccount" asp-action="LogIn"><spand> Remove</spand><br /> Patient</a></li>*@
+                    <li><a style="color:yellow" asp-area="" asp-controller="UserAccount" asp-action="LogIn"><spand class="spandnavremove"> Patient</spand><br /> MasterList</a></li>
+                    <li><a style="color:yellow" asp-area="" asp-controller="UserAccount" asp-action="LogIn"><spand class="spandnavremove"> Patient</spand><br /> Demographics</a></li>
+                    <li><a style="color:yellow" asp-area="" asp-controller="UserAccount" asp-action="LogIn"><spand> Treatment</spand><br /> Master List</a></li>
+                    <li><a style="color:yellow" asp-area="" asp-controller="UserAccount" asp-action="LogIn"><spand> Physician</spand><br /> Master List</a></li>
+                    <li><a style="color:yellow" asp-area="" asp-controller="UserAccount" asp-action="LogIn"><spand> Add</spand><br /> Patient</a></li>
+                    <li><a style="color:yellow" asp-area="" asp-controller="UserAccount" asp-action="LogIn"><spand> Remove</spand><br /> Patient</a></li>*@
             </ul>
             <div class="nav-bar2">
                 <ul class="navbar-collapse collapse" style="font-size:15px">
@@ -102,8 +108,6 @@
     </div>
 </nav>
 
-
-
 @model DialysisPatientTracker.Models.UserAccount
 
 @{
@@ -111,48 +115,49 @@
 }
 
 <hr />
-@if (ViewBag.Message != null)
-{
-    <div><h4> @ViewBag.SuccessMessage</h4></div>
-}
+
 <div class="row">
 
     <div class="form col-lg-7 col-lg-offset-2">
 
         <h2>Registration</h2>
+        @if (ViewBag.Message != null)
+        {
+            <h4> @ViewBag.Message  <br />Registration Successful.  <br />You can now LogIn.</h4>
+        }
         <form asp-action="Register" asp-controller="UserAccount" method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div asp-validation-summary="ModelOnly" class="validationMessage"></div>
 
             <div class="form-group">
                 <label asp-for="FirstName" class="control-label"></label>
                 <input asp-for="FirstName" class="form-control" />
-                <span asp-validation-for="FirstName" class="text-danger"></span>
+                <span asp-validation-for="FirstName" class="validationMessage"></span>
             </div>
             <div class="form-group">
                 <label asp-for="LastName" class="control-label"></label>
                 <input asp-for="LastName" class="form-control" />
-                <span asp-validation-for="LastName" class="text-danger"></span>
+                <span asp-validation-for="LastName" class="validationMessage"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Email" class="control-label"></label>
                 <input asp-for="Email" class="form-control" />
-                <span asp-validation-for="Email" class="text-danger"></span>
+                <span asp-validation-for="Email" class="validationMessage"></span>
             </div>
             <div class="form-group">
                 <label asp-for="UserName" class="control-label"></label>
                 <input asp-for="UserName" class="form-control" />
-                <span asp-validation-for="UserName" class="text-danger"></span>
+                <span asp-validation-for="UserName" class="validationMessage"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Password" class="control-label"></label>
                 <input asp-for="Password" class="form-control" />
-                <span asp-validation-for="Password" class="text-danger"></span>
+                <span asp-validation-for="Password" class="validationMessage"></span>
             </div>
             <div class="form-group">
 
                 <label asp-for="ConfirmPassword" class="control-label"></label>
                 <input asp-for="ConfirmPassword" class="form-control" />
-                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                <span asp-validation-for="ConfirmPassword" class="validationMessage"></span>
             </div>
             @*<div class="form-group">
                     <div class="col-md-offset-2 col-md-10">
@@ -172,11 +177,9 @@
                     <label class="label-succes">@ViewBag.SuccessMessage</label>
                 </div>
             </div>
-
         </form>
     </div>
 </div>
-
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

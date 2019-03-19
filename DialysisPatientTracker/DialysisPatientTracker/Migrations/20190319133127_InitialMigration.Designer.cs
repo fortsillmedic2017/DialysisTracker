@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DialysisPatientTracker.Migrations
 {
     [DbContext(typeof(DialysisAppDbContext))]
-    [Migration("20190312215228_UserAccountAddAdmin")]
-    partial class UserAccountAddAdmin
+    [Migration("20190319133127_InitialMigration")]
+    partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -62,7 +62,7 @@ namespace DialysisPatientTracker.Migrations
 
                     b.Property<string>("PhoneNumber");
 
-                    b.Property<string>("Physician");
+                    b.Property<int?>("PhysicianID");
 
                     b.Property<string>("Temp");
 
@@ -71,6 +71,8 @@ namespace DialysisPatientTracker.Migrations
                     b.Property<string>("TreatmentTime");
 
                     b.HasKey("CompleteListID");
+
+                    b.HasIndex("PhysicianID");
 
                     b.ToTable("CompleteLists");
 
@@ -128,15 +130,21 @@ namespace DialysisPatientTracker.Migrations
 
                     b.Property<string>("ConfirmPassword");
 
-                    b.Property<string>("Email");
+                    b.Property<string>("Email")
+                        .IsRequired();
 
-                    b.Property<string>("FirstName");
+                    b.Property<string>("FirstName")
+                        .IsRequired();
 
-                    b.Property<string>("LastName");
+                    b.Property<string>("LastName")
+                        .IsRequired();
 
-                    b.Property<string>("Password");
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasMaxLength(100);
 
-                    b.Property<string>("UserName");
+                    b.Property<string>("UserName")
+                        .IsRequired();
 
                     b.HasKey("UserAccountID");
 
@@ -171,6 +179,13 @@ namespace DialysisPatientTracker.Migrations
                     b.ToTable("TreatmentMasterList");
 
                     b.HasDiscriminator().HasValue("TreatmentMasterList");
+                });
+
+            modelBuilder.Entity("DialysisPatientTracker.Models.CompleteList", b =>
+                {
+                    b.HasOne("DialysisPatientTracker.Models.Physician", "Physician")
+                        .WithMany("CompleteLists")
+                        .HasForeignKey("PhysicianID");
                 });
 #pragma warning restore 612, 618
         }

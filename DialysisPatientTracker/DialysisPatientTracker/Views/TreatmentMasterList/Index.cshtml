@@ -117,7 +117,7 @@
             <th>Medical <br />Record #</th>
             <th>Last <br />Name</th>
             <th>First<br /> Name</th>
-            <th>Physician<br /> (Click Name For Info)</th>
+            <th>Physician<br /> (Click Name For Contact Info)</th>
             <th>Treatment<br />Days</th>
             <th>Treatment <br />Time(Hrs)</th>
             <th>Access <br />Type</th>
@@ -139,7 +139,7 @@
                 <td>@treatment.MedicalRecord</td>
                 <td>@treatment.LastName</td>
                 <td>@treatment.FirstName</td>
-                <td> <a asp-controller="Physician" asp-action="Details" asp-route-id="@treatment.CompleteListID">@treatment.Physician</a></td>
+                <td> <a asp-controller="Physician" asp-action="Index">@treatment.Physician</a></td>
                 <td>@treatment.TreatmentDays</td>
                 <td>@treatment.TreatmentTime</td>
                 <td>@treatment.AccessType</td>

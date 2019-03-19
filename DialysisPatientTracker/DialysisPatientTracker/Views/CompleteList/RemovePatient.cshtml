@@ -18,6 +18,7 @@
 
     h2 {
         border: yellow solid 2px;
+        border-bottom: yellow solid 1px;
         text-align: center;
         padding: 20px 5px;
         margin-top: 50px;
@@ -26,10 +27,13 @@
         color: yellow;
     }
 
-    table {
+    .form-control{
         border: solid 2px yellow;
         align-content: center;
-        background: rgba(37, 37, 141, .6);
+        background: darkmagenta;
+        font-size:17px;
+        padding-bottom:50px;
+        padding-top:30px;
     }
 
     th {
@@ -46,11 +50,7 @@
         color: snow;
     }
 
-    td {
-        color: white;
-        text-align: center;
-        border: solid 2px yellow;
-    }
+
 
     hr {
         border: none;
@@ -74,12 +74,13 @@
 
 @model List<DialysisPatientTracker.Models.CompleteList>
 
-<div class="pageForm">
-    <h2>@ViewBag.title</h2>
+<h2 class="row">@ViewBag.title</h2>
+<div class="form">
+    
     <form asp-controller="CompleteList" asp-action="RemovePatient" method="post">
         @foreach (var patient in ViewBag.completeList)
         {<div class="form-group row">
-                <div>
+                <div class="form-control">
                     <input type="checkbox" name="patientIds" id="@patient.CompleteListID" value="@patient.CompleteListID" /><!--ID from(Model)-->
                     <label for="@patient.CompleteListID">@patient.LastName, @patient.FirstName (MRN:@patient.MedicalRecord)</label>
                 </div>
@@ -91,8 +92,8 @@
         </div>
     </form>
 
-    @if (@ViewBag.complestList == null)
-    {
-        <p> There are no patients on list Yet.</p>
-    }
+    @*@if (@ViewBag.complestList == null)
+        {
+            <p> There are no patients on list Yet.</p>
+        }*@
 </div>

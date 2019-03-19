@@ -39,7 +39,5 @@ namespace DialysisPatientTracker.ViewModels
         [DataType(DataType.Password)]
         [Display(Name = "Confirm Password")]
         public string ConfirmPassword { get; set; }
-
-        //public bool IsAmin { get; set; }
     }
 }

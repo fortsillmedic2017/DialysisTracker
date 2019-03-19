@@ -12,8 +12,10 @@ namespace DialysisPatientTracker.Models
         public string MedicalRecord { get; set; }
         public string LastName { get; set; }
         public string FirstName { get; set; }
+
         public string Physician { get; set; }
         public DateTime DOB { get; set; }
+
         public string TreatmentDays { get; set; }
         public string Age { get; set; }
         public string Gender { get; set; }
@@ -31,6 +33,8 @@ namespace DialysisPatientTracker.Models
         public string Temp { get; set; }
         public string DialyzerSize { get; set; }
         public string Comments { get; set; }
+
+        //public Physician Physician { get; set; }
 
         public CompleteList()
         {

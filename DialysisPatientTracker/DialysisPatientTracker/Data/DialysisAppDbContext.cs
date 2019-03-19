@@ -22,13 +22,13 @@ namespace DialysisPatientTracker.Data
 
         //-------------------------------------------------------------------------------
 
-        //This sets up the Primary key for CheeseMenu Class (only need when building many to many relationships
-        //protected override void OnModelCreating(ModelBuilder modelBuilder)
-        //{
-        //    modelBuilder.Entity<PatientDetail>().ToTable("PatientDetails");
-        //    modelBuilder.Entity<Patient>().ToTable("PatientDetails");
-        //    modelBuilder.Entity<Demographic>().ToTable("PatientDetails");
-        //    modelBuilder.Entity<Treatment>().ToTable("PatientDetails");
+        //This sets up the Primary key for CompletList Class (only need when building many to many relationships
+        //    protected override void OnModelCreating(ModelBuilder modelBuilder)
+        //    {
+        //        modelBuilder.Entity<Physician>()
+        //            .HasMany(p => p.CompleteLists)
+        //            .WithOne(c => c.Physician);
+        //    }
         //}
     }
 }

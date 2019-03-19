@@ -22,5 +22,7 @@ namespace DialysisPatientTracker.Models
 
         [Required]
         public string OfficePhone { get; set; }
+
+        public ICollection<CompleteList> CompleteLists { get; set; }
     }
 }

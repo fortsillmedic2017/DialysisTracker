@@ -235,7 +235,7 @@ namespace DialysisPatientTracker.Controllers
             return View("/PatientDemographicsMasterList/Index");
         }
 
-        //EDit IndvTreatment tables----------
+        //EDit IndvTreatment tables--------------------------------
 
         // GET: CompleteList/Edit/5
         public async Task<IActionResult> EditIndvTreatment(int? id)
@@ -384,7 +384,7 @@ namespace DialysisPatientTracker.Controllers
                             select p;
             if (!String.IsNullOrEmpty(search))
             {
-                physician = physician.Where(p => p.Physician.Contains(search));
+                physician = physician.Where(p => p.Physician.Equals(search));
             }
 
             return View(physician.ToList());

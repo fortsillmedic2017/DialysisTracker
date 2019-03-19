@@ -74,7 +74,7 @@
     ViewData["Title"] = "Index";
 }
 
-<h2>Physician Master List</h2>
+<h2>Physician Information List</h2>
 
 <table class="table">
     <thead>
@@ -108,6 +108,17 @@
         }
     </tbody>
 </table>
+@if (Model.Count == 0)
+{
+
+    <p style="color:yellow">This physician is not on the List Yet. </p>
+    <p style="color:yellow">
+        Click <a asp-controller="Physician" asp-action="AddPhysician"><span style="color:cyan">Here</span></a> to Add Physician.
+    </p>
+    <p style="color:yellow">
+        Click <a asp-controller="PatientMasterList" asp-action="Index"><span style="color:cyan">Here</span></a> to return to Patient List.
+    </p>
+};
 <p>
     <a asp-controller="PatientMasterList" asp-action="Index">Back to Patient List</a>
 </p>

@@ -23,44 +23,47 @@ namespace DialysisPatientTracker.Controllers
         // GET: /<controller>/
         public IActionResult Index()
         {
-            SearchOptions searchOptions = new SearchOptions();
-            return View();
+            AddSearchOptionsViewModel searchOptions = new AddSearchOptionsViewModel();
+            return View(searchOptions);
         }
 
         public IActionResult FindByMedicalRecord(string search)
         {
-            var medicalRecord = from m in context.CompleteLists
-                                select m;
-            if (!String.IsNullOrEmpty(search))
+            if (ModelState.IsValid)
             {
+                var medicalRecord = from m in context.CompleteLists
+                                    select m;
                 medicalRecord = medicalRecord.Where(m => m.MedicalRecord.Equals(search));
-            }
 
-            return View(medicalRecord.ToList());
+                return View(medicalRecord.ToList());
+            }
+            return View();
         }
 
         public IActionResult FindByLastName(string search)
         {
-            var lastName = from l in context.CompleteLists
-                           select l;
-            if (!String.IsNullOrEmpty(search))
+            if (ModelState.IsValid)
             {
-                lastName = lastName.Where(l => l.LastName.Equals(search));
-            }
+                var lastName = from m in context.CompleteLists
+                               select m;
+                lastName = lastName.Where(m => m.LastName.Equals(search));
 
-            return View(lastName.ToList());
+                return View(lastName.ToList());
+            }
+            return View();
         }
 
         public IActionResult FindByPhysician(string search)
         {
-            var physician = from p in context.CompleteLists
-                            select p;
-            if (!String.IsNullOrEmpty(search))
+            if (ModelState.IsValid)
             {
-                physician = physician.Where(p => p.Physician.Equals(search));
-            }
+                var physician = from m in context.CompleteLists
+                                select m;
+                physician = physician.Where(m => m.Physician.Equals(search));
 
-            return View(physician.ToList());
+                return View(physician.ToList());
+            }
+            return View();
         }
     }
 }

@@ -42,8 +42,7 @@ namespace DialysisPatientTracker.Controllers
                 context.UserAccounts.Add(userAccount);
                 context.SaveChanges();
                 ModelState.Clear();
-
-                ViewBag.SuccessMessage = userAccount.UserName + " " + "Registration Successful.";
+                ViewBag.Message = userAccount.UserName;
             }
             return View();
         }

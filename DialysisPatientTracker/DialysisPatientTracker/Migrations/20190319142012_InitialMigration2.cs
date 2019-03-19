@@ -2,22 +2,21 @@
 
 namespace DialysisPatientTracker.Migrations
 {
-    public partial class UserAccountsAdmin : Migration
+    public partial class InitialMigration2 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AddColumn<bool>(
-                name: "IsAmin",
-                table: "UserAccounts",
-                nullable: false,
-                defaultValue: false);
+            migrationBuilder.AddColumn<string>(
+                name: "Physician",
+                table: "CompleteLists",
+                nullable: true);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropColumn(
-                name: "IsAmin",
-                table: "UserAccounts");
+                name: "Physician",
+                table: "CompleteLists");
         }
     }
 }
