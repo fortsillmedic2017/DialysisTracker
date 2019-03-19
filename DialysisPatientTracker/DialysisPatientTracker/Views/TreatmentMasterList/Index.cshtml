@@ -91,7 +91,7 @@
                 <li><a style="color:yellow" asp-area="" asp-controller="PatientMasterList" asp-action="Index"><spand class="spandnavremove"> Patient</spand><br /> MasterList</a></li>
                 <li><a style="color:yellow" asp-area="" asp-controller="PatientDemographics" asp-action="Index"><spand class="spandnavremove"> Patient</spand><br /> Demographics</a></li>
                 <li><a style="color:yellow" asp-area="" asp-controller="TreatmentMasterList" asp-action="Index"><spand> Treatment</spand><br /> Master List</a></li>
-                <li><a style="color:yellow" asp-area="" asp-controller="Physician" asp-action="Index"><spand> Physician</spand><br /> Master List</a></li>
+                <li><a style="color:yellow" asp-area="" asp-controller="Physician" asp-action="Index"><spand> Physician</spand><br /> Information List</a></li>
                 <li><a style="color:yellow" asp-area="" asp-controller="CompleteList" asp-action="AddPatient"><spand> Add</spand><br /> Patient</a></li>
                 <li><a style="color:yellow" asp-area="" asp-controller="CompleteList" asp-action="RemovePatient"><spand> Remove</spand><br /> Patient</a></li>
             </ul>
@@ -154,8 +154,8 @@
                     <a asp-controller="CompleteList" asp-action="Demographic" asp-route-id="@treatment.CompleteListID">Demographic</a>
 
                 <td>
-                    <a asp-controller="CompleteList" asp-action="EditIndvTreatment" asp-route-id="@treatment.CompleteListID">Edit</a>|
-                    <a asp-controller="CompleteList" asp-action="EditIndvTreatment" asp-route-id="@treatment.CompleteListID">Add Treatment  Orders</a>
+                   
+                    <a asp-controller="CompleteList" asp-action="EditIndvTreatment" asp-route-id="@treatment.CompleteListID"> Treatment  Orders</a>
                 </td>
             </tr>
         }
