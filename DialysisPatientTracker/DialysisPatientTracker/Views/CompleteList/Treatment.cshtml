@@ -67,10 +67,10 @@
 @model DialysisPatientTracker.Models.CompleteList
 
 @{
-    ViewData["Title"] = "Demographics";
+    ViewData["Title"] = "Treatments";
 }
 
-<div class="col-lg-offset-3">  <h2>TreatMent <br/> (@Model.LastName, @Model.FirstName)</h2></div>
+<div class="col-lg-offset-3">  <h2>Treatment Orders <br/> (@Model.LastName, @Model.FirstName)</h2></div>
 
 <div class="table-responsive col-lg-offset-3">
 
@@ -163,6 +163,6 @@
         </dd>
     </dl>
 
-    <a asp-action="EditIndvDemo" asp-route-id="@Model.CompleteListID">Edit</a> |
+    <a asp-action="EditIndvTreatment" asp-route-id="@Model.CompleteListID">Edit</a> |
     <a asp-controller="PatientMasterList" asp-action="Index">Back to List</a>
 </div>

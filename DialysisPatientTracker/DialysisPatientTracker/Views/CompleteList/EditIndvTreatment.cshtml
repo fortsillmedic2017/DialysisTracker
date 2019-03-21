@@ -1,8 +1,4 @@
 ﻿<style>
-    h2 {
-        color: yellow
-    }
-
     .nav-bar2 {
         /* margin-top: -70px;*/
         margin-left: 1055px;
@@ -44,7 +40,9 @@
         background: rgba(40, 37, 141, .5);
         padding: 90px;
         padding-top: 50px;
-        margin-top: 10px;
+        padding-bottom: 30px;
+        margin-top: 100px;
+     
         /*margin-bottom: 100px;
         margin-left: 250px;
         margin-right: 250px;*/
@@ -72,97 +70,99 @@
     }
 </style>
 
-@model DialysisPatientTracker.Models.CompleteList
-@{
-    ViewData["Title"] = "Edit";
-}
-<hr />
-<h2 class="col-md-4 col-md-offset-4">Edit Individual Treatment</h2>
-<div class="row">
-    <div class="col-md-4  col-md-offset-4">
-        <form asp-action="EditIndvTreatment">
-            <div asp-validation-summary="ModelOnly" class="validationMessage"></div>
-            <input type="hidden" asp-for="CompleteListID" />
-            <div class="form-group">
-                <label asp-for="MedicalRecord" class="control-label"></label>
-                <input asp-for="MedicalRecord" class="form-control" />
-                <span asp-validation-for="MedicalRecord" class="validationMessage"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="LastName" class="control-label"></label>
-                <input asp-for="LastName" class="form-control" />
-                <span asp-validation-for="LastName" class="validationMessage"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FirstName" class="control-label"></label>
-                <input asp-for="FirstName" class="form-control" />
-                <span asp-validation-for="FirstName" class="validationMessage"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Physician" class="control-label"></label>
-                <input asp-for="Physician" class="form-control" />
-                <span asp-validation-for="Physician" class="validationMessage"></span>
-            </div>
 
-            <div class="form-group">
-                <label asp-for="TreatmentDays" class="control-label"></label>
-                <input asp-for="TreatmentDays" class="form-control" />
-                <span asp-validation-for="TreatmentDays" class="validationMessage"></span>
-            </div>
 
-            <div class="form-group">
-                <label asp-for="TreatmentTime" class="control-label"></label>
-                <input asp-for="TreatmentTime" class="form-control" />
-                <span asp-validation-for="TreatmentTime" class="validationMessage"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="AccessType" class="control-label"></label>
-                <input asp-for="AccessType" class="form-control" />
-                <span asp-validation-for="AccessType" class="validationMessage"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="KBath" class="control-label"></label>
-                <input asp-for="KBath" class="form-control" />
-                <span asp-validation-for="KBath" class="validationMessage"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CaBath" class="control-label"></label>
-                <input asp-for="CaBath" class="form-control" />
-                <span asp-validation-for="CaBath" class="validationMessage"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="NaBath" class="control-label"></label>
-                <input asp-for="NaBath" class="form-control" />
-                <span asp-validation-for="NaBath" class="validationMessage"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="BiCarb" class="control-label"></label>
-                <input asp-for="BiCarb" class="form-control" />
-                <span asp-validation-for="BiCarb" class="validationMessage"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Temp" class="control-label"></label>
-                <input asp-for="Temp" class="form-control" />
-                <span asp-validation-for="Temp" class="validationMessage"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DialyzerSize" class="control-label"></label>
-                <input asp-for="DialyzerSize" class="form-control" />
-                <span asp-validation-for="DialyzerSize" class="validationMessage"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Comments" class="control-label"></label>
-                <input asp-for="Comments" class="form-control" />
-                <span asp-validation-for="Comments" class="validationMessage"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-default" />
-            </div>
-        </form>
-    </div>
-</div>
+        @model DialysisPatientTracker.Models.CompleteList
+        @{
+            ViewData["Title"] = "Edit";
+        }
+        <hr />
+        <div class="row">
+            <div class="form col-lg-8 col-lg-offset-2">
+                <h2>Edit Patient Treatment</h2>
+                <form asp-action="EditIndvTreatment">
+                    <div asp-validation-summary="ModelOnly" class="validationMessage"></div>
+                    <input type="hidden" asp-for="CompleteListID" />
+                    <div class="form-group">
+                        <label asp-for="MedicalRecord" class="control-label"></label>
+                        <input asp-for="MedicalRecord" class="form-control" />
+                        <span asp-validation-for="MedicalRecord" class="validationMessage"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="LastName" class="control-label"></label>
+                        <input asp-for="LastName" class="form-control" />
+                        <span asp-validation-for="LastName" class="validationMessage"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="FirstName" class="control-label"></label>
+                        <input asp-for="FirstName" class="form-control" />
+                        <span asp-validation-for="FirstName" class="validationMessage"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Physician" class="control-label"></label>
+                        <input asp-for="Physician" class="form-control" />
+                        <span asp-validation-for="Physician" class="validationMessage"></span>
+                    </div>
 
-<div>
-    <a asp-controller="PatientMasterList" asp-action="Index" asp-route-id="@Model.CompleteListID">Back One Page"</a>  |
-    <a asp-controller="PatientMasterList" asp-action="Index">Back to List</a>
-</div>
+                    <div class="form-group">
+                        <label asp-for="TreatmentDays" class="control-label"></label>
+                        <input asp-for="TreatmentDays" class="form-control" />
+                        <span asp-validation-for="TreatmentDays" class="validationMessage"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="TreatmentTime" class="control-label"></label>
+                        <input asp-for="TreatmentTime" class="form-control" />
+                        <span asp-validation-for="TreatmentTime" class="validationMessage"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="AccessType" class="control-label"></label>
+                        <input asp-for="AccessType" class="form-control" />
+                        <span asp-validation-for="AccessType" class="validationMessage"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="KBath" class="control-label"></label>
+                        <input asp-for="KBath" class="form-control" />
+                        <span asp-validation-for="KBath" class="validationMessage"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="CaBath" class="control-label"></label>
+                        <input asp-for="CaBath" class="form-control" />
+                        <span asp-validation-for="CaBath" class="validationMessage"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="NaBath" class="control-label"></label>
+                        <input asp-for="NaBath" class="form-control" />
+                        <span asp-validation-for="NaBath" class="validationMessage"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="BiCarb" class="control-label"></label>
+                        <input asp-for="BiCarb" class="form-control" />
+                        <span asp-validation-for="BiCarb" class="validationMessage"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Temp" class="control-label"></label>
+                        <input asp-for="Temp" class="form-control" />
+                        <span asp-validation-for="Temp" class="validationMessage"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="DialyzerSize" class="control-label"></label>
+                        <input asp-for="DialyzerSize" class="form-control" />
+                        <span asp-validation-for="DialyzerSize" class="validationMessage"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Comments" class="control-label"></label>
+                        <input asp-for="Comments" class="form-control" />
+                        <span asp-validation-for="Comments" class="validationMessage"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Save" class="btn btn-default" />
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div>
+            <a style="color:yellow"asp-controller="PatientMasterList" asp-action="Index" asp-route-id="@Model.CompleteListID">Back One Page</a>  |
+            <a style="color:yellow"asp-controller="PatientMasterList" asp-action="Index">Back to List</a>
+        </div>

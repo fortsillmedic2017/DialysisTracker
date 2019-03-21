@@ -101,9 +101,9 @@
                 <td>@patient.TreatmentDays</td>
                 <td>@patient.Comments</td>
                 <td>
-                    <a asp-controller="CompleteList" asp-action="Details" asp-route-id="@patient.CompleteListID">DempGraphics</a>  |
-                    <a asp-controller="CompleteList" asp-action="Delete" asp-route-id="@patient.CompleteListID">Orders</a>
-                <td>
+                    <a asp-controller="CompleteList" asp-action="Demographic" asp-route-id="@patient.CompleteListID">DempGraphics</a>  |
+                    <a asp-controller="CompleteList" asp-action="Treatment" asp-route-id="@patient.CompleteListID">Treatment Orders</a>
+                
                 <td>
                     <a asp-controller="CompleteList" asp-action="Edit" asp-route-id="@patient.CompleteListID">Edit</a>
                 </td>

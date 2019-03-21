@@ -87,26 +87,24 @@
             <th>Comments</th>
             <th>Details</th>
             <th>Actions</th>
+
         </tr>
     </thead>
     <tbody>
         @foreach (var patient in Model)
         {
-            <tr>
-                <td>@patient.MedicalRecord</td>
-                <td>@patient.LastName</td>
-                <td>@patient.FirstName</td>
-                <td><a asp-controller="Physician" asp-action="Index"> @patient.Physician</a></td>
-                <td>@patient.TreatmentDays</td>
-                <td>@patient.Comments</td>
-                <td>
-                    <a asp-controller="CompleteList" asp-action="EditIndvDemo" asp-route-id="@patient.CompleteListID">DempGraphics</a>  |
-                    <a asp-controller="CompleteList" asp-action="EditIndvTreatment" asp-route-id="@patient.CompleteListID">Orders</a>
-                <td>
-                <td>
-                    <a asp-controller="CompleteList" asp-action="Edit" asp-route-id="@patient.CompleteListID">Edit</a>
-                </td>
-            </tr>
+        <tr>
+            <td>@patient.MedicalRecord</td>
+            <td>@patient.LastName</td>
+            <td>@patient.FirstName</td>
+            <td><a asp-controller="Physician" asp-action="Index"> @patient.Physician</a></td>
+            <td>@patient.TreatmentDays</td>
+            <td>@patient.Comments</td>
+            <td>
+                <a asp-controller="CompleteList" asp-action="Demographic" asp-route-id="@patient.CompleteListID">DemoGraphics</a>  |
+                <a asp-controller="CompleteList" asp-action="Treatment" asp-route-id="@patient.CompleteListID">Treatment Orders</a>
+            <td><a asp-controller="CompleteList" asp-action="Edit" asp-route-id="@patient.CompleteListID">Edit</a></td>
+        </tr>
 
         }
     </tbody>
@@ -119,6 +117,6 @@
         Click <a asp-controller="CompleteList" asp-action="AddPatient"><span style="color:cyan">Here</span></a> to Add patient.
     </p>
     <p style="color:yellow">
-        Click <a asp-controller="SearchOptions" asp-action="Index"><span style="color:cyan">Here</span></a> to reurn to Search Options.
+        Click <a asp-controller="SearchOptions" asp-action="Index"><span style="color:cyan">Here</span></a> to return to Search Options.
     </p>
 };

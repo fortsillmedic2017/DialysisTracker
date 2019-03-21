@@ -101,10 +101,10 @@
                 <td>@patient.Comments</td>
 
                 <td>
-                    <a asp-controller="CompleteList" asp-action="EditIndvDemo" asp-route-id="@patient.CompleteListID">DempGraphics</a>  |
-                    <a asp-controller="CompleteList" asp-action="EditIndvTreatment" asp-route-id="@patient.CompleteListID">Treatment</a>
+                    <a asp-controller="CompleteList" asp-action="Demographic" asp-route-id="@patient.CompleteListID">DempGraphics</a>  |
+                    <a asp-controller="CompleteList" asp-action="Treatment" asp-route-id="@patient.CompleteListID">Treatment</a>
                 <td>
-                    <a asp-controller="CompleteList" asp-action="Edit" asp-route-id="@patient.CompleteListID">Edit</a> |
+                    <a asp-controller="CompleteList" asp-action="EditIndvPatient" asp-route-id="@patient.CompleteListID">Edit</a> |
                     <a asp-controller="CompleteList" asp-action="Delete" asp-route-id="@patient.CompleteListID">Delete</a>
                 </td>
             </tr>
