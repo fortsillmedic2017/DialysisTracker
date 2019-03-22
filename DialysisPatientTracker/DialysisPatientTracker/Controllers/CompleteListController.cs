@@ -15,7 +15,7 @@ namespace DialysisPatientTracker.Controllers
     {
         private DialysisAppDbContext context;
 
-        public CompleteListController(DialysisAppDbContext dbContext)//customized contoller
+        public CompleteListController(DialysisAppDbContext dbContext)//customized controller
         {
             context = dbContext;
         }
