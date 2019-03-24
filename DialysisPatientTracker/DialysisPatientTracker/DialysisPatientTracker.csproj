@@ -90,6 +90,9 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
+    <Content Update="wwwroot\dialysisappbg.jpg">
+      <CopyToOutputDirectory></CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ProjectExtensions>
