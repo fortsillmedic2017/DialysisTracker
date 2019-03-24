@@ -232,7 +232,7 @@ namespace DialysisPatientTracker.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View("/PatientDemographicsMasterList/Index");
+            return Redirect("/PatientMasterList/Index");
         }
 
         //EDit IndvTreatment tables--------------------------------

@@ -95,24 +95,24 @@
     <tbody>
         @foreach (var patient in Model)
         {
-        <tr>
-            <td>@patient.MedicalRecord</td>
-            <td>@patient.LastName</td>
-            <td>@patient.FirstName</td>
-            <td>@patient.Age</td>
-            <td>@patient.Gender</td>
-            <td>@patient.TreatmentDays</td>
-            <td> <a asp-controller="Physician" asp-action="Index">@patient.Physician</a></td>            
-            <td>@patient.Comments</td>
-            <td>
-                <a asp-controller="CompleteList" asp-action="Demographic" asp-route-id="@patient.CompleteListID">DempGraphics</a> |
-                <a asp-controller="CompleteList" asp-action="Treatment" asp-route-id="@patient.CompleteListID">Treatment </a>
-            </td>
+            <tr>
+                <td>@patient.MedicalRecord</td>
+                <td>@patient.LastName</td>
+                <td>@patient.FirstName</td>
+                <td>@patient.Age</td>
+                <td>@patient.Gender</td>
+                <td>@patient.TreatmentDays</td>
+                <td> <a asp-controller="Physician" asp-action="Index">@patient.Physician</a></td>
+                <td>@patient.Comments</td>
+                <td>
+                    <a asp-controller="CompleteList" asp-action="Demographic" asp-route-id="@patient.CompleteListID">DempGraphics</a> |
+                    <a asp-controller="CompleteList" asp-action="Treatment" asp-route-id="@patient.CompleteListID">Treatment </a>
+                </td>
 
-            <td>
-                <a asp-controller="CompleteList" asp-action="EditIndvPatient" asp-route-id="@patient.CompleteListID">Edit  /  Add </a>
-            </td>
-        </tr>
+                <td>
+                    <a asp-controller="CompleteList" asp-action="Edit" asp-route-id="@patient.CompleteListID">Edit  /  Add </a>
+                </td>
+            </tr>
         }
     </tbody>
 </table>

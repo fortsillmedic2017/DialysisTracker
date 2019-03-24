@@ -102,12 +102,12 @@
 
                 <td>
                     <a asp-action="Edit" asp-route-id="@physician.PhysicianID">Edit</a>|
-                    <a asp-action="AddPhysician" asp-route-id="@physician.PhysicianID">Add </a>|
                     <a asp-action="Delete" asp-route-id="@physician.PhysicianID">Delete </a>
             </tr>
         }
     </tbody>
 </table>
+
 @if (Model.Count == 0)
 {
 
@@ -119,6 +119,10 @@
         Click <a asp-controller="PatientMasterList" asp-action="Index"><span style="color:cyan">Here</span></a> to return to Patient List.
     </p>
 };
+
+<p style="color:yellow">
+    Click <a asp-controller="Physician" asp-action="AddPhysician"><span style="color:cyan">Here</span></a> to Add Physician.
+</p>
 <p>
     <a asp-controller="PatientMasterList" asp-action="Index">Back to Patient List</a>
 </p>
