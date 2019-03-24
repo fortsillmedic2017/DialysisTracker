@@ -32,16 +32,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="images\drops-of-water-water-nature-liquid-40784.jpeg" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="images\drops-of-water-water-nature-liquid-40784.jpeg">
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-  </ItemGroup>
-
-  <ItemGroup>
     <None Include="wwwroot\images\dialysisappbg.jpg">
       <CopyToOutputDirectory></CopyToOutputDirectory>
     </None>
