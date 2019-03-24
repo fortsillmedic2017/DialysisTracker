@@ -32,6 +32,16 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="images\dialysisappbg.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="images\dialysisappbg.jpg">
+      <CopyToOutputDirectory></CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="wwwroot\images\dialysisappbg.jpg">
       <CopyToOutputDirectory></CopyToOutputDirectory>
     </None>
