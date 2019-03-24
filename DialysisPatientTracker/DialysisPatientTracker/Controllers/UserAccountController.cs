@@ -64,6 +64,7 @@ namespace DialysisPatientTracker.Controllers
                     UserName = addUserAccountViewModel.UserName,
                     Password = addUserAccountViewModel.Password
                 };
+                ModelState.Clear();
             }
 
             return Redirect("/SearchOptions/Index");
