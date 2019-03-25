@@ -176,7 +176,7 @@ namespace DialysisPatientTracker.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return Redirect("/PatientMasterList/Index");
             }
             return Redirect("PatientMasterList");
         }
