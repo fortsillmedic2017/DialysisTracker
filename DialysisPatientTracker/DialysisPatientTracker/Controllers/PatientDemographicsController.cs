@@ -37,7 +37,7 @@ namespace DialysisPatientTracker.Controllers
                 return NotFound();
             }
 
-            var completeList = await context.CompleteLists
+            var completeList = await context.CompleteLists.OrderBy(c => c.LastName)
                 .FirstOrDefaultAsync(m => m.CompleteListID == id);
             if (completeList == null)
             {
@@ -103,7 +103,7 @@ namespace DialysisPatientTracker.Controllers
                 return NotFound();
             }
 
-            var completeList = await context.CompleteLists
+            var completeList = await context.CompleteLists.OrderBy(c => c.LastName)
                 .FirstOrDefaultAsync(m => m.CompleteListID == id);
             if (completeList == null)
             {

@@ -31,7 +31,7 @@ namespace DialysisPatientTracker.Controllers
         {
             if (ModelState.IsValid)
             {
-                var medicalRecord = from m in context.CompleteLists
+                var medicalRecord = from m in context.CompleteLists.OrderBy(c => c.LastName)
                                     select m;
                 medicalRecord = medicalRecord.Where(m => m.MedicalRecord.Equals(search));
 
@@ -44,7 +44,7 @@ namespace DialysisPatientTracker.Controllers
         {
             if (ModelState.IsValid)
             {
-                var lastName = from m in context.CompleteLists
+                var lastName = from m in context.CompleteLists.OrderBy(c => c.LastName)
                                select m;
                 lastName = lastName.Where(m => m.LastName.Equals(search));
 
@@ -57,7 +57,7 @@ namespace DialysisPatientTracker.Controllers
         {
             if (ModelState.IsValid)
             {
-                var physician = from m in context.CompleteLists
+                var physician = from m in context.CompleteLists.OrderBy(c => c.LastName)
                                 select m;
                 physician = physician.Where(m => m.Physician.Equals(search));
 

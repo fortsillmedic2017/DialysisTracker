@@ -22,7 +22,7 @@ namespace DialysisPatientTracker.Controllers
         // GET: CompleteList
         public IActionResult Index()
         {
-            List<Physician> physicians = context.Physicians.ToList();//****
+            List<Physician> physicians = context.Physicians.OrderBy(c => c.LastName).ToList();//****
 
             return View(physicians);
         }
@@ -52,7 +52,7 @@ namespace DialysisPatientTracker.Controllers
         }
 
         // POST: Physician/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for
+        // To protect from over posting attacks, please enable the specific properties you want to bind to, for
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -84,7 +84,7 @@ namespace DialysisPatientTracker.Controllers
         }
 
         // POST: Physician/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for
+        // To protect from over posting attacks, please enable the specific properties you want to bind to, for
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -126,7 +126,7 @@ namespace DialysisPatientTracker.Controllers
                 return NotFound();
             }
 
-            var physician = await context.Physicians
+            var physician = await context.Physicians.OrderBy(c => c.LastName)
                 .FirstOrDefaultAsync(m => m.PhysicianID == id);
             if (physician == null)
             {

@@ -14,7 +14,7 @@ namespace DialysisPatientTracker.Controllers
 {
     public class PatientMasterListController : Controller
     {
-        //Ctreated an Instance of PatientMasterListDBContext(context)
+        //Created an Instance of PatientMasterListDBContext(context)
         private DialysisAppDbContext context;
 
         /*Created a Constructor from PatientMasterListController and set
@@ -32,7 +32,7 @@ namespace DialysisPatientTracker.Controllers
         public IActionResult Index()
         {
             //////return View(await context.CompleteLists.ToListAsync());
-            List<CompleteList> patientMasterLists = context.CompleteLists.ToList();//From Dbset
+            List<CompleteList> patientMasterLists = context.CompleteLists.OrderBy(c => c.LastName).ToList();//From Dbset
 
             return View(patientMasterLists);
         }
@@ -47,7 +47,7 @@ namespace DialysisPatientTracker.Controllers
                 return NotFound();
             }
 
-            var completeList = await context.CompleteLists
+            var completeList = await context.CompleteLists.OrderBy(c => c.LastName)
                 .FirstOrDefaultAsync(m => m.CompleteListID == id);
             if (completeList == null)
             {
@@ -64,7 +64,7 @@ namespace DialysisPatientTracker.Controllers
         //}
 
         //// POST: CompleteList/Create
-        //// To protect from overposting attacks, please enable the specific properties you want to bind to, for
+        //// To protect from over posting attacks, please enable the specific properties you want to bind to, for
         //// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         //[HttpPost]
         //public IActionResult AddPatient(addCompleteListViewModle addCompleteListViewModle)
@@ -176,7 +176,7 @@ namespace DialysisPatientTracker.Controllers
                 return NotFound();
             }
 
-            var completeList = await context.CompleteLists
+            var completeList = await context.CompleteLists.OrderBy(c => c.LastName)
                 .FirstOrDefaultAsync(m => m.CompleteListID == id);
             if (completeList == null)
             {

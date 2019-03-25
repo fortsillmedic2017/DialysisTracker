@@ -23,7 +23,7 @@ namespace DialysisPatientTracker.Controllers
         // GET: CompleteList
         public async Task<IActionResult> Index()
         {
-            return View(await context.CompleteLists.ToListAsync());
+            return View(await context.CompleteLists.OrderBy(c => c.LastName).ToListAsync());
         }
 
         // GET: CompleteList/Details/5
@@ -34,7 +34,7 @@ namespace DialysisPatientTracker.Controllers
                 return NotFound();
             }
 
-            var completeList = await context.CompleteLists
+            var completeList = await context.CompleteLists.OrderBy(c => c.LastName)
                 .FirstOrDefaultAsync(m => m.CompleteListID == id);
             if (completeList == null)
             {
@@ -53,7 +53,7 @@ namespace DialysisPatientTracker.Controllers
                 return NotFound();
             }
 
-            var demographics = await context.CompleteLists
+            var demographics = await context.CompleteLists.OrderBy(c => c.LastName)
                 .FirstOrDefaultAsync(m => m.CompleteListID == id);
             if (demographics == null)
             {
@@ -72,7 +72,7 @@ namespace DialysisPatientTracker.Controllers
                 return NotFound();
             }
 
-            var treatments = await context.CompleteLists
+            var treatments = await context.CompleteLists.OrderBy(c => c.LastName)
                 .FirstOrDefaultAsync(m => m.CompleteListID == id);
             if (treatments == null)
             {
@@ -396,7 +396,7 @@ namespace DialysisPatientTracker.Controllers
         public IActionResult RemovePatient()
         {
             ViewBag.title = "Remove Patient";
-            ViewBag.completeList = context.CompleteLists.ToList(); //From Db Context
+            ViewBag.completeList = context.CompleteLists.OrderBy(c => c.LastName).ToList(); //From Db Context
 
             return View();
         }

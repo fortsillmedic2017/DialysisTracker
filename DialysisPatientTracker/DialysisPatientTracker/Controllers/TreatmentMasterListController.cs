@@ -24,7 +24,7 @@ namespace DialysisPatientTracker.Controllers
         // GET: /<controller>/
         public IActionResult Index()
         {
-            List<CompleteList> treatmentMasterLists = context.CompleteLists.ToList();
+            List<CompleteList> treatmentMasterLists = context.CompleteLists.OrderBy(c => c.LastName).ToList();
 
             return View(treatmentMasterLists);
         }
@@ -37,7 +37,7 @@ namespace DialysisPatientTracker.Controllers
                 return NotFound();
             }
 
-            var completeList = await context.CompleteLists
+            var completeList = await context.CompleteLists.OrderBy(c => c.LastName)
                 .FirstOrDefaultAsync(m => m.CompleteListID == id);
             if (completeList == null)
             {
@@ -106,7 +106,7 @@ namespace DialysisPatientTracker.Controllers
                 return NotFound();
             }
 
-            var completeList = await context.CompleteLists
+            var completeList = await context.CompleteLists.OrderBy(c => c.LastName)
                 .FirstOrDefaultAsync(m => m.CompleteListID == id);
             if (completeList == null)
             {
